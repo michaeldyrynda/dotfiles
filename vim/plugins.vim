@@ -1,15 +1,8 @@
 " vim-plug configuration ********************************************************
 call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required!
-Plug 'VundleVim/Vundle.vim'
-
-" vim-scripts repos
-Plug 'L9'
-
 " Vundle bundles
-"Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'Shougo/vimproc'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
