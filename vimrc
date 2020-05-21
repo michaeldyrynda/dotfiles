@@ -160,9 +160,6 @@ let g:PHP_noArrowMatching = 1
 
 " Extract vundle configuration to separate file
 so ~/.vim/plugins.vim
-so ~/.vim/fzftags.vim
-so ~/.vim/phpactor.vim
-so ~/.vim/vimtest.vim
 set termguicolors
 colorscheme nord
 syntax on

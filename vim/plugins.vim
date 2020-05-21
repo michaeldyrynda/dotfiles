@@ -1,55 +1,54 @@
-" Vundle configuration ********************************************************
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug configuration ********************************************************
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle
 " required!
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " vim-scripts repos
-Plugin 'L9'
+Plug 'L9'
 
 " Vundle bundles
 "Plugin 'ervandew/supertab'
-Plugin 'Shougo/vimproc'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-vinegar'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'garbas/vim-snipmate'
-Plugin 'tpope/vim-surround'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'lilydjwg/colorizer'
-Plugin 'trevordmiller/nova-vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'junegunn/fzf.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'dhruvasagar/vim-zoom'
-Plugin 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-Plugin 'janko/vim-test'
-Plugin 'rainglow/vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'tobyS/pdv'
-Plugin 'tobyS/vmustache'
-Plugin 'prettier/vim-prettier', {'do': 'npm install'}
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'benmills/vimux'
-Plugin 'tmhedberg/matchit'
+Plug 'Shougo/vimproc'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'wakatime/vim-wakatime'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-vinegar'
+Plug 'sheerun/vim-polyglot'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'garbas/vim-snipmate'
+Plug 'tpope/vim-surround'
+Plug 'StanAngeloff/php.vim'
+Plug 'lilydjwg/colorizer'
+Plug 'trevordmiller/nova-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'dhruvasagar/vim-zoom'
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'janko/vim-test'
+Plug 'rainglow/vim'
+Plug 'majutsushi/tagbar'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache'
+Plug 'prettier/vim-prettier', {'do': 'npm install'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'benmills/vimux'
+Plug 'tmhedberg/matchit'
 
-call vundle#end()
-filetype plugin indent on " required!
+call plug#end()
 
 nmap <F6> :TagbarToggle<cr>
 
 let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates_snip"
 
-source ~/.vim/coc.vim
+so ~/.vim/coc.vim
+so ~/.vim/fzftags.vim
+so ~/.vim/phpactor.vim
+so ~/.vim/vimtest.vim
