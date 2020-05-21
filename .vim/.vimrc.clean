@@ -1,0 +1,47 @@
+set rtp+=/usr/local/opt/fzf
+
+set autoindent                                                                  "Preserve current indent on new lines
+set smartindent                                                                 "Automatic indentation. See :help smartindent
+set softtabstop=4                                                               "Number of spaces a tab counts as with si
+set backspace=indent,eol,start                                                  "Make backspaces delete sensibly
+set tabstop=4                                                                   "Indentation levels every four columns
+set expandtab                                                                   "Convert all tabs typed to spaces
+set shiftwidth=4                                                                "Indent/outdent by four columns
+set shiftround                                                                  "Indent/outdent to nearest tabstop
+set showmatch                                                                   "Briefly jump to matching bracket, one screen
+set nowrap                                                                      "Don't wrap long lines
+set wildmenu                                                                    "Visual autocomplete for command menu
+set autowriteall                                                                "Write files when switching buffers
+set complete=.,w,b,u                                                            "Set the auto-complete buffer options
+set nobackup                                                                    "Disable backup files
+set noswapfile                                                                  "Disable swapfiles
+set noerrorbells                                                                "Disable error bells
+set novisualbell                                                                "Disable visual bells
+set laststatus=0                                                                "No statusline
+set noshowmode
+set noruler
+set noshowcmd
+set t_vb=
+let mapleader = ','                                                             "The default is \, but a comma is better
+filetype plugin indent on                                                       "Enable file-type based indentation
+
+set guioptions-=l                                                               "Disable Gui scrollbars.
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+so ~/.vim/plugins.vim
+so ~/.vim/fzftags.vim
+so ~/.vim/vimtest.vim
+
+set termguicolors
+colorscheme nord
+syntax on
+
+let g:airline_extensions = []
+let g:airline#extensions#coc#enabled = 0
+let g:gitgutter_enabled = 0
+
+autocmd VimEnter * :set laststatus=0
+autocmd VimEnter * NoMatchParen
+autocmd VimEnter * CocDisable

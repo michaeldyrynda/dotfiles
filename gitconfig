@@ -1,0 +1,64 @@
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = /usr/bin/env vim
+    pager = less --tabs=4 -RFX
+[user]
+    name = Michael Dyrynda
+    email = michael@dyrynda.com.au
+	signingkey = 6C7291F4FF64187A3312A765DB6707E977DAA4D4
+[push]
+    default = simple
+[filter "lfs"]
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
+    process = git-lfs filter-process
+[alias]
+    bn = "!git rev-parse --abbrev-ref HEAD"
+    rbm = "!git rebase -i `git merge-base master $(git branch-name)`"
+    d = difftool
+    last-tag = describe --abbrev=0 --tags
+    switch = !legit switch
+    sync = !legit sync
+    publish = !legit publish
+    unpublish = !legit unpublish
+    undo = !legit undo
+    branches = !legit branches
+    di = diff
+    dc = diff --cached
+    amend = commit --amend
+    ff = merge --ff-only
+    noff = merge --no-ff
+    fa = fetch --all
+    fp = fetch --prune
+    can = commit --amend --no-edit
+
+    # Logging
+    r = !GIT_NO_PAGER=1 git l -30
+    l = "!. ~/.githelpers && pretty_git_log"
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[pager]
+    diff = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
+    log = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
+    show = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
+[interactive]
+    diffFilter = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    commit = green
+    meta = yellow
+    frag = cyan
+    old = red
+    new = green
+    whitespace = red reverse
+[color]
+	ui = true
+[commit]
+	gpgsign = true

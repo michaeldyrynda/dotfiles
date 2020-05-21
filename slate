@@ -1,0 +1,61 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Resize Bindings
+bind l:alt;cmd   resize +5% +0                  # Expand right
+bind l:shift;cmd resize -5% +0                  # Shrink right
+bind h:alt;cmd   resize +5% +0 top-right        # Expand left
+bind h:shift;cmd resize -5% +0 bottom-right     # Shrink left
+
+bind k:alt;cmd   resize +0   +5% bottom-right   # Expand top
+bind k:shift;cmd resize +0   -5% bottom-left    # Shrink top
+bind j:alt;cmd   resize +0   +5%                # Expand bottom
+bind j:shift;cmd resize +0   -5%                # Shrink bottom
+
+# Full screen
+bind f:ctrl;cmd;shift corner top-left resize:screenSizeX;screenSizeY
+
+# Push Bindings
+bind h:ctrl;cmd  push left  bar-resize:screenSizeX/3
+bind k:ctrl;cmd  push top   center
+bind l:ctrl;cmd  push right bar-resize:screenSizeX/3
+
+# Nudge Bindings
+bind l:shift;alt nudge +5% +0
+bind h:shift;alt nudge -5% +0
+bind k:shift;alt nudge +0   -5%
+bind j:shift;alt nudge +0   +5%
+
+# Position bindings
+
+bind c:alt;cmd move screenSizeX/10;screenOriginY 4*screenSizeX/5;screenSizeY    # Center and size 80%
+
+# Halves
+bind up:ctrl;cmd push top bar-resize:screenSizeY/2                               # Top
+bind right:ctrl;cmd push right bar-resize:screenSizeX/2                          # Right
+bind down:ctrl;cmd push bottom bar-resize:screenSizeY/2                          # Bottom
+bind left:ctrl;cmd push left bar-resize:screenSizeX/2                            # Left
+
+# Thirds
+bind up:shift;alt;cmd push top bar-resize:screenSizeY/3                             # Top
+bind right:shift;alt;cmd push right bar-resize:screenSizeX/3                        # Right
+bind down:shift;alt;cmd push bottom bar-resize:screenSizeY/3                        # Bottom
+bind left:shift;alt;cmd push left bar-resize:screenSizeX/3                          # Left
+bind c:shift;alt;cmd move 2*screenSizeX/6;0 screenSizeX/3;screenSizeY               # Middle
+
+# Quarters
+bind left:ctrl;shift;alt;cmd corner top-left resize:screenSizeX/2;screenSizeY/2      # Top left
+bind right:ctrl;shift;alt;cmd corner top-right resize:screenSizeX/2;screenSizeY/2    # Top right
+bind left:ctrl;alt;cmd corner bottom-left resize:screenSizeX/2;screenSizeY/2    # Bottom left
+bind right:ctrl;alt;cmd corner bottom-right resize:screenSizeX/2;screenSizeY/2  # Bottom right
+
+# Window Hints
+bind esc:cmd hint
+
+# Monitor switching
+bind right:alt;ctrl throw 1
+bind left:alt,ctrl throw 0

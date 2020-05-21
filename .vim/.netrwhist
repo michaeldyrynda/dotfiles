@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/Users/michael/dotfiles'
+let g:netrw_dirhist_8='/Users/michael/dotfiles/vim'
+let g:netrw_dirhist_7='/Users/michael/dotfiles'
+let g:netrw_dirhist_6='/Users/michael/dotfiles/tmux-powerline'
+let g:netrw_dirhist_5='/Users/michael/dotfiles'
+let g:netrw_dirhist_4='/Users/michael/dotfiles/ssh'
+let g:netrw_dirhist_3='/Users/michael/dotfiles'
+let g:netrw_dirhist_2='/Users/michael/dotfiles/oh-my-zsh'
+let g:netrw_dirhist_1='/Users/michael/dotfiles'
+let g:netrw_dirhist_0='/Users/michael/dotfiles/oh-my-zsh-custom'

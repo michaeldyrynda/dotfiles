@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.dotfiles: ""
+    ~/.tmux.conf: tmux.conf
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.ctags: ctags
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.php_cs: php_cs
+    ~/.slaterc: slate
+    ~/.sqliterc: sqliterc
+    ~/.zshrc: zshrc
+    ~/.fzf.zsh: fzf.zsh
+
+- create:
+    - ~/downloads
+    - ~/.vim/undo-history
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
