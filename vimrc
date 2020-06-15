@@ -11,6 +11,7 @@ set shiftround                                                                  
 set matchpairs+=<:>                                                             "Jump between pairs (%) command
 set showmatch                                                                   "Briefly jump to matching bracket, one screen
 set number                                                                      "Show line numbers
+set relativenumber
 set ruler                                                                       "Show line and column number of cursor pos
 set nowrap                                                                      "Don't wrap long lines
 set wildmenu                                                                    "Visual autocomplete for command menu
@@ -22,6 +23,7 @@ set cursorline                                                                  
 set noerrorbells                                                                "Disable error bells
 set novisualbell                                                                "Disable visual bells
 set t_vb=
+set colorcolumn=120
 let mapleader = ','                                                             "The default is \, but a comma is better
 filetype plugin indent on                                                       "Enable file-type based indentation
 
@@ -131,6 +133,7 @@ nmap <Leader>gst :Gstatus<cr>
 "Ensure sign column background colour matches editor background
 "Always display the sign column
 set signcolumn=yes
+let g:gitgutter_sign_allow_clobber = 1
 
 "/
 "/ Status bar *****************************************************************
@@ -161,12 +164,14 @@ let g:PHP_noArrowMatching = 1
 " Extract vundle configuration to separate file
 so ~/.vim/plugins.vim
 set termguicolors
+
 colorscheme nord
 syntax on
 
 so ~/.vim/colors.vim
 
 let g:prettier#autoformat = 0
+nnoremap <Leader>gp :silent %!prettier --stdin-filepath %<CR>
 
 " Auto-source .vimrc when saved ***********************************************
 augroup autosourcing
@@ -186,7 +191,3 @@ augroup WrapLineInMarkdown
     autocmd!
     autocmd FileType markdown setlocal wrap
 augroup END
-
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup

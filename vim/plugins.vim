@@ -21,6 +21,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'prettier/vim-prettier', {'on': ['Prettier', 'PrettierAsync'], 'do': 'npm install'}
 Plug 'benmills/vimux'
 Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-fugitive'
 
 " Snippets
 Plug 'tomtom/tlib_vim'
