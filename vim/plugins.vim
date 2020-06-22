@@ -41,3 +41,5 @@ so ~/.vim/coc.vim
 so ~/.vim/fzftags.vim
 so ~/.vim/phpactor.vim
 so ~/.vim/vimtest.vim
+
+noremap <Leader>g :Gstatus<cr>
