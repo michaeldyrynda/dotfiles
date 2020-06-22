@@ -36,6 +36,7 @@
     # Logging
     r = !GIT_NO_PAGER=1 git l -30
     l = "!. ~/.githelpers && pretty_git_log"
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 [diff]
     tool = vimdiff
 [difftool]
