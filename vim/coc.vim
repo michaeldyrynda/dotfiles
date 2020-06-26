@@ -1,6 +1,6 @@
 let g:airline#extensions#coc#enabled = 1
 
-nmap <Leader>gd <Plug>(coc-definition)<cr>
+nmap <Leader>gd <Plug>(coc-definition)
 nmap <Leader>gr <Plug>(coc-references)
 nmap <Leader>gi <Plug>(coc-implementation)
 nmap <Leader>sr <Plug>(coc-rename)
