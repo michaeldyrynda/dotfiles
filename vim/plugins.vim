@@ -32,6 +32,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'neoclide/coc.nvim', {'for': 'php', 'branch': 'release'}
+Plug 'vim-vdebug/vdebug'
 
 Plug 'iamcco/coc-tailwindcss',  {'do': 'npm ci && npm build'}
 
