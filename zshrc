@@ -17,7 +17,6 @@ plugins=(
   sublime
   common-aliases
   laravel5
-  zsh-autosuggestions
 )
 
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
