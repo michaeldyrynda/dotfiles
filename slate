@@ -2,8 +2,100 @@
 # If no ~/.slate file exists this is the file that will be used.
 
 config defaultToCurrentScreen true
+config secondsBeforeRepeat 0.4
+config secondsBetweenRepeat 0.1
+config keyboardLayout "qwerty"
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
+
+# "Hyper" keys
+alias hyper ctrl;alt;cmd
+alias hyper2 ctrl;cmd
+
+# Slate features
+# Key overlays
+config windowHintsShowIcons true
+config windowHintsSpread true
+config windowHintsIgnoreHiddenWindows false
+bind esc:cmd hint ASDFHJKLQWERTYUIOPCVBNG
+
+# Show positioning grid for each monitor
+bind g:${hyper2} grid padding:5 0:6,2 1:9,3
+
+# Better application switcher
+bind tab:cmd switch
+
+# Reload Slate configuration file
+bind s:${hyper2} relaunch
+
+# Position aliases and bindings
+# Center
+alias center move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/2;screenSizeY
+bind j:shift;${hyper} ${center}
+
+# Full screen
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind f:${hyper} ${full}
+
+# Corners
+# Top left
+alias topLeftCorner move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
+bind left:shift;${hyper} ${topLeftCorner}
+
+# Top right
+alias topRightCorner move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+bind right:shift;${hyper} ${topRightCorner}
+
+# Bottom left
+alias bottomLeftCorner move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+bind left:${hyper} ${bottomLeftCorner}
+
+# Bottom right
+alias bottomRightCorner move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+bind right:${hyper} ${bottomRightCorner}
+
+# Halves
+# Left half
+alias leftHalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+bind left:${hyper2} ${leftHalf}
+
+# Right half
+alias rightHalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+bind right:${hyper2} ${rightHalf}
+
+# Top half
+alias topHalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+bind up:${hyper2} ${topHalf}
+
+# Bottom half
+alias bottomHalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+bind down:${hyper2} ${bottomHalf}
+
+# Thirds
+# Left third
+alias leftThird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY
+bind h:${hyper2} ${leftThird}
+
+# Center third
+alias midThird move screenOriginX+screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+bind j:${hyper2} ${midThird}
+
+# Right third
+alias rightThird move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+bind l:${hyper2} ${rightThird}
+
+# Left two thirds
+alias leftTwoThirds move screenOriginX;screenOriginY 2*screenSizeX/3;screenSizeY
+bind h:shift;${hyper2} ${leftTwoThirds}
+
+# Right two thirds
+alias rightTwoThirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY
+bind l:shift;${hyper2} ${rightTwoThirds}
+
+# Monitor aliases
+alias monitor-imac 3200x1800
+alias monitor-macbook 2048x1280
+alias monitor-kogan 3440x1440
 
 # Resize Bindings
 bind l:alt;cmd   resize +5% +0                  # Expand right
@@ -11,51 +103,17 @@ bind l:shift;cmd resize -5% +0                  # Shrink right
 bind h:alt;cmd   resize +5% +0 top-right        # Expand left
 bind h:shift;cmd resize -5% +0 bottom-right     # Shrink left
 
-bind k:alt;cmd   resize +0   +5% bottom-right   # Expand top
-bind k:shift;cmd resize +0   -5% bottom-left    # Shrink top
+bind k:alt;cmd   resize +0   +5%   # Expand top
+bind k:shift;cmd resize +0   -5%    # Shrink top
 bind j:alt;cmd   resize +0   +5%                # Expand bottom
 bind j:shift;cmd resize +0   -5%                # Shrink bottom
 
-# Full screen
-bind f:ctrl;cmd;shift corner top-left resize:screenSizeX;screenSizeY
-
-# Push Bindings
-bind h:ctrl;cmd  push left  bar-resize:screenSizeX/3
-bind k:ctrl;cmd  push top   center
-bind l:ctrl;cmd  push right bar-resize:screenSizeX/3
+# Throw
+bind ]:${hyper} throw right
+bind [:${hyper} throw left
 
 # Nudge Bindings
 bind l:shift;alt nudge +5% +0
 bind h:shift;alt nudge -5% +0
 bind k:shift;alt nudge +0   -5%
 bind j:shift;alt nudge +0   +5%
-
-# Position bindings
-
-bind c:alt;cmd move screenSizeX/10;screenOriginY 4*screenSizeX/5;screenSizeY    # Center and size 80%
-
-# Halves
-bind up:ctrl;cmd push top bar-resize:screenSizeY/2                               # Top
-bind right:ctrl;cmd push right bar-resize:screenSizeX/2                          # Right
-bind down:ctrl;cmd push bottom bar-resize:screenSizeY/2                          # Bottom
-bind left:ctrl;cmd push left bar-resize:screenSizeX/2                            # Left
-
-# Thirds
-bind up:shift;alt;cmd push top bar-resize:screenSizeY/3                             # Top
-bind right:shift;alt;cmd push right bar-resize:screenSizeX/3                        # Right
-bind down:shift;alt;cmd push bottom bar-resize:screenSizeY/3                        # Bottom
-bind left:shift;alt;cmd push left bar-resize:screenSizeX/3                          # Left
-bind c:shift;alt;cmd move 2*screenSizeX/6;0 screenSizeX/3;screenSizeY               # Middle
-
-# Quarters
-bind left:ctrl;shift;alt;cmd corner top-left resize:screenSizeX/2;screenSizeY/2      # Top left
-bind right:ctrl;shift;alt;cmd corner top-right resize:screenSizeX/2;screenSizeY/2    # Top right
-bind left:ctrl;alt;cmd corner bottom-left resize:screenSizeX/2;screenSizeY/2    # Bottom left
-bind right:ctrl;alt;cmd corner bottom-right resize:screenSizeX/2;screenSizeY/2  # Bottom right
-
-# Window Hints
-bind esc:cmd hint
-
-# Monitor switching
-bind right:alt;ctrl throw 1
-bind left:alt,ctrl throw 0
