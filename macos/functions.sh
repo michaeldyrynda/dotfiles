@@ -120,3 +120,11 @@ function screenshot() {
 function make-stero() {
     ffmpeg -i $1 -af "pan=stereo|c0=c0|c1=c0" "$1-stereo.mp3"
 }
+
+function xdebugenable() {
+    sed -ie 's!^;\(zend.*xdebug\.so\)!\1!' $(php --ini | awk '/php.ini$/' | awk '{print $4}')
+}
+
+function xdebugdisable() {
+  sed -ie 's!^\(zend.*xdebug\.so\)!;\1!' $(php --ini | awk '/php.ini$/' | awk '{print $4}')
+}
