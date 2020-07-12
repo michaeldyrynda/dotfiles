@@ -1,5 +1,6 @@
 # This is the default .slate file.
 # If no ~/.slate file exists this is the file that will be used.
+# Largely taken from https://github.com/paixaop/slate-conf/blob/master/.slate
 
 config defaultToCurrentScreen true
 config secondsBeforeRepeat 0.4
