@@ -7,7 +7,7 @@
     email = michael@dyrynda.com.au
 	signingkey = 6C7291F4FF64187A3312A765DB6707E977DAA4D4
 [push]
-    default = simple
+	default = current
 [filter "lfs"]
     clean = git lfs clean %f
     smudge = git lfs smudge %f
