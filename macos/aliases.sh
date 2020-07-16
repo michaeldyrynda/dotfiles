@@ -3,7 +3,9 @@ alias ll='ls -lh'
 alias rm='trash'
 
 # Artisan
-alias pha='php artisan'
+alias a='php artisan'
+alias tinker='php artisan tinker'
+alias serve='php artisan serve'
 alias pham='php artisan migrate'
 alias pham:r='php artisan migrate:rollback'
 alias phat='php artisan tinker'
