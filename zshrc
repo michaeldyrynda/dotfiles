@@ -17,6 +17,8 @@ plugins=(
   sublime
   common-aliases
   artisan
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
