@@ -16,7 +16,7 @@ plugins=(
   history-substring-search
   sublime
   common-aliases
-  laravel5
+  artisan
 )
 
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
@@ -43,3 +43,5 @@ cdpath=($HOME/code)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+ARTISAN_OPEN_ON_MAKE_EDITOR=vim
