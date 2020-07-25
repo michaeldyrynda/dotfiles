@@ -191,3 +191,7 @@ augroup WrapLineInMarkdown
     autocmd!
     autocmd FileType markdown setlocal wrap
 augroup END
+
+" Move highlighted block
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
