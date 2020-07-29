@@ -44,3 +44,4 @@ so ~/.vim/phpactor.vim
 so ~/.vim/vimtest.vim
 
 noremap <Leader>g :Gstatus<cr>
+noremap <Leader>p :PrettierAsync<cr>

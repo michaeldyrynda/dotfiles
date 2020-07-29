@@ -1,13 +1,28 @@
 {
-    "languageserver": {
-        "intelephense": {
-            "command": "intelephense",
-            "args": ["--stdio"],
-            "filetypes": ["php"],
-            "initializationOptions": {
-                "storagePath": "/tmp/intelephense",
-                "licenceKey": "00M48UAAVZ841B0"
-            }
-        }
-    },
+  "languageserver": {
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense",
+        "licenceKey": "00M48UAAVZ841B0"
+      }
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact"
+  ],
+  "eslint.filetypes": [
+    "css",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ]
 }
