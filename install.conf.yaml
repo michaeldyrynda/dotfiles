@@ -24,3 +24,28 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+
+- cask:
+    - insomnia
+
+- brew:
+    - blackfire-agent
+    - blackfire-php74
+    - ctags
+    - ffmpeg
+    - fzf
+    - git
+    - git-delta
+    - gh
+    - httpie
+    - mas
+    - minio
+    - mycli
+    - mysql-client
+    - php
+    - python@3.8
+    - sqlite
+    - tmux
+    - vim
+    - youtube-dl
+    - zsh-autosuggestions
