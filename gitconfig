@@ -1,7 +1,9 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env vim
-    pager = less --tabs=4 -RFX
+    pager = delta
+[delta]
+    syntax-theme = "Nord"
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
@@ -41,24 +43,8 @@
     tool = vimdiff
 [difftool]
     prompt = false
-[pager]
-    diff = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
-    log = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
-    show = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less --tabs=4 -RFX
 [interactive]
-    diffFilter = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    commit = green
-    meta = yellow
-    frag = cyan
-    old = red
-    new = green
-    whitespace = red reverse
+    diffFilter = delta --color-only
 [color]
 	ui = true
 [commit]
