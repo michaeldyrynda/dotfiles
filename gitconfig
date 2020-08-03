@@ -53,3 +53,5 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg
