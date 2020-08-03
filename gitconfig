@@ -2,8 +2,6 @@
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env vim
     pager = delta
-[delta]
-    syntax-theme = "Nord"
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
@@ -45,6 +43,14 @@
     prompt = false
 [interactive]
     diffFilter = delta --color-only
+[delta]
+    syntax-theme = "Nord"
+    features = decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
 [color]
 	ui = true
 [commit]
