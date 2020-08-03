@@ -28,6 +28,9 @@
 - cask:
     - insomnia
 
+- tap:
+  - blackfireio/homebrew-blackfire
+
 - brew:
     - blackfire-agent
     - blackfire-php74
