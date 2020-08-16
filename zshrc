@@ -22,6 +22,7 @@ plugins=(
 )
 
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
+fpath+=$HOME/dotfiles/pure
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/macos/aliases.sh
