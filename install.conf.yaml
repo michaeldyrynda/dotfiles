@@ -24,7 +24,6 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - autoload -U promptinit; promptinit; prompt pure
 
 - cask:
     - insomnia

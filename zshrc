@@ -24,6 +24,10 @@ plugins=(
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
 fpath+=$HOME/dotfiles/pure
 
+# Enable pure-prompt
+autoload -U promptinit; promptinit
+prompt pure
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/macos/aliases.sh
 source $HOME/dotfiles/macos/functions.sh
