@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 DEFAULT_USER=michael
-ZSH_THEME="sorin"
+ZSH_THEME=""
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
