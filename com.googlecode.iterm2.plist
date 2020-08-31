@@ -716,8 +716,16 @@
 	<string>EC5F563A-DE06-474B-8C1C-E103F85640BA</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>Hotkey</key>
+	<true/>
+	<key>HotkeyChar</key>
+	<integer>96</integer>
+	<key>HotkeyCode</key>
+	<integer>50</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>HotkeyModifiers</key>
+	<integer>1310985</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
@@ -784,7 +792,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>304 1193 592 584 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>132 293 3440 1417 0 0 3200 1777 </string>
+	<string>901 180 2292 1417 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1105 201 990 1040 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3519,11 +3527,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>68E217AF-9E7B-454F-A864-6C14EB692EC4</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>50</integer>
+	<integer>51</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>576727686.552634</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -4326,7 +4334,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-16T23:34:55Z</date>
+	<date>2020-08-26T23:35:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -4345,6 +4353,8 @@
 	<real>1566173440</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.12</string>
 </dict>
