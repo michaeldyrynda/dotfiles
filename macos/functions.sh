@@ -55,7 +55,7 @@ function newdb() {
     if [ $# -eq 0 ]; then
         echo "Usage: newdb <dbname>"
     else
-        mysql -uroot -e "create database \`${1}\`"
+        mysql -e "create database \`${1}\`"
     fi
 }
 
