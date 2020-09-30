@@ -35,6 +35,7 @@ alias glt="git last-tag"
 alias branches="git branches"
 alias switch="git switch"
 alias dm="git branch --merged | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
+alias lg="lazygit"
 
 # Convenience
 alias s="subl \."
