@@ -716,26 +716,16 @@
 	<string>EC5F563A-DE06-474B-8C1C-E103F85640BA</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
-	<key>Hotkey</key>
+	<key>HideScrollbar</key>
 	<true/>
-	<key>HotkeyChar</key>
-	<integer>96</integer>
-	<key>HotkeyCode</key>
-	<integer>50</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
-	<key>HotkeyModifiers</key>
-	<integer>1310985</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/code/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 470}</string>
-	<key>NSNavPanelExpandedStateForSaveMode</key>
-	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -746,8 +736,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -756,7 +746,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -777,26 +767,16 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>2199 615 445 77 0 0 3200 1777 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>1200 996 799 448 0 0 3200 1777 </string>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>1292 1202 616 174 0 0 3200 1777 </string>
+	<string>624 606 799 448 0 0 2048 1257 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1290 1038 620 392 0 0 3200 1777 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 126 606 469 0 0 2560 1418 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>1522 1095 918 514 0 0 3840 2137 </string>
+	<string>1610 1309 620 392 0 0 3840 2138 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>304 1193 592 584 0 0 3200 1777 </string>
+	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>901 180 2292 1417 0 0 3200 1777 </string>
+	<string>1146 0 2292 1415 0 0 3440 1415 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1105 201 990 1040 0 0 3200 1777 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>715 306 1130 807 0 0 2560 1418 </string>
+	<string>511 74 990 1044 0 0 2048 1257 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1603,6 +1583,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>JetBrainsMono-Medium 12</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1669,7 +1651,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.021272208121827414</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -3486,70 +3468,49 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.3beta1</string>
-		<string>3.3.8beta3</string>
-		<string>3.3.0beta7</string>
-		<string>3.3.7beta1</string>
-		<string>3.3.8beta5</string>
-		<string>3.3.10beta4</string>
-		<string>3.3.7beta3</string>
-		<string>3.3.12</string>
-		<string>3.3.1beta1</string>
-		<string>3.3.3beta2</string>
-		<string>3.3.8beta4</string>
-		<string>3.3.0beta16</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.7beta2</string>
-		<string>3.3.4beta1</string>
-		<string>3.3.10beta1</string>
+		<string>3.3.6</string>
 		<string>3.3.11</string>
+		<string>3.3.12</string>
+		<string>3.3.1</string>
+		<string>3.3.0beta16</string>
+		<string>3.3.7</string>
+		<string>3.3.9</string>
+		<string>3.3.0beta15</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Dank Mono</string>
+		<string>Operator Mono</string>
 		<string>JetBrains Mono</string>
 	</array>
-	<key>NoSyncFrame_SessionsPreferences</key>
-	<dict>
-		<key>screenFrame</key>
-		<string>{{0, 0}, {3200, 1800}}</string>
-		<key>topLeft</key>
-		<string>{1297, 1462}</string>
-	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{3200, 84}, {3440, 1440}}</string>
+		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{3423, 1108}</string>
+		<string>{495, 924}</string>
 	</dict>
-	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
-	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>68E217AF-9E7B-454F-A864-6C14EB692EC4</string>
+	<string>8B4ECF6D-FC44-47C2-A91E-4C7B44B21FDE</string>
+	<key>NoSyncLastTipTime</key>
+	<real>588167944.81992805</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>51</integer>
+	<integer>68</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>576727686.552634</real>
+	<real>588081505.94351101</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<true/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
 		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>id</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
@@ -3605,14 +3566,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>tmuxWindowTitle</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3637,6 +3590,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tab.tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3654,14 +3615,6 @@
 				<true/>
 				<key>name</key>
 				<string>path</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindowTitleEval</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3707,19 +3660,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>name</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>iterm2</string>
 				<key>nonterminalContext</key>
 				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3771,6 +3724,14 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tab.tmuxWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>tab</string>
@@ -3782,14 +3743,6 @@
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tab</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3880,14 +3833,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.jobPid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>frame</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3912,7 +3857,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalIconName</string>
+				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3920,7 +3865,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalWindowName</string>
+				<string>currentTab.currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3952,7 +3897,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>titleOverride</string>
+				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3968,7 +3913,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>id</string>
+				<string>titleOverride</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4044,17 +3989,17 @@
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
+		</array>
+		<key>2</key>
+		<array>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.tab</string>
+				<string>currentSession.commandLine</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
-		</array>
-		<key>2</key>
-		<array>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
@@ -4075,7 +4020,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>title</string>
+				<string>tmuxWindowTitle</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4083,7 +4028,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>tmuxWindowTitle</string>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4107,17 +4052,17 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>window</string>
+				<string>tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>tmuxWindowName</string>
+				<string>window</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>16</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4145,11 +4090,11 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
 				<string>window</string>
 				<key>nonterminalContext</key>
-				<integer>16</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4211,7 +4156,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
+				<string>currentSession.pid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4219,7 +4164,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.pid</string>
+				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4276,10 +4221,16 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
+	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
+	<real>587609721.67267799</real>
+	<key>NoSyncTipsDisabled</key>
 	<true/>
-	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>522915057.34420401</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -4318,7 +4269,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mdyrynda/dotfiles</string>
+	<string>/Users/michael/dotfiles</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -4330,17 +4281,15 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=72</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=34</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-26T23:35:36Z</date>
+	<date>2020-09-23T06:39:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
-	<key>Secure Input</key>
-	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
@@ -4350,11 +4299,11 @@
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1566173440</real>
+	<real>1566562816</real>
+	<key>UseBorder</key>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
-	<key>findMode_iTerm</key>
-	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.12</string>
 </dict>
