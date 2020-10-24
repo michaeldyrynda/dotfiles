@@ -63,3 +63,5 @@ alias sshconf="vim ~/.ssh/config"
 alias sshkey="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Copied to clipboard.'"
 
 alias op="cd ~/code/\$(ls ~/code | fzf) && vim +GFiles"
+
+alias ready="git pull --rebase && composer install && npm i && npm run dev"
