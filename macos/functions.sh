@@ -55,7 +55,7 @@ function newdb() {
     if [ $# -eq 0 ]; then
         echo "Usage: newdb <dbname>"
     else
-        mysql -e "create database \`${1}\`"
+        mysql -e "create database if not exists\`${1}\`"
     fi
 }
 
@@ -127,4 +127,12 @@ function xdebugenable() {
 
 function xdebugdisable() {
   sed -ie 's!^\(zend.*xdebug\.so\)!;\1!' $(php --ini | awk '/php.ini$/' | awk '{print $4}')
+}
+
+function takeoutdbs() {
+    for db in crm gnaf appointments storage geoscape pmacct coverage nbn
+    do
+        newdb $db;
+        newdb test_$db;
+    done
 }
