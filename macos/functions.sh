@@ -130,9 +130,9 @@ function xdebugdisable() {
 }
 
 function takeoutdbs() {
-    for db in crm gnaf appointments storage geoscape pmacct coverage nbn
+    for db in frodo crm gnaf appointments storage geoscape pmacct coverage nbn faults
     do
         newdb $db;
-        newdb test_$db;
+        newdb testing_$db;
     done
 }
