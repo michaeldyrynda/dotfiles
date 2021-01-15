@@ -30,7 +30,7 @@ Plug 'garbas/vim-snipmate'
 
 " PHP
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'develop', 'do': 'composer install --no-dev'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-vdebug/vdebug'
 
