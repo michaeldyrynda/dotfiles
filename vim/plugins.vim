@@ -45,3 +45,5 @@ so ~/.vim/vimtest.vim
 
 noremap <Leader>g :Gstatus<cr>
 noremap <Leader>p :PrettierAsync<cr>
+
+let g:snipMate = { 'snippet_version' : 1 }
