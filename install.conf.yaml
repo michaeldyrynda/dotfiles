@@ -26,15 +26,7 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
-- cask:
-    - insomnia
-
-- tap:
-  - blackfireio/homebrew-blackfire
-
 - brew:
-    - blackfire-agent
-    - blackfire-php74
     - ctags
     - ffmpeg
     - fzf
@@ -42,11 +34,8 @@
     - git-delta
     - gh
     - httpie
-    - mas
-    - minio
     - mycli
     - mysql-client
-    - php
     - python@3.8
     - sqlite
     - tmux
