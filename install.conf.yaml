@@ -17,6 +17,7 @@
     ~/.sqliterc: sqliterc
     ~/.zshrc: zshrc
     ~/.fzf.zsh: fzf.zsh
+    ~/.config/karabiner: karabiner
 
 - create:
     - ~/downloads
@@ -53,3 +54,4 @@
     - youtube-dl
     - zsh-autosuggestions
     - jesseduffield/lazygit/lazygit
+    - karabiner-elements
