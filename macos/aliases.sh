@@ -15,6 +15,7 @@ alias mmo='php artisan make:model'
 alias mmi='php artisan make:migration'
 alias mf='php artisan migrate:fresh'
 alias mfs='php artisan migrate:fresh --seed'
+alias sail='bash vendor/bin/sail'
 
 # Composer
 alias co="composer dumpautoload -o"
