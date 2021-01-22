@@ -14,6 +14,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'junegunn/fzf', {'do': 'fzf#install()'}
 Plug 'junegunn/fzf.vim', {'do': 'fzf#install()'}
 Plug 'mattn/emmet-vim'
 Plug 'janko/vim-test'
