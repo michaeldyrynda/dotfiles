@@ -192,6 +192,13 @@ augroup WrapLineInMarkdown
     autocmd FileType markdown setlocal wrap
 augroup END
 
+" Automatically rebalance windows when vim is resized
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
 " Move highlighted block
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
