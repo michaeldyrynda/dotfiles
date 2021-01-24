@@ -87,8 +87,9 @@ nmap <Leader>es :e ~/.vim/snippets/
 "Remove highlighting
 nmap <Leader><space> :nohlsearch<cr>
 
-"Syntax check PHP file
-nmap <Leader>s :!php -l %<cr>
+"Breeze jumping
+nmap <Leader>s <Plug>(breeze-jump-attribute-forward)
+nmap <Leader>S <Plug>(breeze-jump-attribute-backward)
 
 "Delete all buffers
 nmap <Leader>bda :bufdo bd <cr>

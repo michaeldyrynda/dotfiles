@@ -23,6 +23,7 @@ Plug 'prettier/vim-prettier', {'on': ['Prettier', 'PrettierAsync'], 'do': 'npm i
 Plug 'benmills/vimux'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
+Plug 'gcmt/breeze.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Snippets
