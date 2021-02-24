@@ -160,6 +160,9 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
+# Disable font smoothing
+defaults -currentHost write -g AppleFontSmoothing -int 0
+
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
 	"Terminal" "Transmission" "Twitter" "iCal"; do
