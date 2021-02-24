@@ -203,3 +203,6 @@ nnoremap <leader>= :wincmd =<cr>
 " Move highlighted block
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
+set exrc
+set secure
