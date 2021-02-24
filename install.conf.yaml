@@ -18,6 +18,7 @@
     ~/.zshrc: zshrc
     ~/.fzf.zsh: fzf.zsh
     ~/.config/karabiner: karabiner
+    ~/.yabairc: yabairc
     ~/bin: bin
 
 - create:
@@ -48,3 +49,4 @@
     - karabiner-elements
     - bat
     - ag
+    - koekeishiya/formulae/yabai
