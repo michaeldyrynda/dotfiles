@@ -85,6 +85,11 @@ function unit() {
         return
     fi
 
+    if [ -f "./vendor/bin/sail" ]; then
+        clear && ./vendor/bin/sail test
+        return
+    fi
+
     (php artisan) > /dev/null
 
     if [ $? -eq 0 ]; then
