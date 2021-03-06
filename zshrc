@@ -8,6 +8,7 @@ DEFAULT_USER=michael
 ZSH_THEME=""
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
+BREW_BASE_DIR=$(brew --prefix)
 
 plugins=(
   git
