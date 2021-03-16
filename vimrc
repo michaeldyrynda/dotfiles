@@ -129,12 +129,9 @@ nmap <Leader>st :SyntasticToggleMode<cr>
 nmap <Leader>gst :Gstatus<cr>
 
 "/
-"/ GitGutter
+"/ Signify
 "/
-"Ensure sign column background colour matches editor background
-"Always display the sign column
-set signcolumn=yes
-let g:gitgutter_sign_allow_clobber = 1
+let g:signify_sign_change = '~'
 
 "/
 "/ Status bar *****************************************************************

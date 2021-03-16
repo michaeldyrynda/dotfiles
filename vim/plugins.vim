@@ -6,7 +6,7 @@ Plug 'ervandew/supertab'
 Plug 'Shougo/vimproc'
 
 Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'wakatime/vim-wakatime'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-vinegar'
