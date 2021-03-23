@@ -25,6 +25,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'gcmt/breeze.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 
 " Snippets
 Plug 'tomtom/tlib_vim'
