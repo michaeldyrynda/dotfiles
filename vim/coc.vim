@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-diagnostic',
   \ 'coc-emmet',
+  \ 'coc-fzf-preview',
   \ 'coc-git',
   \ 'coc-html',
   \ 'coc-json',
