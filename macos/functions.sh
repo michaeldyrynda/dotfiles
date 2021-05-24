@@ -5,9 +5,9 @@ function releaseDate() {
 function routes()
 {
     if [ $# -eq 0 ]; then
-        php artisan route:list
+        php artisan route:list | fzf
     else
-        php artisan route:list | grep ${1}
+        php artisan route:list | ag --color ${1}
     fi
 }
 
