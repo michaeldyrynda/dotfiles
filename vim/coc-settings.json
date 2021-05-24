@@ -5,7 +5,7 @@
       "args": ["--stdio"],
       "filetypes": ["php"],
       "initializationOptions": {
-        "storagePath": "/tmp/intelephense",
+        "storagePath": "/tmp/intelephense"
       },
       "workspace_config": {
         "intelephense": {
