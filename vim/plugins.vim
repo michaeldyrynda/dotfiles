@@ -11,6 +11,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-vinegar'
 Plug 'sheerun/vim-polyglot'
+Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-surround'
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'ludovicchabant/vim-gutentags'
