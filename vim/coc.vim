@@ -1,5 +1,20 @@
 let g:airline#extensions#coc#enabled = 1
 
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-diagnostic',
+  \ 'coc-emmet',
+  \ 'coc-git',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-pairs',
+  \ 'coc-phpls',
+  \ 'coc-prettier',
+  \ 'coc-snippets',
+  \ 'coc-sql',
+  \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
+\ ]
+
 nmap <Leader>gd <Plug>(coc-definition)
 nmap <Leader>gr <Plug>(coc-references)
 nmap <Leader>gi <Plug>(coc-implementation)
