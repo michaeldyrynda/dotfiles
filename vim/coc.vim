@@ -14,3 +14,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+set cmdheight=2
+set updatetime=300

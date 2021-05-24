@@ -6,10 +6,38 @@
       "filetypes": ["php"],
       "initializationOptions": {
         "storagePath": "/tmp/intelephense",
-        "licenceKey": "00M48UAAVZ841B0"
+      },
+      "workspace_config": {
+        "intelephense": {
+          "files": {
+            "maxSize": 1000000,
+            "associations": ["*.php"],
+            "exclude": []
+          },
+          "completion": {
+            "insertUseDeclaration": true,
+            "fullyQualifiedGlobalConstantsAndFunctions": false,
+            "triggerParameterHints": true,
+            "maxItems": 100
+          },
+          "format": {
+            "enable": true
+          }
+        }
       }
     }
   },
+  "diagnostic.virtualText": true,
+  "diagnostic.messageTarget": "echo",
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "!",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
+  "git.enableGutters": true,
+  "intelephense.environment.phpVersion": "8",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.headwind.sortTailwindClasses": true,
+  "tailwindCSS.headwind.runOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "javascript",
