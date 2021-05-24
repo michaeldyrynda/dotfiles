@@ -28,17 +28,17 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 
 " Snippets
-Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
 " PHP
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
-Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'develop', 'do': 'composer install --no-dev'}
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-vdebug/vdebug'
 
-Plug 'iamcco/coc-tailwindcss',  {'do': 'npm ci && npm build'}
+Plug 'iamcco/coc-tailwindcss',  {'do': 'npm ci && npm run build'}
 
 call plug#end()
 
@@ -46,6 +46,7 @@ so ~/.vim/coc.vim
 so ~/.vim/fzftags.vim
 so ~/.vim/phpactor.vim
 so ~/.vim/vimtest.vim
+so ~/.vim/php.vim
 
 noremap <Leader>g :Gstatus<cr>
 noremap <Leader>p :PrettierAsync<cr>
