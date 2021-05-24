@@ -30,7 +30,6 @@ Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
 
 " PHP
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
@@ -50,5 +49,3 @@ so ~/.vim/php.vim
 
 noremap <Leader>g :Gstatus<cr>
 noremap <Leader>p :PrettierAsync<cr>
-
-let g:snipMate = { 'snippet_version' : 1 }
