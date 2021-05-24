@@ -38,8 +38,6 @@ Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-vdebug/vdebug'
 
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
-
 call plug#end()
 
 so ~/.vim/coc.vim
