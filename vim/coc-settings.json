@@ -1,56 +1,25 @@
 {
-  "languageserver": {
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php"],
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      },
-      "workspace_config": {
-        "intelephense": {
-          "files": {
-            "maxSize": 1000000,
-            "associations": ["*.php"],
-            "exclude": []
-          },
-          "completion": {
-            "insertUseDeclaration": true,
-            "fullyQualifiedGlobalConstantsAndFunctions": false,
-            "triggerParameterHints": true,
-            "maxItems": 100
-          },
-          "format": {
-            "enable": true
-          }
-        }
-      }
-    }
-  },
   "diagnostic.virtualText": true,
-  "diagnostic.messageTarget": "echo",
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "•",
   "diagnostic.hintSign": "•",
   "git.enableGutters": true,
+  "phpls.path": "~/.node/bin/intelephense",
+  "intelephense.completion.maxItems": 100,
+  "intelephense.completion.insertUseDeclaration": true,
+  "intelephense.completion.triggerParameterHints": false,
+  "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": false,
   "intelephense.environment.phpVersion": "8",
+  "intelephense.files.maxSize": 1000000,
+  "intelephense.format.enable": true,
   "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.headwind.sortTailwindClasses": true,
-  "tailwindCSS.headwind.runOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "javascript",
     "typescript",
     "typescriptreact",
     "json",
-    "javascriptreact"
-  ],
-  "eslint.filetypes": [
-    "css",
-    "javascript",
-    "typescript",
-    "typescriptreact",
     "javascriptreact"
   ]
 }
