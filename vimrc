@@ -183,7 +183,6 @@ autocmd! GUIEnter * set vb t_vb=
 autocmd FileType php set iskeyword+=$
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 autocmd BufWritePost *.php nested set filetype=php
-autocmd BufWritePost *.blade.php nested set filetype=blade
 
 augroup WrapLineInMarkdown
     autocmd!

@@ -16,5 +16,7 @@
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.headwind.removeDuplicates": true,
   "tailwindCSS.headwind.runOnSave": true,
-  "tailwindCSS.emmetCompletions": true
+  "tailwindCSS.includeLanguages": {
+    "blade": "html"
+  }
 }
