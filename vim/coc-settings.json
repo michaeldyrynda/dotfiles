@@ -1,12 +1,4 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact"
-  ],
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "!",
@@ -28,16 +20,5 @@
   "phpls.path": "~/.node/bin/intelephense",
   "tailwindCSS.headwind.removeDuplicates": true,
   "tailwindCSS.headwind.runOnSave": true,
-  "tailwindCSS.trace.server": "verbose",
-  "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.includeLanguages": {
-    "blade": "html"
-  },
-  "tailwindCSS.jsLanguages": [
-    "javascript",
-    "javascriptreact",
-    "reason",
-    "typescriptreact"
-  ],
-  "tailwindCSS.htmlLanguages": ["blade", "html", "markdown", "php", "vue"]
+  "tailwindCSS.emmetCompletions": true
 }
