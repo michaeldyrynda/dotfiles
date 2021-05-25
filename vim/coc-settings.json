@@ -1,11 +1,17 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact"
+  ],
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "•",
   "diagnostic.hintSign": "•",
-  "git.enableGutters": true,
-  "phpls.path": "~/.node/bin/intelephense",
   "git.addedSign.hlGroup": "GitGutterAdd",
   "git.enableGutters": false,
   "git.changedSign.hlGroup": "GitGutterChange",
@@ -19,12 +25,11 @@
   "intelephense.environment.phpVersion": "8",
   "intelephense.files.maxSize": 1000000,
   "intelephense.format.enable": true,
+  "phpls.path": "~/.node/bin/intelephense",
   "tailwindCSS.headwind.removeDuplicates": true,
   "tailwindCSS.headwind.runOnSave": true,
   "tailwindCSS.trace.server": "verbose",
   "tailwindCSS.emmetCompletions": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
   "tailwindCSS.includeLanguages": {
     "blade": "html"
   },
