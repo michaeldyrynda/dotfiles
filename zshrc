@@ -41,6 +41,7 @@ export EDITOR=vim
 export BAT_THEME="Nord"
 export GPG_TTY=$(tty)
 
+export FZF_DEFAULT_COMMAND='ag -u -g ""'
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 setopt auto_cd
