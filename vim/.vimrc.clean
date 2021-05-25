@@ -32,6 +32,7 @@ set guioptions-=R
 
 set splitbelow
 set splitright
+set signcolumn=yes
 
 so ~/.vim/plugins.vim
 so ~/.vim/fzftags.vim
