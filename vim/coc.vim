@@ -13,7 +13,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-snippets',
   \ 'coc-sql',
-  \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
+  \ 'https://github.com/petertriho/coc-tailwind-intellisense',
 \ ]
 
 nmap <Leader>gd <Plug>(coc-definition)

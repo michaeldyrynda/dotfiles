@@ -30,6 +30,9 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
+set splitbelow
+set splitright
+
 so ~/.vim/plugins.vim
 so ~/.vim/fzftags.vim
 so ~/.vim/vimtest.vim
@@ -40,8 +43,7 @@ syntax on
 
 let g:airline_extensions = []
 let g:airline#extensions#coc#enabled = 0
-let g:gitgutter_enabled = 0
+let g:coc_git_status = 0
 
 autocmd VimEnter * :set laststatus=0
 autocmd VimEnter * NoMatchParen
-autocmd VimEnter * CocDisable
