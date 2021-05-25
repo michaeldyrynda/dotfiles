@@ -19,13 +19,20 @@
   "intelephense.environment.phpVersion": "8",
   "intelephense.files.maxSize": 1000000,
   "intelephense.format.enable": true,
+  "tailwindCSS.headwind.removeDuplicates": true,
+  "tailwindCSS.headwind.runOnSave": true,
+  "tailwindCSS.trace.server": "verbose",
   "tailwindCSS.emmetCompletions": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+  "tailwindCSS.includeLanguages": {
+    "blade": "html"
+  },
+  "tailwindCSS.jsLanguages": [
     "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact"
-  ]
+    "javascriptreact",
+    "reason",
+    "typescriptreact"
+  ],
+  "tailwindCSS.htmlLanguages": ["blade", "html", "markdown", "php", "vue"]
 }
