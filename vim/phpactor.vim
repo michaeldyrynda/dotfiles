@@ -1,7 +1,5 @@
 autocmd FileType php setlocal omnifunc=phpactor#Complete
 
-nmap <leader>ca <Plug>(coc-codeaction)
-
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
@@ -14,7 +12,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Include use statement
 inoremap <Leader>u <C-O>:call phpactor#UseAdd()<CR>
-nmap <Leader>u <C-o>viwb <esc><esc>l:phpactor#UseAdd()<CR>
 inoremap <Leader>e <C-o>viwb <esc><esc>i\<esc>l:PhpactorClassExpand<CR>e
 nmap <Leader>e :call phpactor#ClassExpand()<CR>
 

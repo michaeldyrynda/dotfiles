@@ -16,6 +16,7 @@ let g:coc_global_extensions = [
   \ 'https://github.com/petertriho/coc-tailwind-intellisense',
 \ ]
 
+nmap <Leader>a <Plug>(coc-codeaction)
 nmap <Leader>gd <Plug>(coc-definition)
 nmap <Leader>gr <Plug>(coc-references)
 nmap <Leader>gi <Plug>(coc-implementation)
