@@ -32,7 +32,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
 " PHP
-Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
+Plug 'dense-analysis/ale'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-vdebug/vdebug'
@@ -44,6 +44,7 @@ so ~/.vim/fzftags.vim
 so ~/.vim/phpactor.vim
 so ~/.vim/vimtest.vim
 so ~/.vim/php.vim
+so ~/.vim/linting.vim
 
 noremap <Leader>g :Gstatus<cr>
 noremap <Leader>p :PrettierAsync<cr>
