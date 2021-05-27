@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Vundle bundles
-Plug 'ervandew/supertab'
 Plug 'Shougo/vimproc'
 
 Plug 'vim-airline/vim-airline'
