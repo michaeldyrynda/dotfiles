@@ -10,7 +10,6 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-pairs',
   \ 'coc-phpls',
-  \ 'coc-prettier',
   \ 'coc-snippets',
   \ 'coc-sql',
   \ 'https://github.com/petertriho/coc-tailwind-intellisense',

@@ -18,7 +18,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'janko/vim-test'
 Plug 'arcticicestudio/nord-vim'
-Plug 'prettier/vim-prettier', {'on': ['Prettier', 'PrettierAsync'], 'do': 'npm install'}
 Plug 'benmills/vimux'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
@@ -46,4 +45,3 @@ so ~/.vim/php.vim
 so ~/.vim/linting.vim
 
 noremap <Leader>g :Gstatus<cr>
-noremap <Leader>p :PrettierAsync<cr>
