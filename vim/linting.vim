@@ -4,7 +4,13 @@ augroup END
 
 let g:ale_fix_on_save = 1
 
-autocmd linting FileType php let b:ale_fixers = ['php_cs_fixer']
+let g:ale_fixers = {
+    \ 'php': ['php_cs_fixer'],
+    \ 'html': ['prettier'],
+    \ 'javascript': ['prettier'],
+    \ 'css': ['prettier'],
+    \ 'json': ['prettier'],
+\ }
 
 " Fallback to my global php-cs-fixer binary if not installed in local project
 function! FallbackToGlobalPhpCsFixerBinary()
