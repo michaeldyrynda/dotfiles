@@ -24,10 +24,6 @@ Plug 'gcmt/breeze.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 
-" Snippets
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-
 " PHP
 Plug 'dense-analysis/ale'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install'}
