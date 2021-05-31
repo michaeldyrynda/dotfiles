@@ -11,7 +11,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'sheerun/vim-polyglot'
 Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-surround'
-Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', {'do': 'fzf#install()'}
 Plug 'junegunn/fzf.vim'
