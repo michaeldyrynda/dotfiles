@@ -26,7 +26,7 @@ call FallbackToGlobalPhpCsFixerBinary()
 " When the current project does not have a php-cs-fixer config, we will fall
 " back to a locally defined `.php_cs.local` file if it exists, otherwise we
 " will just use PSR2.
-function! FallbackToCustomLocalOrPsr2PhpCsFixerConfig()
+function! FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
   if (filereadable('.php-cs-fixer.php') || filereadable('.php-cs-fixer.dist.php'))
     return
   else
@@ -34,7 +34,7 @@ function! FallbackToCustomLocalOrPsr2PhpCsFixerConfig()
   endif
 endfunction
 
-call FallbackToCustomLocalOrPsr2PhpCsFixerConfig()
+call FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
 
 " -----------------------------------------------------------------------------
 "  Linters
