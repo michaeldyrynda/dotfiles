@@ -13,7 +13,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " Include use statement
 inoremap <Leader>u <C-O>:call phpactor#UseAdd()<CR>
 inoremap <Leader>e <C-o>viwb <esc><esc>i\<esc>l:PhpactorClassExpand<CR>e
-nmap <Leader>e :call phpactor#ClassExpand()<CR>
+nmap <Leader>e :PhpactorClassExpand<CR>e
 
 " Invoke the context menu
 nmap <Leader>mm :call phpactor#ContextMenu()<CR>
