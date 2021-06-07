@@ -6,6 +6,7 @@ set softtabstop=4                                                               
 set backspace=indent,eol,start                                                  "Make backspaces delete sensibly
 set tabstop=4                                                                   "Indentation levels every four columns
 set expandtab                                                                   "Convert all tabs typed to spaces
+set smarttab                                                                    
 set shiftwidth=4                                                                "Indent/outdent by four columns
 set shiftround                                                                  "Indent/outdent to nearest tabstop
 set matchpairs+=<:>                                                             "Jump between pairs (%) command
@@ -24,8 +25,13 @@ set noerrorbells                                                                
 set novisualbell                                                                "Disable visual bells
 set t_vb=
 set colorcolumn=120
+set autoread                                                                    "Re-read a file when it has been 
 let mapleader = ','                                                             "The default is \, but a comma is better
 filetype plugin indent on                                                       "Enable file-type based indentation
+
+if v:version > 703
+    set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
 "/
 "/ Editor *********************************************************************
