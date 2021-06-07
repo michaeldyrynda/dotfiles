@@ -12,6 +12,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Include use statement
 inoremap <Leader>u <C-O>:call phpactor#UseAdd()<CR>
+nmap <Leader>u :call phpactor#UseAdd()<CR>
 inoremap <Leader>e <C-o>viwb <esc><esc>i\<esc>l:PhpactorClassExpand<CR>e
 nmap <Leader>e :PhpactorClassExpand<CR>e
 
