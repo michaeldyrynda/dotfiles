@@ -25,7 +25,7 @@ call FallbackToGlobalPhpCsFixerBinary()
 
 " When the current project does not have a php-cs-fixer config, we will fall
 " back to a locally defined `.php_cs.local` file if it exists, otherwise we
-" will just use PSR2.
+" will just use PSR12.
 function! FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
   if (filereadable('.php-cs-fixer.php') || filereadable('.php-cs-fixer.dist.php'))
     return
@@ -41,7 +41,7 @@ call FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
 " -----------------------------------------------------------------------------
 
 " Use the following linters, in this order, when any are available
-autocmd linting FileType php let b:ale_linters = ['php', 'psalm', 'phpstan']
+autocmd linting FileType php let b:ale_linters = ['php', 'phpstan', 'psalm']
 
 " Only look for a binary once
 let g:ale_cache_executable_check_failures = 1
