@@ -9,6 +9,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.config/nvim: nvim
     ~/.ctags: ctags
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/michael.dyrynda/.local/share/nvim/site/autoload'
+let g:netrw_dirhist_3='/Users/michael.dyrynda/.local/share/nvim/site'
+let g:netrw_dirhist_2='/Users/michael.dyrynda/.config/nvim'
+let g:netrw_dirhist_1='/Users/michael.dyrynda/dotfiles/vim/plugged/nvim-treesitter'
