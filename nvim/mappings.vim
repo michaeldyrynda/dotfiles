@@ -31,7 +31,6 @@ nmap <silent> <leader>v :vsplit<cr>
 nmap <silent> <leader>h :split<cr>
 
 " Resizing
-autocmd VimResized * :wincmd =                  " Automatically resize splits when Vim is resized
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>  " Focus active split
 nnoremap <leader>= :wincmd =<cr>                " Balance open splits
 
