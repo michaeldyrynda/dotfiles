@@ -8,6 +8,7 @@ nmap <silent> <leader>ev :e ~/.config/nvim/init.vim<cr>
 
 nmap <c-p> <cmd>Telescope find_files<cr>
 nmap <leader>b <cmd>Telescope buffers<cr>
+nmap <leader>lg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <leader>gd :lua require'telescope.builtin'.lsp_definitions{}<cr>
 nnoremap <silent> <leader>a :lua require'telescope.builtin'.lsp_code_actions{}<cr>
 nnoremap <silent> <leader>f :lua require'telescope.builtin'.lsp_document_symbols{}<cr>
