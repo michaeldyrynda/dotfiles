@@ -36,7 +36,12 @@ source $HOME/dotfiles/macos/functions.sh
 # User configuration
 export PATH="/opt/homebrew/bin:$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/mysql-client/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin"
 
-export EDITOR=vim
+if command -v nvim &> /dev/null
+then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
 
 export BAT_THEME="Nord"
 export GPG_TTY=$(tty)
