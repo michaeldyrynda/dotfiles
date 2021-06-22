@@ -6,15 +6,27 @@ let mapleader = ','
 "
 " nvim
 "
+nmap <silent> <leader>ev :tabnew ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>en :lua require'telescope.builtin'.edit_vim{}<cr>
+nnoremap <silent> <leader>ed :lua require'telescope.builtin'.dotfiles{}<cr>
 
+" Tabs
+nmap <silent> <leader>tL :tabnext<cr>
+nmap <silent> <leader>tH :tabprevious<cr>
+nmap <silent> <leader>tN :tabnew<cr>
+nmap <silent> <leader>tC :tabclose<cr>
+
+" Telescope
 nmap <c-p> <cmd>Telescope find_files<cr>
 nmap <leader>b <cmd>Telescope buffers<cr>
 nmap <leader>lg <cmd>Telescope live_grep<cr>
-nnoremap <silent> <leader>gd :lua require'telescope.builtin'.lsp_definitions{}<cr>
+nmap <leader>fb <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <silent> <leader>gd :vsplit<cr>:lua require'telescope.builtin'.lsp_definitions{}<cr>
 nnoremap <silent> <leader>a :lua require'telescope.builtin'.lsp_code_actions{}<cr>
 nnoremap <silent> <leader>f :lua require'telescope.builtin'.lsp_document_symbols{}<cr>
 nnoremap <silent> <leader>r :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
+nnoremap <silent> <leader>fi :lua require'telescope.builtin'.lsp_implementations{}<cr>
+nnoremap <silent> <leader>dg :lua require'telescope.builtin'.lsp_document_diagnostics{}<cr>
 
 " LSP
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<cr>
