@@ -13,11 +13,7 @@ require'compe'.setup {
     documentation = true;
 
     source = {
-        path = true;
-        buffer = true;
-        calc = true;
-        nvim_lsp = true;
-        nvm_lua = true;
-        vsnip = true;
+        sort = true;
+        nvim_lsp = { sort = false; priority = 1000; };
     };
 }
