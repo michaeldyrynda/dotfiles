@@ -1,5 +1,6 @@
 "
 " Laravel helpers
+" https://github.com/jesseleite/dotfiles/blob/master/vim/config/laravel.vim
 "
 function! LaravelGoToDefinition()
     call LaravelGoToView()
