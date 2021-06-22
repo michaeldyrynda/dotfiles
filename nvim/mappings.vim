@@ -66,6 +66,8 @@ inoremap <silent> <leader>j <esc>:m .+1<cr>==gi
 " Laravel
 "
 nmap <silent> <leader>lv :call LaravelGoToDefinition()<cr> " See config/laravel.vim
+nmap <leader>lm :!php artisan make:
+nmap <leader>pt :!php artisan pest:test 
 
 "
 " UltiSnips
