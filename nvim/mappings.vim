@@ -3,8 +3,10 @@
 "
 let mapleader = ','
 
-" Open nvim config
-nmap <silent> <leader>ev :e ~/.config/nvim/init.vim<cr>
+"
+" nvim
+"
+nnoremap <silent> <leader>en :lua require'telescope.builtin'.edit_vim{}<cr>
 
 nmap <c-p> <cmd>Telescope find_files<cr>
 nmap <leader>b <cmd>Telescope buffers<cr>

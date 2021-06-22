@@ -21,4 +21,12 @@ telescope.setup {
     }
 }
 
+builtin.edit_vim = function ()
+  builtin.find_files({
+    cwd = "~/.config/nvim",
+    prompt_title = "~ nvim config ~",
+    theme = 'dropdown',
+  })
+end
+
 telescope.load_extension('fzf')
