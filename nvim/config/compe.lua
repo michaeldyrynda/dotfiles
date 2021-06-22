@@ -14,6 +14,7 @@ require'compe'.setup {
 
     source = {
         sort = true;
+        buffer = { sort = true; priority = 500; };
         nvim_lsp = { sort = false; priority = 1000; };
     };
 }
