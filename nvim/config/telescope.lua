@@ -7,7 +7,8 @@ local builtin = require('telescope.builtin')
 
 telescope.setup {
     defaults = {
-        prompt_prefix = '  ',
+        prompt_prefix = '$  ',
+        shorten_path = true,
         mappings = {
             i = {
                 ["<esc>"] = actions.close,
@@ -17,8 +18,11 @@ telescope.setup {
         vimgrep_arguments = {
             'ag',
             '--vimgrep'
-        }
-    }
+        },
+
+        winblend = 10,
+        results_width = 0.25,
+    },
 }
 
 builtin.edit_vim = function ()
