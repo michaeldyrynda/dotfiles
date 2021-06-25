@@ -49,6 +49,3 @@ Plug 'mhinz/vim-signify'
 "Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'hrsh7th/nvim-compe'
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

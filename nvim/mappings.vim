@@ -104,3 +104,6 @@ inoremap <silent><expr> <C-d> compe#scroll({ 'delta': -4 })
 "
 nnoremap <buffer><nowait> <leader>pi <cmd>PlugInstall<cr>
 nnoremap <buffer><nowait> <leader>pu <cmd>PlugUpdate<cr>
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
