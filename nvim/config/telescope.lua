@@ -26,7 +26,10 @@ telescope.setup {
         },
 
         winblend = 10,
-        results_width = 0.25,
+        layout_config = {
+            preview_width = 0.6,
+            width = 0.5,
+        },
     },
 
     pickers = {
