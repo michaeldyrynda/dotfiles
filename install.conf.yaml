@@ -7,8 +7,6 @@
 - link:
     ~/.dotfiles: ""
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
     ~/.config/nvim: nvim
     ~/.ctags: ctags
     ~/.gitconfig: gitconfig
