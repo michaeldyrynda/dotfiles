@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore_global
-    editor = /usr/bin/env vim
+    editor = /usr/bin/env nvim
     pager = delta
 [user]
     name = Michael Dyrynda
