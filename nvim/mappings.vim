@@ -21,15 +21,18 @@ nmap <c-p> <cmd>Telescope find_files<cr>
 nmap <leader>b <cmd>Telescope buffers<cr>
 nmap <leader>lg <cmd>Telescope live_grep<cr>
 nmap <leader>fb <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <silent> <leader>gd :vsplit<cr>:lua require'telescope.builtin'.lsp_definitions{}<cr>
-nnoremap <silent> <leader>a :lua require'telescope.builtin'.lsp_code_actions{}<cr>
-nnoremap <silent> <leader>f :lua require'telescope.builtin'.lsp_document_symbols{}<cr>
-nnoremap <silent> <leader>r :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
-nnoremap <silent> <leader>fi :lua require'telescope.builtin'.lsp_implementations{}<cr>
-nnoremap <silent> <leader>dg :lua require'telescope.builtin'.lsp_document_diagnostics{}<cr>
+nnoremap <silent> <leader>gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
+nnoremap <silent> <leader>f <cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>
+nnoremap <silent> <leader>r <cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
+nnoremap <silent> <leader>fi <cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>
+nnoremap <silent> <leader>dg <cmd>lua require'telescope.builtin'.lsp_document_diagnostics{}<cr>
 
 " LSP
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap <silent> <leader>sr <cmd>lua vim.lsp.buf.rename()<cr>
+nnoremap <silent> <leader>sh <cmd>lua vim.lsp.buf.signature_help()<cr>
+nnoremap <silent> <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
+nnoremap <silent> <leader>sd <cmd>lua vim.lsp.buf.declaration()<cr>
 
 " Miscellaneous
 nnoremap <silent> <leader><space> :nohlsearch<cr>
