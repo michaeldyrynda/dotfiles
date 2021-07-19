@@ -30,8 +30,14 @@ autoload -U promptinit; promptinit
 prompt pure
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/dotfiles/macos/aliases.sh
-source $HOME/dotfiles/macos/functions.sh
+if [[ `uname` == 'Darwin' ]]
+then
+  source $HOME/dotfiles/shell/macos/aliases.sh
+  source $HOME/dotfiles/shell/macos/functions.sh
+else
+  source $HOME/dotfiles/shell/linux/aliases.sh
+  source $HOME/dotfiles/shell/linux/functions.sh
+fi
 
 # User configuration
 export PATH="/opt/homebrew/bin:$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/mysql-client/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin"
