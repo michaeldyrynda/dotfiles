@@ -73,11 +73,14 @@ nmap <silent> <leader>tv :w<cr>:TestVisit<cr>
 
 "
 " Navigation
-"
-nnoremap <silent> <leader>j :m .+1<cr>==
-nnoremap <silent> <leader>k :m .-2<cr>==
-inoremap <silent> <leader>k <esc>:m .-2<cr>==gi
-inoremap <silent> <leader>j <esc>:m .+1<cr>==gi
+" Move visually selected lines down
+vnoremap <silent> <leader>j :m '>+1<cr>gv=gv
+" Move visually selected lines up
+vnoremap <silent> <leader>k :m '<-2<cr>gv=gv 
+" Move line under cursor down
+inoremap <silent> <leader><leader>j <esc>:m .+1<cr>==gi
+" Move line under cursor up
+inoremap <silent> <leader><leader>k <esc>:m .-2<cr>==gi
 
 "
 " Laravel
