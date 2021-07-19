@@ -5,19 +5,20 @@
 - clean: ["~"]
 
 - link:
-    ~/.dotfiles: ""
-    ~/.tmux.conf: tmux.conf
+    ~/.bashrc: bashrc
+    ~/.config/karabiner: karabiner
     ~/.config/nvim: nvim
     ~/.ctags: ctags
+    ~/.dotfiles: ""
+    ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.php_cs: php_cs
     ~/.slate: slate
     ~/.sqliterc: sqliterc
-    ~/.zshrc: zshrc
-    ~/.fzf.zsh: fzf.zsh
-    ~/.config/karabiner: karabiner
+    ~/.tmux.conf: tmux.conf
     ~/.yabairc: yabairc
+    ~/.zshrc: zshrc
     ~/bin: bin
 
 - create:
