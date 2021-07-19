@@ -26,6 +26,9 @@ alias cgu="composer global update"
 
 # Git
 alias g="git"
+alias ga="git add"
+alias gp="git push"
+alias gc="git commit"
 alias gs="git status"
 alias gca="git commit -m"
 alias gb="git checkout -b"
