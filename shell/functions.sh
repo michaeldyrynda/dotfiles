@@ -18,7 +18,7 @@ function routes()
     if [ $# -eq 0 ]; then
         php artisan route:list | fzf
     else
-        php artisan route:list | ag --color ${1}
+        php artisan route:list | rg ${1}
     fi
 }
 
