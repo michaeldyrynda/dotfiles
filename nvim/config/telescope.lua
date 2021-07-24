@@ -6,43 +6,42 @@ local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 
 telescope.setup {
-    defaults = {
-        prompt_prefix = '$  ',
-        shorten_path = true,
-        mappings = {
-            i = {
-                ["<esc>"] = actions.close,
-            }
-        },
-        file_ignore_patterns = { 'node_modules' },
-        vimgrep_arguments = {
-            'rg',
-            '--color=never',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case'
-        },
+  defaults = {
+    path_display = {
+      'shorten',
+    },
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      }
+    },
+    file_ignore_patterns = { 'node_modules' },
 
-        winblend = 10,
-        layout_config = {
-            preview_width = 0.6,
-            width = 0.5,
-        },
+    winblend = 10,
+
+    layout_config = {
+      prompt_position = 'top',
+      width = 0.75
+    },
+  },
+
+  pickers = {
+    find_files = {
+      prompt_title = 'All Files',
+      find_command = { 'rg', '--files', '--no-ignore', '--hidden' }
     },
 
-    pickers = {
-        find_files = {
-            prompt_title = 'All files',
-            color_devicons = true,
-        },
-        current_buffer_fuzzy_find = {
-            prompt_title = 'Current buffer',
-            theme = 'dropdown',
-            sorting_strategy = 'ascending',
-        },
+    current_buffer_fuzzy_find = {
+      prompt_title = 'Current buffer',
+      sorting_strategy = 'ascending'
+    },
+
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      previewer = false
     }
+  }
 }
 
 --
@@ -52,13 +51,14 @@ builtin.edit_vim = function ()
   builtin.find_files({
     cwd = "~/.config/nvim",
     prompt_title = "~ nvim config ~",
-    theme = 'dropdown',
+    theme = "dropdown",
+    previewer = false
   })
 end
 
 builtin.dotfiles = function ()
-    builtin.find_files({
-        prompt_title = 'Dotfiles',
-        cwd = "$HOME/dotfiles",
-    })
+  builtin.find_files({
+    prompt_title = 'Dotfiles',
+    cwd = "$HOME/dotfiles",
+  })
 end
