@@ -88,6 +88,7 @@ inoremap <silent> <leader><leader>k <esc>:m .-2<cr>==gi
 nmap <silent> <leader>lv :call LaravelGoToDefinition()<cr> " See config/laravel.vim
 nmap <leader>lm :!php artisan make:
 nmap <leader>pt :!php artisan pest:test 
+nmap <leader>rw :vsp routes/web.php<cr>
 
 "
 " UltiSnips

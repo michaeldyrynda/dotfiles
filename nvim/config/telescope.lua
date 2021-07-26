@@ -27,20 +27,14 @@ telescope.setup {
 
   pickers = {
     find_files = {
-      prompt_title = 'All Files',
-      find_command = { 'rg', '--files', '--no-ignore', '--hidden' }
+      prompt_title = 'All files',
+      hidden = true
     },
 
     current_buffer_fuzzy_find = {
       prompt_title = 'Current buffer',
-      sorting_strategy = 'ascending'
+      sorting_strategy = 'descending'
     },
-
-    buffers = {
-      show_all_buffers = true,
-      sort_lastused = true,
-      previewer = false
-    }
   }
 }
 
