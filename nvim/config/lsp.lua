@@ -9,3 +9,7 @@ lspconfig.html.setup({
     cmd = { 'html-languageserver', '--stdio' },
     filetypes = { 'html', 'blade' }
 })
+
+lspconfig.tailwindcss.setup({
+    filetypes = { 'html', 'css', 'blade' }
+})
