@@ -22,7 +22,7 @@ set splitbelow
 set splitright
 set termguicolors
 set signcolumn=yes
-set timeoutlen=100
+set timeoutlen=500
 
 " Persistent undo
 let &undodir=sourcery#system_vimfiles_path('undo')
