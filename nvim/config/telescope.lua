@@ -27,8 +27,10 @@ telescope.setup {
 
   pickers = {
     find_files = {
-      prompt_title = 'All files',
-      hidden = true
+      prompt_title = 'All Files',
+      find_command = {'rg', '--files', '--no-ignore', 'hidden'},
+      hidden = true,
+      no_ignore = true,
     },
 
     current_buffer_fuzzy_find = {
