@@ -16,7 +16,6 @@ plugins=(
   history
   history-substring-search
   sublime
-  common-aliases
   artisan
   zsh-syntax-highlighting
   zsh-autosuggestions

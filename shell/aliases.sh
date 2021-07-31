@@ -1,5 +1,10 @@
 # Generic
-alias ll='ls -lh'
+alias ll='ls -lAFh'   #long list,show almost all,show type,human readable
+
+alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+
+alias t='tail -f'
+alias dud='du -d 1 -h'
 
 # Artisan
 alias a='php artisan'
