@@ -10,6 +10,4 @@ lspconfig.html.setup({
     filetypes = { 'html', 'blade' }
 })
 
-lspconfig.tailwindcss.setup({
-    filetypes = { 'html', 'css', 'blade' }
-})
+lspconfig.tailwindcss.setup { }
