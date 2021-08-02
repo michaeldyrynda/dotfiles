@@ -10,6 +10,19 @@ nmap <silent> <leader>ev :tabnew ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>en :lua require'telescope.builtin'.edit_vim{}<cr>
 nnoremap <silent> <leader>ed :lua require'telescope.builtin'.dotfiles{}<cr>
 
+"
+" Top mappings via https://www.youtube.com/watch?v=hSHATqh8svM
+"
+" Make Y behave like C, and D (yank to end of line)
+nnoremap Y y$
+
+" Keep search results centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Keep cursor in place when joining lines
+nnoremap J mzJ`z
+
 " Tabs
 nmap <silent> <leader>tL :tabnext<cr>
 nmap <silent> <leader>tH :tabprevious<cr>
@@ -73,14 +86,12 @@ nmap <silent> <leader>tv :w<cr>:TestVisit<cr>
 
 "
 " Navigation
-" Move visually selected lines down
-vnoremap <silent> <leader>j :m '>+1<cr>gv=gv
-" Move visually selected lines up
-vnoremap <silent> <leader>k :m '<-2<cr>gv=gv 
-" Move line under cursor down
-inoremap <silent> <leader><leader>j <esc>:m .+1<cr>==gi
-" Move line under cursor up
-inoremap <silent> <leader><leader>k <esc>:m .-2<cr>==gi
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
+inoremap <C-j> :m .+1<cr>==
+inoremap <C-k> :m .-2<cr>==
+nnoremap <leader>j :m .+1<cr>==
+nnoremap <leader>k :m .-2<cr>==
 
 "
 " Laravel
