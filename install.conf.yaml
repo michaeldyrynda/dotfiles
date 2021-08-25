@@ -53,3 +53,4 @@
     - watch
     - legit
     - pure
+    - stripe/stripe-cli/stripe
