@@ -88,8 +88,6 @@ if command -v mtpush &> /dev/null; then
             if [[ "$newBranch" != "$currentLocal" ]]; then
                 echo "Switching to ($newBranch) locally..."
                 git checkout "$newBranch"
-                # Rebase whatever we just sync'd from master into our current branch
-                git rebase master
             fi
 
             if ! branchExists $newBranch "remote"; then
