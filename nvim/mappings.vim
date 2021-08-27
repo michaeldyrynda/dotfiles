@@ -26,7 +26,7 @@ nnoremap J mzJ`z
 " Tabs
 nmap <silent> <leader>tL :tabnext<cr>
 nmap <silent> <leader>tH :tabprevious<cr>
-nmap <silent> <leader>tN :tabnew<cr>
+nmap <leader>tN :tabnew 
 nmap <silent> <leader>tC :tabclose<cr>
 
 " Telescope
