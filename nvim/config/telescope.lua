@@ -44,17 +44,17 @@ telescope.setup {
 -- Custom finders
 --
 builtin.edit_vim = function ()
-  builtin.find_files({
-    cwd = "~/.config/nvim",
-    prompt_title = "~ nvim config ~",
-    theme = "dropdown",
+  builtin.find_files(require('telescope.themes').get_dropdown{
+    cwd = "$HOME/.config/nvim",
+    prompt_title = "nvim config",
     previewer = false
   })
 end
 
 builtin.dotfiles = function ()
-  builtin.find_files({
-    prompt_title = 'Dotfiles',
+  builtin.find_files(require('telescope.themes').get_dropdown{
     cwd = "$HOME/dotfiles",
+    prompt_title = 'Dotfiles',
+    previewer = false,
   })
 end
