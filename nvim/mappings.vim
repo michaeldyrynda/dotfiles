@@ -9,6 +9,7 @@ let mapleader = ','
 nmap <silent> <leader>ev :tabnew ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>en :lua require'telescope.builtin'.edit_vim{}<cr>
 nnoremap <silent> <leader>ed :lua require'telescope.builtin'.dotfiles{}<cr>
+nnoremap <leader>ft :FloatermNew<cr>
 
 "
 " Top mappings via https://www.youtube.com/watch?v=hSHATqh8svM
