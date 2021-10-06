@@ -54,3 +54,6 @@
     - legit
     - pure
     - stripe/stripe-cli/stripe
+
+- cask:
+    - raycast
