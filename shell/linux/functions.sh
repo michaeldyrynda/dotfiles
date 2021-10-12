@@ -36,7 +36,7 @@ if command -v mtpush &> /dev/null; then
             fi
         fi
 
-        echo "$check"
+        echo "$location: $check"
     }
 
     function hasStash {
@@ -74,9 +74,11 @@ if command -v mtpush &> /dev/null; then
         else
             newBranch=$1
 
+            echo "Stashing changes..."
+            git stash -u
+
             if ! branchExists $newBranch "local"; then
                 echo "Branch ($newBranch) doesn't exist locally. Creating..."
-                git stash -u
                 git checkout master
                 mtpush -checkout master
                 git add . && git commit -m "sync upstream"
