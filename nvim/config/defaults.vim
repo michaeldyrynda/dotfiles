@@ -2,7 +2,7 @@
 " Default configuration
 "
 set autowriteall
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 set colorcolumn=120
 set cursorline
 set expandtab
@@ -23,6 +23,7 @@ set splitright
 set termguicolors
 set signcolumn=yes
 set timeoutlen=300
+set lazyredraw
 
 " Persistent undo
 let &undodir=sourcery#system_vimfiles_path('undo')
