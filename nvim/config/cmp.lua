@@ -1,6 +1,10 @@
 local cmp = require('cmp') 
 
 cmp.setup({
+    experimental = {
+        ghost_text = true,
+    },
+
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -39,5 +43,6 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
         { name = 'buffer', priority = 500 },
+        { name = 'ultisnips' },
     }
 })
