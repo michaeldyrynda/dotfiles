@@ -2,25 +2,30 @@ local cmp = require('cmp')
 
 cmp.setup({
     mapping = {
-        ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-        ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({
+        ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
-        }),
-        ['<Tab>'] = function (fallback)
+        },
+        ['<Tab>'] = function(fallback)
             if cmp.visible() then
-                cmp.next_select_item()
+                cmp.select_next_item()
             else
                 fallback()
             end
-        end
+        end,
+        ['<S-Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end,
     },
 
     documentation = {
@@ -34,11 +39,5 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
         { name = 'buffer', priority = 500 },
-    },
-
-    source = {
-        sort = true;
-        buffer = { sort = true; priority = 500; };
-        nvim_lsp = { sort = false; priority = 1000; };
-    };
+    }
 })
