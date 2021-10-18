@@ -1,1 +1,1 @@
-let test#strategy = "vimux"
+let test#strategy = 'neovim'
