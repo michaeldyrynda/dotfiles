@@ -1,6 +1,9 @@
 - defaults:
     link:
       relink: true
+- shell:
+  - description: Validating sudo credentials
+    command: "sudo --validate"
 
 - clean: ["~"]
 
@@ -8,6 +11,7 @@
     ~/.bashrc: bashrc
     ~/.config/karabiner: karabiner
     ~/.config/nvim: nvim
+    ~/.composer/composer.json: composer/composer.json
     ~/.ctags: ctags
     ~/.dotfiles: ""
     ~/.fzf.zsh: fzf.zsh
@@ -22,38 +26,39 @@
     ~/bin: bin
 
 - create:
-    - ~/downloads
+    - ~/intelephense
+    - ~/code
     - ~/.vim/undo-history
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
-
-- brew:
-    - universal-ctags
-    - ffmpeg
-    - fzf
-    - git
-    - git-delta
-    - gh
-    - httpie
-    - mycli
-    - mysql-client
-    - python@3.9
-    - sqlite
-    - tmux
-    - vim
-    - youtube-dl
-    - zsh-autosuggestions
-    - jesseduffield/lazygit/lazygit
-    - trash
-    - karabiner-elements
-    - bat
-    - rg
-    - koekeishiya/formulae/yabai
-    - watch
-    - legit
-    - pure
-    - stripe/stripe-cli/stripe
-
-- cask:
-    - raycast
+    - description: Install submodules
+      command: "git submodule update --init --recursive"
+    - description: Hush login
+      command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
+    - description: Install Brew
+      command: "[ -x \"$(which brew)\" ] || arch -x86_64 /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+    - description: Update Brew
+      command: "brew update"
+    - description: Install Brew bundler
+      command: "brew tap homebrew/bundle"
+    - description: Install Brewfile bundle
+      command: "brew bundle"
+    - description: Install pipfile
+      command: "pip3 install -r pipfile"
+    - description: Install vim-plug
+      command: "[ -f ~/.config/neovim/autoload/plug.vim ] || curl -fLo ~/.config/neovim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    - description: Install neovim plugins
+      command: "nvim +PlugInstall +qa"
+    - description: Installing and updating Composer
+      command: "composer/install.sh"
+    - description: Installing ZSH plugins
+      command: "shell/zsh-plugins.sh"
+    - description: Install TPM
+      command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
+    - description: Setup intelephense
+      command: "echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
+      stdin: true
+    - description: Set macOS defaults
+      command: shell/macos/defaults.sh
+    - description: Enable services
+      command: "brew services start yabai"
