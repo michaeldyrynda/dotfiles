@@ -5,9 +5,9 @@
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
-	signingkey = 6C7291F4FF64187A3312A765DB6707E977DAA4D4
+    signingkey = 6C7291F4FF64187A3312A765DB6707E977DAA4D4
 [push]
-	default = current
+    default = current
 [filter "lfs"]
     clean = git lfs clean %f
     smudge = git lfs smudge %f
@@ -36,7 +36,7 @@
     # Logging
     r = !GIT_NO_PAGER=1 git l -30
     l = "!. ~/.githelpers && pretty_git_log"
-	new = !git init && git symbolic-ref HEAD refs/heads/main
+    new = !git init && git symbolic-ref HEAD refs/heads/main
 [diff]
     tool = vimdiff
 [difftool]
@@ -52,14 +52,14 @@
     file-style = bold yellow ul
     file-decoration-style = none
 [color]
-	ui = true
+    ui = true
 [commit]
-	gpgsign = true
+    gpgsign = true
 [pull]
-	rebase = true
+    rebase = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+    program = /usr/local/MacGPG2/bin/gpg
 [credential]
-	helper = cache
+    helper = cache
