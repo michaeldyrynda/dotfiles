@@ -66,3 +66,5 @@
       command: shell/macos/defaults.sh
     - description: Enable services
       command: "brew services start yabai"
+    - description: Clear sudo credential cache
+      command: "sudo --reset-timestamp"
