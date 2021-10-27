@@ -55,6 +55,8 @@
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
+    - description: Install npm globals
+      command: "npm i -G intelephense neovim vscode-html-languageserver-bin"
     - description: Setup intelephense
       command: "echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
       stdin: true
