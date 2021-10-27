@@ -57,6 +57,8 @@
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
     - description: Install npm globals
       command: "npm i -G intelephense neovim vscode-html-languageserver-bin"
+    - description: Install Valet
+      command: "sudo valet install && sudo valet trust && valet park ~/code"
     - description: Setup intelephense
       command: "echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
       stdin: true

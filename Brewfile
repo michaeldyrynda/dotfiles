@@ -31,8 +31,10 @@ brew 'watch'
 brew 'legit'
 brew 'pure'
 brew 'stripe'
-brew 'node'
+brew 'node@16' # Need v16 for intelephense to work
+brew 'nginx'
 brew 'php'
+brew 'dnsmasq'
 
 # Cask
 cask 'firefox'
