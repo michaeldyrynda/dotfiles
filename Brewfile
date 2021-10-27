@@ -3,8 +3,8 @@ tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'universal-ctags/universal-ctags'
 tap 'koekeishiya/formulae' 		# yabai
-tap 'jesseduffield/lazygit' 		# lazygit
-tap 'stripe/stripe-cli' 		# stripe-cli
+tap 'jesseduffield/lazygit' 	# lazygit
+tap 'stripe/stripe-cli' 		  # stripe-cli
 
 # Brew
 brew 'universal-ctags'
