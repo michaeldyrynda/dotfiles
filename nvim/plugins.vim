@@ -5,6 +5,9 @@
 " Simplify management of vim configuration (https://github.com/jesseleite/vim-sourcery)
 Plug 'jesseleite/vim-sourcery'
 
+" nvim abstraction for tree-sitter (parser generator)
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Nord color scheme
 Plug 'arcticicestudio/nord-vim'
 
@@ -24,9 +27,6 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " fzf extension for fuzzy finding in Telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
-
-" nvim abstraction for tree-sitter (parser generator)
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Improve behaviour of built-in netrw
 Plug 'tpope/vim-vinegar'
