@@ -63,3 +63,5 @@
     program = /usr/local/MacGPG2/bin/gpg
 [credential]
     helper = cache
+[remote "origin"]
+	prune = true
