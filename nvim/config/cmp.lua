@@ -42,7 +42,7 @@ cmp.setup({
 
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
-        { name = 'buffer', priority = 500 },
+        { name = 'buffer', priority = 500, keyword_length = 5 },
         { name = 'ultisnips' },
     }
 })
