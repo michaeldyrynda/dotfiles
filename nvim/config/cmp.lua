@@ -24,6 +24,12 @@ cmp.setup({
     min_length = 1;
     preselect = true;
 
+    snippet = {
+        expand = function (args)
+            vim.fn["UltiSnips#Anon"](args.body)
+        end
+    },
+
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
         { name = 'buffer', priority = 500, keyword_length = 5 },
