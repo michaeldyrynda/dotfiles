@@ -63,3 +63,6 @@ let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
 
 " Use this as a marker in the sidebar when an linting error is found
 let g:ale_sign_error = '👀'
+
+" Display linting errors in airline
+let g:airline#extensions#ale#enabled = 1
