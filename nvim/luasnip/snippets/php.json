@@ -1,0 +1,48 @@
+{
+  "method": {
+    "prefix": "met",
+    "body": ["${1:public} function ${2:name}($3)$4", "{", "    ${0://}", "}"],
+    "description": "Define method"
+  },
+  "static method": {
+    "prefix": "smet",
+    "body": [
+      "${1:public} static function ${2:name}($3)$4",
+      "{",
+      "    ${0://}",
+      "}"
+    ],
+    "description": "Define static method"
+  },
+  "laravel route": {
+    "prefix": "route",
+    "body": ["Route::${1:get}('${2:route}', [${3:controller}, ${4:method}]);"],
+    "description": "Create a Laravel route"
+  },
+  "$this->": {
+    "prefix": "$",
+    "body": ["$this->$0"],
+    "description": "Typing $this-> is tedious"
+  },
+  "test method": {
+    "prefix": "test",
+    "body": [
+      "/** @test */",
+      "public function it_$1($2)",
+      "{",
+      "    ${3:$this->markTestIncomplete();}",
+      "}"
+    ],
+    "description": "PHPUnit test method"
+  },
+  "pest test method": {
+    "prefix": "pest",
+    "body": ["it('$1', function () {", "    //$0", "})${3:->skip()};"],
+    "description": "Pest test method"
+  },
+  "class property": {
+    "prefix": "prop",
+    "body": ["${1:public} $${2:property} = $0;"],
+    "description": "Declare class property"
+  }
+}

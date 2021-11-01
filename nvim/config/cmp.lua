@@ -1,4 +1,5 @@
 local cmp = require('cmp') 
+local luasnip = require('luasnip')
 
 cmp.setup({
     experimental = {
@@ -14,6 +15,27 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     },
 
     documentation = {
@@ -26,13 +48,19 @@ cmp.setup({
 
     snippet = {
         expand = function (args)
-            vim.fn["UltiSnips#Anon"](args.body)
+            require("luasnip").lsp_expand(args.body)
         end
     },
 
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
-        { name = 'buffer', priority = 500, keyword_length = 5 },
-        { name = 'ultisnips' },
+        { name = 'luasnip' },
+        { name = 'buffer', priority = 500 },
     }
+})
+
+require('luasnip/loaders/from_vscode').load({
+    paths = {
+        "./luasnip"
+    },
 })
