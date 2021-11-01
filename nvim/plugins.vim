@@ -25,8 +25,8 @@ Plug 'nvim-lua/popup.nvim'
 " Telescope itself
 Plug 'nvim-telescope/telescope.nvim'
 
-" fzf extension for fuzzy finding in Telescope
-Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+" nvim abstraction for tree-sitter (parser generator)
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Improve behaviour of built-in netrw
 Plug 'tpope/vim-vinegar'
