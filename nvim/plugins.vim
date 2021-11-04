@@ -50,6 +50,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
