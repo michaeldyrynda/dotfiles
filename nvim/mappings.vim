@@ -52,10 +52,6 @@ nnoremap <silent> <leader><space> :nohlsearch<cr>
 "
 " Window 
 "
-" Cycle splits
-nnoremap <tab> <c-w>w
-nnoremap <s-tab> <c-w>W
-
 " Splits
 nmap <silent> <leader>v :vsplit<cr>
 nmap <silent> <leader>h :split<cr>
