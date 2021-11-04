@@ -45,6 +45,11 @@ alias branches="git branches"
 alias switch="git switch"
 alias dm="git branch --merged | egrep -v \"(^\*|master|main|dev)\" | xargs git branch -d"
 alias lg="lazygit"
+alias amend="git add . && git commit --amend --no-edit"
+alias commit="git add . && git commit -m"
+alias resolve="git add . && git commit --no-edit"
+alias stash="git stash -u"
+alias pop="git stash pop"
 
 # Convenience
 alias uf="unit --filter"
