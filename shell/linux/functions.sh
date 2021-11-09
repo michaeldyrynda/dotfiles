@@ -40,22 +40,28 @@ if command -v mtpush &> /dev/null; then
     }
 
     function hasStash {
-        [[ -n `git stash list` ]]
+        if [[ -n "$1" ]]; then
+            [[ -n `git stash list | grep "$1"` ]]
+        else
+            [ -n `git stash list` ]
+        fi
     }
 
     function mg {
         if ! isGit; then
             echo "Not in a git working directory"
         else
+            LAST_SHA=`git rev-parse --short HEAD`
             LAST_COMMIT=`git log -1 --pretty="%s"`
+            STASH_ID="mtpush-$LAST_SHA"
 
             if [ -z "$LAST_COMMIT" ]; then
                 echo "No commit to push"
             else
-                git stash -u
+                git stash save -u "$STASH_ID"
                 mtpush -push "'$LAST_COMMIT'"
 
-                if hasStash; then
+                if hasStash $STASH_ID; then
                     git stash pop
                 fi
             fi
