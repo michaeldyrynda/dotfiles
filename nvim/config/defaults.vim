@@ -23,6 +23,7 @@ set splitright
 set termguicolors
 set signcolumn=yes
 set timeoutlen=300
+set updatetime=300
 set lazyredraw
 
 " Persistent undo
