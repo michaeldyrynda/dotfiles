@@ -21,7 +21,7 @@ set smartindent
 set splitbelow
 set splitright
 set termguicolors
-set signcolumn=yes
+set signcolumn=yes:2
 set timeoutlen=300
 set updatetime=300
 set lazyredraw
