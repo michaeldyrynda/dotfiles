@@ -13,5 +13,3 @@ highlight SignifySignAdd ctermbg=none ctermfg=green
 highlight SignifySignChange ctermbg=none ctermfg=yellow
 highlight SignifySignDelete ctermbg=none ctermfg=red
 
-highlight SignColumn guibg=none ctermbg=none
-highlight normal guibg=none ctermbg=none
