@@ -26,6 +26,8 @@ yabai -m rule --add app="^Workbench$" manage=off
 yabai -m rule --add app="^1Password 7$" manage=off
 yabai -m rule --add app="^DBngin$" manage=off
 yabai -m rule --add app="^Setapp$" manage=off
+yabai -m rule --add app="^Detail$" manage=off
+yabai -m rule --add app="^Ecamm Live$" manage=off
 
 # Global settings
 # New window spawns to the right if vertical split, or bottom if horizontal split
