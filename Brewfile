@@ -35,7 +35,6 @@ brew 'node@16' # Need v16 for intelephense to work
 brew 'nginx'
 brew 'php'
 brew 'dnsmasq'
-brew 'docker'
 
 # Cask
 cask 'firefox'
@@ -50,3 +49,4 @@ cask 'tableplus'
 cask 'helo'
 cask 'ray'
 cask 'invoker'
+cask 'docker'
