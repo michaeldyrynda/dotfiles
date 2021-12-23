@@ -60,7 +60,7 @@
     - description: Install TPM
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
     - description: Install npm globals
-      command: "npm i -G intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server"
+      command: "npm i -g intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server"
     - description: Install Valet
       command: "sudo valet install && sudo valet trust && valet park ~/code"
     - description: Setup intelephense
