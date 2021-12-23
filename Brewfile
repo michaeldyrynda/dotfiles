@@ -7,7 +7,6 @@ tap 'jesseduffield/lazygit' 	# lazygit
 tap 'stripe/stripe-cli' 		  # stripe-cli
 
 # Brew
-brew 'universal-ctags'
 brew 'ffmpeg'
 brew 'fzf'
 brew 'git'
