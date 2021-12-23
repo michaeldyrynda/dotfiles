@@ -22,7 +22,7 @@ plugins=(
 )
 
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
-fpath+=$HOME/dotfiles/pure
+fpath+=(/opt/homebrew/share/zsh/site-functions)
 
 # Enable pure-prompt
 autoload -U promptinit; promptinit
