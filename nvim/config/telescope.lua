@@ -7,9 +7,6 @@ local builtin = require('telescope.builtin')
 
 telescope.setup {
   defaults = {
-    path_display = {
-      'shorten',
-    },
     mappings = {
       i = {
         ["<esc>"] = actions.close,
