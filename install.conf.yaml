@@ -50,17 +50,21 @@
     - description: Install neovim plugins
       command: "nvim +PlugInstall +qa"
     - description: Installing and updating Composer
-      command: "composer/install.sh"
+      command: "sudo composer/install.sh"
+    - description: Preparing pure-prompt
+      command: "mkdir $HOME/dotfiles/pure"
+    - description: Installing oh-my-zsh
+      command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
     - description: Install npm globals
-      command: "npm i -G intelephense neovim vscode-html-languageserver-bin"
+      command: "npm i -G intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server"
     - description: Install Valet
       command: "sudo valet install && sudo valet trust && valet park ~/code"
     - description: Setup intelephense
-      command: "echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
+      command: "[ -f ~/intelephense/licence.txt ] || echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
       stdin: true
     - description: Set macOS defaults
       command: shell/macos/defaults.sh
