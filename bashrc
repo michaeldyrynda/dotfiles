@@ -14,3 +14,5 @@ source $HOME/dotfiles/shell/linux/functions.sh
 
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
