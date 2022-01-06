@@ -30,7 +30,7 @@ call FallbackToGlobalPhpCsFixerBinary()
 " back to a locally defined `.php_cs.local` file if it exists, otherwise we
 " will just use PSR12.
 function! FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
-  if (filereadable('.php-cs-fixer.php') || filereadable('.php-cs-fixer.dist.php'))
+  if (filereadable('.php-cs-fixer.php') || filereadable('.php-cs-fixer.dist.php') || filereadable('.php_cs'))
     return
   else
     let g:ale_php_cs_fixer_options = '--using-cache=no --path-mode=override --rules=@PSR12'
