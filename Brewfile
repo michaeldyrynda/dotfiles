@@ -18,7 +18,7 @@ brew 'mysql-client'
 brew 'python@3.9'
 brew 'sqlite'
 brew 'tmux'
-brew 'neovim', args: ['HEAD']
+brew 'neovim'
 brew 'youtube-dl'
 brew 'zsh-autosuggestions'
 brew 'lazygit'
