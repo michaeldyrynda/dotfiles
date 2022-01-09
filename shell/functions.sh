@@ -105,5 +105,8 @@ function make-stereo() {
         exit 1;
     fi
 
-    ffmpeg -i $1 -af "pan=stereo|c0=c0|c1=c0" "$1-stereo.mp3"
+    filename=$(echo $1 | cut -d "." -f1)
+    extension=$(echo $1 | cut -d "." -f2)
+
+    ffmpeg -i $1 -af "pan=stereo|c0=c0|c1=c0" "$filename-stereo.$extension"
 }
