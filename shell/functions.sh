@@ -4,7 +4,7 @@ function releaseDate() {
 
 function routes()
 {
-    if [ ! command -v fzf > /dev/null ]
+    if ! command -v fzf > /dev/null
     then
         if [ $# -eq 0 ]; then
             php artisan route:list
@@ -85,7 +85,7 @@ function unit() {
 }
 
 function makegif() {
-    if [ ! command -v ffmpeg > /dev/null ]
+    if  ! command -v ffmpeg > /dev/null
     then
         echo "ffmpeg not available"
         exit 1;
@@ -99,7 +99,7 @@ function makegif() {
 }
 
 function make-stereo() {
-    if [ ! command -v ffmpeg > /dev/null ]
+    if ! command -v ffmpeg > /dev/null
     then
         echo "ffmpeg not available"
         exit 1;
