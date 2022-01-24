@@ -52,6 +52,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'ThePrimeagen/git-worktree.nvim'
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
