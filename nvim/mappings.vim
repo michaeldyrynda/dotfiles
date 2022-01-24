@@ -44,6 +44,7 @@ nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>sr <cmd>lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a <cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>
 nnoremap <silent> <leader>gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
+nnoremap <silent> <leader>gvd <cmd>lua require'telescope.builtin'.lsp_definitions{jump_type="vsplit"}<cr>
 nnoremap <silent> <leader>gt <cmd>lua require'telescope.builtin'.lsp_type_definitions{}<cr>
 nnoremap <silent> <leader>gi <cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>
 nnoremap <silent> <leader>fr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
