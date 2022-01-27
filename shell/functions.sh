@@ -110,3 +110,11 @@ function make-stereo() {
 
     ffmpeg -i $1 -af "pan=stereo|c0=c0|c1=c0" "$filename-stereo.$extension"
 }
+
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
