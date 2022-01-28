@@ -52,6 +52,20 @@ nnoremap <silent> <leader>f <cmd>lua require'telescope.builtin'.lsp_document_sym
 nnoremap <silent> <leader>r <cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
 nnoremap <silent> <leader>dg <cmd>lua require'telescope.builtin'.lsp_document_diagnostics{}<cr>
 
+"
+" PhpActor
+"
+" General
+nnoremap <silent><leader>pcm :call phpactor#ContextMenu()<cr>
+
+" Extraction mappings
+nnoremap <silent> <leader>ec :call phpactor#ExtractConstant()<cr>
+xnoremap <silent> <leader>ee :<C-U>call phpactor#ExtractExpression(visualmode())<cr>
+xnoremap <silent> <leader>em :<C-U>call phpactor#ExtractMethod(visualmode())<cr>
+
+" Class mappings
+nnoremap <silent> <leader>cm :call phpactor#MoveFile()<cr>
+
 " Miscellaneous
 nnoremap <silent> <leader><space> :nohlsearch<cr>
 
