@@ -50,7 +50,7 @@ nnoremap <silent> <leader>gi <cmd>lua require'telescope.builtin'.lsp_implementat
 nnoremap <silent> <leader>fr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 nnoremap <silent> <leader>f <cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>
 nnoremap <silent> <leader>r <cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
-nnoremap <silent> <leader>dg <cmd>lua require'telescope.builtin'.lsp_document_diagnostics{}<cr>
+nnoremap <silent> <leader>dg :Telescope diagnostics bufnr=0<cr>
 
 "
 " PhpActor
