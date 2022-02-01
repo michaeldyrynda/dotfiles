@@ -69,6 +69,8 @@ nnoremap <silent> <leader>cm :call phpactor#MoveFile()<cr>
 
 " Miscellaneous
 nnoremap <silent> <leader><space> :nohlsearch<cr>
+nmap <leader>cr :!composer require 
+nmap <leader>crd :!composer require --dev  
 
 "
 " Window 
