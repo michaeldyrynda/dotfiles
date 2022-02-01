@@ -34,6 +34,16 @@ telescope.setup {
       prompt_title = 'Current buffer',
       sorting_strategy = 'descending'
     },
+
+    buffers = {
+      sort_lastused = true,
+      theme = 'dropdown',
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        }
+      }
+    }
   }
 }
 
