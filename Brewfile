@@ -5,6 +5,7 @@ tap 'universal-ctags/universal-ctags'
 tap 'koekeishiya/formulae' 		# yabai
 tap 'jesseduffield/lazygit' 	# lazygit
 tap 'stripe/stripe-cli' 		  # stripe-cli
+tap 'nicoverbruggen/homebrew-cask'
 
 # Brew
 brew 'ffmpeg'
@@ -50,3 +51,4 @@ cask 'helo'
 cask 'ray'
 cask 'invoker'
 cask 'docker'
+cask 'phpmon'
