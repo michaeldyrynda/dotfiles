@@ -50,6 +50,7 @@ alias commit="git add . && git commit -m"
 alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias pop="git stash pop"
+alias grc="git add . && git rebase --continue"
 
 # Convenience
 alias uf="unit --filter"
