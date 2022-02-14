@@ -8,20 +8,20 @@ function s:highlight(group, bg, fg, style)
   exec 'hi ' . a:group . ' ' . bg . ' ' . fg  . ' ' . gui
 endfunction
 
+let s:Color0 = '#8464c6'
 let s:Color1 = '#54c59f'
-let s:Color7 = '#adacae'
-let s:Color8 = '#1f1a27'
-let s:Color12 = '#2e2b45'
-let s:Color5 = '#6d6d6d'
-let s:Color6 = '#6cb2c7'
 let s:Color2 = '#c7a06f'
 let s:Color3 = '#c55858'
-let s:Color0 = '#8464c6'
+let s:Color4 = '#bdbdbd'
+let s:Color5 = '#6d6d6d'
+let s:Color6 = '#6cb2c7'
+let s:Color7 = '#adacae'
+let s:Color8 = '#1f1a27'
 let s:Color9 = '#21202e'
 let s:Color10 = '#1c393b'
-let s:Color13 = '#3b3754'
 let s:Color11 = '#3c2431'
-let s:Color4 = '#bdbdbd'
+let s:Color12 = '#2e2b45'
+let s:Color13 = '#3b3754'
 
 call s:highlight('Keyword', '', s:Color0, '')
 call s:highlight('Operator', '', s:Color0, '')
@@ -35,8 +35,8 @@ call s:highlight('Comment', '', s:Color5, '')
 call s:highlight('Function', '', s:Color2, '')
 call s:highlight('Type', '', s:Color6, '')
 call s:highlight('StatusLine', s:Color7, s:Color8, '')
-call s:highlight('WildMenu', s:Color9, s:Color4, '')
-call s:highlight('Pmenu', s:Color9, s:Color4, '')
+call s:highlight('WildMenu', s:Color10, s:Color4, '')
+call s:highlight('Pmenu', s:Color12, s:Color4, '')
 call s:highlight('PmenuSel', s:Color4, s:Color9, '')
 call s:highlight('PmenuThumb', s:Color9, s:Color4, '')
 call s:highlight('DiffAdd', s:Color10, '', '')
@@ -46,11 +46,17 @@ call s:highlight('Visual', s:Color12, '', '')
 call s:highlight('CursorLine', s:Color12, '', '')
 call s:highlight('ColorColumn', s:Color12, '', '')
 call s:highlight('SignColumn', s:Color9, '', '')
-call s:highlight('LineNr', '', s:Color13, '')
+call s:highlight('LineNr', '', s:Color5, '')
 call s:highlight('TabLine', s:Color9, s:Color5, '')
 call s:highlight('TabLineSel', s:Color1, s:Color9, '')
 call s:highlight('TabLineFill', s:Color9, s:Color5, '')
 call s:highlight('TSPunctDelimiter', '', s:Color4, '')
+
+" Signify
+call s:highlight('SignifySignAdd', '', s:Color1, 'bold')
+call s:highlight('SignifySignChange', '', s:Color2, 'bold')
+call s:highlight('SignifySignDelete', '', s:Color3, 'bold')
+call s:highlight('SignifySignChangeDelete', '', s:Color2, 'bold')
 
 highlight! link TSString String
 highlight! link Folded Comment
@@ -84,3 +90,12 @@ highlight! link TSParameterReference TSParameter
 highlight! link TSProperty TSField
 highlight! link TSNumber Number
 highlight! link TSConditional Conditional
+
+call s:highlight("DiagnosticWarn", "", s:Color2, "")
+call s:highlight("DiagnosticError" , "", s:Color3, "")
+call s:highlight("DiagnosticInfo" , "", s:Color6, "")
+call s:highlight("DiagnosticHint" , "", s:Color0, "")
+call s:highlight("DiagnosticUnderlineWarn" , "", s:Color2, "undercurl")
+call s:highlight("DiagnosticUnderlineError" , "", s:Color3, "undercurl")
+call s:highlight("DiagnosticUnderlineInfo" , "", s:Color6, "undercurl")
+call s:highlight("DiagnosticUnderlineHint" , "", s:Color0, "undercurl")
