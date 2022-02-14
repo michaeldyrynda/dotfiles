@@ -10,8 +10,9 @@ telescope.setup {
     mappings = {
       i = {
         ["<esc>"] = actions.close,
-      }
+      },
     },
+    preview = false,
     file_ignore_patterns = { 'node_modules' },
 
     winblend = 10,
@@ -28,6 +29,8 @@ telescope.setup {
       find_command = {'rg', '--files', '--no-ignore', '--hidden'},
       hidden = true,
       no_ignore = true,
+      theme = 'dropdown',
+      preview = false,
     },
 
     current_buffer_fuzzy_find = {
