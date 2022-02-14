@@ -56,7 +56,7 @@ nnoremap <silent> <leader>dg <cmd>lua require'telescope.builtin'.lsp_document_di
 " PhpActor
 "
 " General
-nnoremap <silent><leader>pcm :call phpactor#ContextMenu()<cr>
+nnoremap <silent><leader>p :call phpactor#ContextMenu()<cr>
 nnoremap <silent><leader>u :call phpactor#ImportClass()<cr>
 
 " Extraction mappings
