@@ -7,6 +7,7 @@ function s:highlight(group, bg, fg, style)
   exec 'hi ' . a:group . ' ' . bg . ' ' . fg  . ' ' . gui
 endfunction
 
+let s:carbon_Color0 = '#ffffff'
 let s:carbon_Color1 = '#d0d6b5'
 let s:carbon_Color2 = '#5d6976'
 let s:carbon_Color3 = '#db6378'
@@ -24,13 +25,15 @@ let s:carbon_Color14 = '#f2c4b3'
 let s:carbon_Color15 = '#73a7a7'
 let s:carbon_Color16 = '#465063'
 
-call s:highlight('Keyword', '', s:carbon_Color4, 'bold')
+call s:highlight('phpStructure', '', s:carbon_Color3, '')
+call s:highlight('Statement', '', s:carbon_Color3, 'bold')
+call s:highlight('Keyword', '', s:carbon_Color4, '')
 call s:highlight('Operator', '', s:carbon_Color14, '')
 call s:highlight('Type', '', s:carbon_Color12, '')
 call s:highlight('Constant', '', s:carbon_Color14, '')
 call s:highlight('String', '', s:carbon_Color15, '')
 call s:highlight('Function', '', s:carbon_Color9, '')
-call s:highlight('Error', '', s:carbon_Color11, '')
+call s:highlight('Error', s:carbon_Color11, s:carbon_Color0, '')
 call s:highlight('Identifier', '', s:carbon_Color4, '')
 call s:highlight('Comment', '', s:carbon_Color6, '')
 call s:highlight('StatusLine', s:carbon_Color6, s:carbon_Color7, '')
@@ -39,7 +42,12 @@ call s:highlight('PMenu', s:carbon_Color16, s:carbon_Color4, '')
 call s:highlight('LineNr', '', s:carbon_Color16, '')
 call s:highlight('CursorLine', s:carbon_Color16, '', '')
 call s:highlight('ColorColumn', s:carbon_Color16, '', '')
-call s:highlight('SignColumn', s:carbon_Color16, '', '')
+call s:highlight('SignColumn', '', 'none', '')
+call s:highlight('ErrorMsg', s:carbon_Color11, s:carbon_Color0, '')
+call s:highlight('DiffAdd', s:carbon_Color15, s:carbon_Color0, '')
+call s:highlight('DiffChange', s:carbon_Color14, s:carbon_Color16, '')
+call s:highlight('DiffDelete', s:carbon_Color11, s:carbon_Color0, '')
+call s:highlight('DiffText', s:carbon_Color11, s:carbon_Color0, '')
 
 " PHP-specific
 call s:highlight('Todo', '', s:carbon_Color6, 'bold')
@@ -49,56 +57,11 @@ call s:highlight('phpDocParam', '', s:carbon_Color10, 'bold')
 call s:highlight('phpDocIdentifier', '', s:carbon_Color4, 'bold')
 call s:highlight('phpDocNamespaceSeparator', '', s:carbon_Color10, 'bold')
 call s:highlight('phpClasses', '', s:carbon_Color10, '')
-call s:highlight('phpType', '', s:carbon_Color3, '')
-call s:highlight('phpKeyword', '', s:carbon_Color9, '')
-
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
-"call s:highlight('php', '', '', '');
+call s:highlight('phpType', '', s:carbon_Color3, 'bold')
+call s:highlight('phpKeyword', '', s:carbon_Color3, 'bold')
+call s:highlight('phpStructure', '', s:carbon_Color11, 'bold')
+"highlight! link phpMethods Function
+"call s:highlight('phpNumber', '', )
 
 call s:highlight('DiagnosticError', '', s:carbon_Color11, '')
 call s:highlight('DiagnosticWarn', '', s:carbon_Color14, '')
