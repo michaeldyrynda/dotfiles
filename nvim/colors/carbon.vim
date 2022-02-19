@@ -34,6 +34,7 @@ let s:carbon_Color23 = '#43698D' " diff change
 let s:carbon_Color24 = '#DB7090' " diff delete
 
 call s:highlight('Normal', s:carbon_Color10, '', '')
+call s:highlight('Directory', '', s:carbon_Color21, '')
 call s:highlight('Search', s:carbon_Color5, '', '')
 call s:highlight('Ignore', s:carbon_Color10, s:carbon_Color19, 'bold')
 call s:highlight('Todo', s:carbon_Color10, s:carbon_Color19, 'bold')
@@ -58,7 +59,7 @@ call s:highlight('LineNr', s:carbon_Color10, s:carbon_Color11, '')
 call s:highlight('CursorLine', s:carbon_Color16, '', '')
 call s:highlight('CursorLineNr', '', s:carbon_Color15, '')
 call s:highlight('ColorColumn', s:carbon_Color16, '', '')
-call s:highlight('SignColumn', s:carbon_Color10, '', '')
+call s:highlight('SignColumn', s:carbon_Color10, s:carbon_Color21, '')
 call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color20, '')
 call s:highlight('DiagnosticError', '', s:carbon_Color0, '')
 call s:highlight('DiagnosticWarn', '', s:carbon_Color17, '')
