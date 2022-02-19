@@ -148,3 +148,4 @@ highlight! link TSParameterReference TSParameter
 highlight! link TSProperty TSField
 highlight! link TSNumber Number
 highlight! link TSConditional Conditional
+highlight! link IncSearch Search
