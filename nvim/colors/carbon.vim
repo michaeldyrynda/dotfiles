@@ -29,9 +29,9 @@ let s:carbon_Color18 = '#D0D6B5' " html tag attributes
 let s:carbon_Color19 = '#CDD3D3' " html tag attributes
 let s:carbon_Color20 = '#FF4262' " error text
 let s:carbon_Color21 = '#02858E' " links
-let s:carbon_Color22 = '#57A464' " links
-let s:carbon_Color23 = '#43698D' " links
-let s:carbon_Color24 = '#DB7090' " links
+let s:carbon_Color22 = '#57A464' " diff add
+let s:carbon_Color23 = '#43698D' " diff change
+let s:carbon_Color24 = '#DB7090' " diff delete
 
 call s:highlight('Normal', s:carbon_Color10, '', '')
 call s:highlight('Search', s:carbon_Color5, '', '')
@@ -87,13 +87,14 @@ call s:highlight('phpNowDoc', '', s:carbon_Color3, '')
 call s:highlight('phpMemberSelector', '', s:carbon_Color0, '')
 call s:highlight('phpOperator', '', s:carbon_Color0, '')
 call s:highlight('phpMagicConstants', '', s:carbon_Color1, '')
-call s:highlight('phpFunctions', '', s:carbon_Color4, '')
+call s:highlight('phpFunctions', '', s:carbon_Color4, 'bold')
 call s:highlight('phpVarSelector', '', s:carbon_Color2, '')
 call s:highlight('phpInclude', '', s:carbon_Color0, '')
 call s:highlight('phpClasses', '', s:carbon_Color6, '')
 call s:highlight('phpParent', '', s:carbon_Color6, '')
 call s:highlight('phpSpecialChar', '', s:carbon_Color3, '')
 call s:highlight('phpBacktick', s:carbon_Color9, s:carbon_Color8, '')
+call s:highlight('phpException', s:carbon_Color9, s:carbon_Color8, '')
 
 " HTML-specific
 call s:highlight('htmlTag', '', s:carbon_Color7, '')
@@ -104,6 +105,10 @@ call s:highlight('htmlArg', '', s:carbon_Color18, '')
 
 " CSS-specific
 call s:highlight('cssProp', '', s:carbon_Color19, '')
+
+" JSON-specific
+call s:highlight('jsonKeyword', '', s:carbon_Color6, '')
+call s:highlight('jsonBoolean', '', s:carbon_Color0, '')
 
 highlight! link TSString String
 highlight! link Folded Comment
