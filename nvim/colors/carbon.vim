@@ -29,7 +29,12 @@ let s:carbon_Color18 = '#D0D6B5' " html tag attributes
 let s:carbon_Color19 = '#CDD3D3' " html tag attributes
 let s:carbon_Color20 = '#FF4262' " error text
 let s:carbon_Color21 = '#02858E' " links
+let s:carbon_Color22 = '#57A464' " links
+let s:carbon_Color23 = '#43698D' " links
+let s:carbon_Color24 = '#DB7090' " links
 
+call s:highlight('Normal', s:carbon_Color10, '', '')
+call s:highlight('Search', s:carbon_Color5, '', '')
 call s:highlight('Ignore', s:carbon_Color10, s:carbon_Color19, 'bold')
 call s:highlight('Todo', s:carbon_Color10, s:carbon_Color19, 'bold')
 call s:highlight('PreProc', '', s:carbon_Color0, '')
@@ -55,10 +60,10 @@ call s:highlight('CursorLineNr', '', s:carbon_Color15, '')
 call s:highlight('ColorColumn', s:carbon_Color16, '', '')
 call s:highlight('SignColumn', s:carbon_Color10, '', '')
 call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color20, '')
-call s:highlight('DiffAdd', s:carbon_Color8, s:carbon_Color12, '')
-call s:highlight('DiffDelete', s:carbon_Color13, s:carbon_Color20, '')
-call s:highlight('DiffText', s:carbon_Color13, s:carbon_Color20, '')
-call s:highlight('DiffChange', s:carbon_Color14, '', '')
+call s:highlight('DiffAdd', s:carbon_Color10, s:carbon_Color22, 'bold')
+call s:highlight('DiffDelete', s:carbon_Color10, s:carbon_Color24, 'bold')
+call s:highlight('DiffText', s:carbon_Color24, s:carbon_Color13, '')
+call s:highlight('DiffChange', s:carbon_Color10, s:carbon_Color23, 'bold')
 call s:highlight('DiagnosticError', '', s:carbon_Color0, '')
 call s:highlight('DiagnosticWarn', '', s:carbon_Color17, '')
 call s:highlight('WarningMsg', '', s:carbon_Color17, '')
@@ -100,7 +105,6 @@ call s:highlight('htmlArg', '', s:carbon_Color18, '')
 " CSS-specific
 call s:highlight('cssProp', '', s:carbon_Color19, '')
 
-highlight! link Search Visual
 highlight! link TSString String
 highlight! link Folded Comment
 highlight! link TSPunctSpecial TSPunctDelimiter
