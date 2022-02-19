@@ -27,6 +27,8 @@ let s:carbon_Color16 = '#1E2A3E' " caret line background
 let s:carbon_Color17 = '#FFAE8F' " html tags
 let s:carbon_Color18 = '#D0D6B5' " html tag attributes
 let s:carbon_Color19 = '#CDD3D3' " html tag attributes
+let s:carbon_Color20 = '#FF4262' " error text
+let s:carbon_Color21 = '#02858E' " links
 
 call s:highlight('Ignore', s:carbon_Color10, s:carbon_Color19, 'bold')
 call s:highlight('Todo', s:carbon_Color10, s:carbon_Color19, 'bold')
@@ -39,25 +41,34 @@ call s:highlight('Operator', '', s:carbon_Color14, '')
 call s:highlight('Type', '', s:carbon_Color3, '')
 call s:highlight('String', '', s:carbon_Color3, '')
 call s:highlight('Function', '', s:carbon_Color0, '')
-call s:highlight('Error', s:carbon_Color10, s:carbon_Color0, '')
+call s:highlight('Error', '', s:carbon_Color20, '')
 call s:highlight('Identifier', '', s:carbon_Color2, '')
 call s:highlight('Number', '', s:carbon_Color5, '')
 call s:highlight('Comment', '', s:carbon_Color7, '')
 call s:highlight('StatusLine', s:carbon_Color6, s:carbon_Color10, '')
 call s:highlight('WildMenu', s:carbon_Color16, s:carbon_Color7, '')
-call s:highlight('PMenu', s:carbon_Color16, s:carbon_Color4, '')
+call s:highlight('PMenu', s:carbon_Color16, s:carbon_Color6, '')
+call s:highlight('PMenuSel', s:carbon_Color10, s:carbon_Color1, '')
 call s:highlight('LineNr', s:carbon_Color10, s:carbon_Color11, '')
 call s:highlight('CursorLine', s:carbon_Color16, '', '')
 call s:highlight('CursorLineNr', '', s:carbon_Color15, '')
 call s:highlight('ColorColumn', s:carbon_Color16, '', '')
 call s:highlight('SignColumn', s:carbon_Color10, '', '')
-call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color0, '')
-call s:highlight('DiffAdd', s:carbon_Color12, '', '')
-call s:highlight('DiffDelete', s:carbon_Color13, s:carbon_Color6, '')
+call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color20, '')
+call s:highlight('DiffAdd', s:carbon_Color8, s:carbon_Color12, '')
+call s:highlight('DiffDelete', s:carbon_Color13, s:carbon_Color20, '')
+call s:highlight('DiffText', s:carbon_Color13, s:carbon_Color20, '')
 call s:highlight('DiffChange', s:carbon_Color14, '', '')
+call s:highlight('DiagnosticError', '', s:carbon_Color0, '')
+call s:highlight('DiagnosticWarn', '', s:carbon_Color17, '')
+call s:highlight('WarningMsg', '', s:carbon_Color17, '')
+call s:highlight('Title', '', s:carbon_Color2 , '')
+call s:highlight('MoreMsg', '', s:carbon_Color15, '')
+call s:highlight('Question', '', s:carbon_Color15, '')
+call s:highlight('Underlined', '', s:carbon_Color21, '')
+call s:highlight('Underlined', '', s:carbon_Color21, '')
 
 " PHP-specific
-call s:highlight('Conceal', '', s:carbon_Color0, 'bold')
 call s:highlight('phpDocTags', '', s:carbon_Color7, 'bold')
 call s:highlight('phpDocParam', '', s:carbon_Color6, '')
 call s:highlight('phpDocIdentifier', '', s:carbon_Color1, '')
@@ -78,7 +89,6 @@ call s:highlight('phpClasses', '', s:carbon_Color6, '')
 call s:highlight('phpParent', '', s:carbon_Color6, '')
 call s:highlight('phpSpecialChar', '', s:carbon_Color3, '')
 call s:highlight('phpBacktick', s:carbon_Color9, s:carbon_Color8, '')
-call s:highlight('phpBacktick', s:carbon_Color9, s:carbon_Color8, '')
 
 " HTML-specific
 call s:highlight('htmlTag', '', s:carbon_Color7, '')
@@ -89,13 +99,6 @@ call s:highlight('htmlArg', '', s:carbon_Color18, '')
 
 " CSS-specific
 call s:highlight('cssProp', '', s:carbon_Color19, '')
-
-call s:highlight('DiagnosticError', '', s:carbon_Color0, '')
-call s:highlight('DiagnosticWarn', '', s:carbon_Color17, '')
-call s:highlight('WarningMsg', '', s:carbon_Color17, '')
-call s:highlight('Title', '', s:carbon_Color13, '')
-call s:highlight('MoreMsg', '', s:carbon_Color15, '')
-call s:highlight('Question', '', s:carbon_Color15, '')
 
 highlight! link Search Visual
 highlight! link TSString String
@@ -129,5 +132,3 @@ highlight! link TSParameterReference TSParameter
 highlight! link TSProperty TSField
 highlight! link TSNumber Number
 highlight! link TSConditional Conditional
-
-
