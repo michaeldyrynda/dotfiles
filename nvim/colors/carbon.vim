@@ -68,6 +68,8 @@ call s:highlight('Title', '', s:carbon_Color2 , '')
 call s:highlight('MoreMsg', '', s:carbon_Color15, '')
 call s:highlight('Question', '', s:carbon_Color15, '')
 call s:highlight('Underlined', '', s:carbon_Color21, '')
+call s:highlight('VertSplit', s:carbon_Color11, s:carbon_Color10, '')
+call s:highlight('StatusLineNC', s:carbon_Color16, s:carbon_Color16, '')
 
 " Diffs
 call s:highlight('DiffAdd', s:carbon_Color12, '', '')
