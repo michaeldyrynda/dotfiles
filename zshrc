@@ -39,7 +39,23 @@ else
 fi
 
 # User configuration
-export PATH="/opt/homebrew/bin:$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/mysql-client/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:$HOME/node_modules/.bin"
+path=('/opt/homebrew/bin')
+path+=('$HOME/bin')
+path+=('$HOME/.composer/vendor/bin')
+path+=('$HOME/.config/composer/vendor/bin')
+path+=('/usr/local/sbin')
+path+=('/usr/local/bin')
+path+=('/usr/local/opt/mysql-client/bin')
+path+=('/usr/bin')
+path+=('/bin')
+path+=('/usr/sbin')
+path+=('/sbin')
+path+=('/opt/X11/bin')
+path+=('/usr/local/git/bin')
+path+=('/usr/local/MacGPG2/bin')
+path+=('$HOME/node_modules/.bin')
+export PATH
+
 
 if command -v nvim &> /dev/null
 then
