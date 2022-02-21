@@ -107,6 +107,7 @@ call s:highlight('phpStaticClasses', '', s:carbon_Color6, '')
 call s:highlight('phpStructure', '', s:carbon_Color0, '')
 call s:highlight('phpType', '', s:carbon_Color0, '')
 call s:highlight('phpVarSelector', '', s:carbon_Color2, '')
+call s:highlight('phpMethods', '', s:carbon_Color4, 'bold')
 
 " HTML-specific
 call s:highlight('htmlArg', '', s:carbon_Color18, '')
@@ -154,3 +155,4 @@ highlight! link TSTagDelimiter Type
 highlight! link TSType Type
 highlight! link TelescopeNormal Normal
 highlight! link Whitespace Comment
+highlight! link SpecialKey Directory
