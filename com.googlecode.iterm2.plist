@@ -1339,13 +1339,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.65490198135375977</real>
+				<real>0.80392156862745101</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.65490198135375977</real>
+				<real>0.80000000000000004</real>
 				<key>Red Component</key>
-				<real>0.45098039507865906</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1365,13 +1365,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.24313725490196078</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.16470588235294117</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.11764705882352941</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>0</integer>
@@ -1887,19 +1887,6 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.91372543573379517</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.87058824300765991</real>
-				<key>Red Component</key>
-				<real>0.84705895185470581</real>
-			</dict>
-			<key>Selection Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
 				<real>0.80392156862745101</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
@@ -1907,6 +1894,19 @@
 				<real>0.80000000000000004</real>
 				<key>Red Component</key>
 				<real>0.78823529411764703</real>
+			</dict>
+			<key>Selection Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.24313725490196078</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.16470588235294117</real>
+				<key>Red Component</key>
+				<real>0.11764705882352941</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
