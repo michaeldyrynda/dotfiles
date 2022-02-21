@@ -33,43 +33,43 @@ let s:carbon_Color22 = '#57A464' " diff add
 let s:carbon_Color23 = '#43698D' " diff change
 let s:carbon_Color24 = '#DB7090' " diff delete
 
-call s:highlight('Normal', s:carbon_Color10, '', '')
-call s:highlight('Directory', '', s:carbon_Color21, '')
-call s:highlight('Search', s:carbon_Color5, '', '')
-call s:highlight('Ignore', s:carbon_Color10, s:carbon_Color19, 'bold')
-call s:highlight('Todo', s:carbon_Color10, s:carbon_Color19, 'bold')
-call s:highlight('PreProc', '', s:carbon_Color0, '')
-call s:highlight('Visual', s:carbon_Color16, '', '')
-call s:highlight('Special', '', s:carbon_Color2, '')
-call s:highlight('Statement', '', s:carbon_Color17, '')
-call s:highlight('Keyword', '', s:carbon_Color2, '')
-call s:highlight('Operator', '', s:carbon_Color14, '')
-call s:highlight('Type', '', s:carbon_Color3, '')
-call s:highlight('String', '', s:carbon_Color3, '')
-call s:highlight('Function', '', s:carbon_Color0, '')
-call s:highlight('Error', '', s:carbon_Color20, '')
-call s:highlight('Identifier', '', s:carbon_Color2, '')
-call s:highlight('Number', '', s:carbon_Color5, '')
+call s:highlight('ColorColumn', s:carbon_Color16, '', '')
 call s:highlight('Comment', '', s:carbon_Color7, 'italic')
-call s:highlight('StatusLine', s:carbon_Color6, s:carbon_Color10, '')
-call s:highlight('WildMenu', s:carbon_Color16, s:carbon_Color7, '')
-call s:highlight('PMenu', s:carbon_Color16, s:carbon_Color6, '')
-call s:highlight('PMenuSel', s:carbon_Color10, s:carbon_Color1, '')
-call s:highlight('LineNr', s:carbon_Color10, s:carbon_Color11, '')
 call s:highlight('CursorLine', s:carbon_Color16, '', '')
 call s:highlight('CursorLineNr', '', s:carbon_Color15, '')
-call s:highlight('ColorColumn', s:carbon_Color16, '', '')
-call s:highlight('SignColumn', s:carbon_Color10, s:carbon_Color21, '')
-call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color20, '')
 call s:highlight('DiagnosticError', '', s:carbon_Color0, '')
 call s:highlight('DiagnosticWarn', '', s:carbon_Color17, '')
-call s:highlight('WarningMsg', '', s:carbon_Color17, '')
-call s:highlight('Title', '', s:carbon_Color2 , '')
+call s:highlight('Directory', '', s:carbon_Color21, '')
+call s:highlight('Error', '', s:carbon_Color20, '')
+call s:highlight('ErrorMsg', s:carbon_Color10, s:carbon_Color20, '')
+call s:highlight('Function', '', s:carbon_Color0, '')
+call s:highlight('Identifier', '', s:carbon_Color2, '')
+call s:highlight('Ignore', s:carbon_Color10, s:carbon_Color19, 'bold')
+call s:highlight('Keyword', '', s:carbon_Color2, '')
+call s:highlight('LineNr', s:carbon_Color10, s:carbon_Color11, '')
 call s:highlight('MoreMsg', '', s:carbon_Color15, '')
+call s:highlight('Normal', s:carbon_Color10, '', '')
+call s:highlight('Number', '', s:carbon_Color5, '')
+call s:highlight('Operator', '', s:carbon_Color14, '')
+call s:highlight('PMenu', s:carbon_Color16, s:carbon_Color6, '')
+call s:highlight('PMenuSel', s:carbon_Color10, s:carbon_Color1, '')
+call s:highlight('PreProc', '', s:carbon_Color0, '')
 call s:highlight('Question', '', s:carbon_Color15, '')
+call s:highlight('Search', s:carbon_Color5, '', '')
+call s:highlight('SignColumn', s:carbon_Color10, s:carbon_Color21, '')
+call s:highlight('Special', '', s:carbon_Color2, '')
+call s:highlight('Statement', '', s:carbon_Color17, '')
+call s:highlight('StatusLine', s:carbon_Color6, s:carbon_Color10, '')
+call s:highlight('StatusLineNC', s:carbon_Color16, s:carbon_Color16, '')
+call s:highlight('String', '', s:carbon_Color3, '')
+call s:highlight('Title', '', s:carbon_Color2 , '')
+call s:highlight('Todo', s:carbon_Color10, s:carbon_Color19, 'bold')
+call s:highlight('Type', '', s:carbon_Color3, '')
 call s:highlight('Underlined', '', s:carbon_Color21, '')
 call s:highlight('VertSplit', s:carbon_Color11, s:carbon_Color10, '')
-call s:highlight('StatusLineNC', s:carbon_Color16, s:carbon_Color16, '')
+call s:highlight('Visual', s:carbon_Color16, '', '')
+call s:highlight('WarningMsg', '', s:carbon_Color17, '')
+call s:highlight('WildMenu', s:carbon_Color16, s:carbon_Color7, '')
 
 " Diffs
 call s:highlight('DiffAdd', s:carbon_Color12, '', '')
@@ -84,71 +84,73 @@ call s:highlight('SignifySignChange', s:carbon_Color10, s:carbon_Color23, 'bold'
 call s:highlight('DiffText', s:carbon_Color24, s:carbon_Color13, '')
 
 " PHP-specific
-call s:highlight('phpDocTags', '', s:carbon_Color7, 'bold')
-call s:highlight('phpDocParam', '', s:carbon_Color6, '')
+call s:highlight('phpBacktick', s:carbon_Color9, s:carbon_Color8, '')
+call s:highlight('phpClasses', '', s:carbon_Color6, '')
+call s:highlight('phpDefine', '', s:carbon_Color2, '')
 call s:highlight('phpDocIdentifier', '', s:carbon_Color1, '')
 call s:highlight('phpDocNamespaceSeparator', '', s:carbon_Color6, 'bold')
-call s:highlight('phpClasses', '', s:carbon_Color6, '')
-call s:highlight('phpStaticClasses', '', s:carbon_Color6, '')
-call s:highlight('phpType', '', s:carbon_Color0, '')
-call s:highlight('phpKeyword', '', s:carbon_Color0, '')
-call s:highlight('phpHereDoc', '', s:carbon_Color3, '')
-call s:highlight('phpNowDoc', '', s:carbon_Color3, '')
-call s:highlight('phpMemberSelector', '', s:carbon_Color0, '')
-call s:highlight('phpOperator', '', s:carbon_Color0, '')
-call s:highlight('phpMagicConstants', '', s:carbon_Color1, '')
-call s:highlight('phpFunctions', '', s:carbon_Color4, 'bold')
-call s:highlight('phpVarSelector', '', s:carbon_Color2, '')
-call s:highlight('phpInclude', '', s:carbon_Color0, '')
-call s:highlight('phpClasses', '', s:carbon_Color6, '')
-call s:highlight('phpParent', '', s:carbon_Color6, '')
-call s:highlight('phpSpecialChar', '', s:carbon_Color3, '')
-call s:highlight('phpBacktick', s:carbon_Color9, s:carbon_Color8, '')
+call s:highlight('phpDocParam', '', s:carbon_Color6, '')
+call s:highlight('phpDocTags', '', s:carbon_Color7, 'bold')
 call s:highlight('phpException', s:carbon_Color9, s:carbon_Color8, '')
+call s:highlight('phpFunctions', '', s:carbon_Color4, 'bold')
+call s:highlight('phpHereDoc', '', s:carbon_Color3, '')
+call s:highlight('phpIdentifier', '', s:carbon_Color2, '')
+call s:highlight('phpInclude', '', s:carbon_Color0, '')
+call s:highlight('phpKeyword', '', s:carbon_Color0, '')
+call s:highlight('phpMagicConstants', '', s:carbon_Color1, '')
+call s:highlight('phpMemberSelector', '', s:carbon_Color0, '')
+call s:highlight('phpNowDoc', '', s:carbon_Color3, '')
+call s:highlight('phpOperator', '', s:carbon_Color0, '')
+call s:highlight('phpParent', '', s:carbon_Color0, '')
+call s:highlight('phpSpecialChar', '', s:carbon_Color3, '')
+call s:highlight('phpStaticClasses', '', s:carbon_Color6, '')
+call s:highlight('phpStructure', '', s:carbon_Color0, '')
+call s:highlight('phpType', '', s:carbon_Color0, '')
+call s:highlight('phpVarSelector', '', s:carbon_Color2, '')
 
 " HTML-specific
-call s:highlight('htmlTag', '', s:carbon_Color7, '')
-call s:highlight('htmlValue', '', s:carbon_Color3, '')
-call s:highlight('htmlString', '', s:carbon_Color3, '')
-call s:highlight('htmlTagName', '', s:carbon_Color17, '')
 call s:highlight('htmlArg', '', s:carbon_Color18, '')
+call s:highlight('htmlString', '', s:carbon_Color3, '')
+call s:highlight('htmlTag', '', s:carbon_Color7, '')
+call s:highlight('htmlTagName', '', s:carbon_Color17, '')
+call s:highlight('htmlValue', '', s:carbon_Color3, '')
 
 " CSS-specific
 call s:highlight('cssProp', '', s:carbon_Color19, '')
 
 " JSON-specific
-call s:highlight('jsonKeyword', '', s:carbon_Color6, '')
 call s:highlight('jsonBoolean', '', s:carbon_Color0, '')
+call s:highlight('jsonKeyword', '', s:carbon_Color6, '')
 
-highlight! link TSString String
-highlight! link Folded Comment
-highlight! link TSPunctSpecial TSPunctDelimiter
-highlight! link TSParameter Constant
-highlight! link TSConstant Constant
-highlight! link NonText Comment
-highlight! link TSConstBuiltin TSVariableBuiltin
 highlight! link Conditional Operator
-highlight! link Whitespace Comment
-highlight! link TSFunction Function
-highlight! link TSRepeat Repeat
+highlight! link Folded Comment
+highlight! link IncSearch Search
 highlight! link Macro Function
-highlight! link TSTagDelimiter Type
-highlight! link TelescopeNormal Normal
-highlight! link TSTag MyTag
-highlight! link TSNamespace TSType
-highlight! link TSFloat Number
-highlight! link TSField Constant
-highlight! link Repeat Conditional
-highlight! link TSLabel Type
-highlight! link TSPunctBracket MyTag
-highlight! link TSType Type
-highlight! link TSOperator Operator
+highlight! link NonText Comment
 highlight! link Operator Keyword
-highlight! link TSKeyword Keyword
-highlight! link TSFuncMacro Macro
+highlight! link Repeat Conditional
 highlight! link TSComment Comment
+highlight! link TSConditional Conditional
+highlight! link TSConstBuiltin TSVariableBuiltin
+highlight! link TSConstant Constant
+highlight! link TSField Constant
+highlight! link TSFloat Number
+highlight! link TSFuncMacro Macro
+highlight! link TSFunction Function
+highlight! link TSKeyword Keyword
+highlight! link TSLabel Type
+highlight! link TSNamespace TSType
+highlight! link TSNumber Number
+highlight! link TSOperator Operator
+highlight! link TSParameter Constant
 highlight! link TSParameterReference TSParameter
 highlight! link TSProperty TSField
-highlight! link TSNumber Number
-highlight! link TSConditional Conditional
-highlight! link IncSearch Search
+highlight! link TSPunctBracket MyTag
+highlight! link TSPunctSpecial TSPunctDelimiter
+highlight! link TSRepeat Repeat
+highlight! link TSString String
+highlight! link TSTag MyTag
+highlight! link TSTagDelimiter Type
+highlight! link TSType Type
+highlight! link TelescopeNormal Normal
+highlight! link Whitespace Comment
