@@ -1180,13 +1180,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.65490196078431373</real>
+				<real>0.39215686274509803</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.65490196078431373</real>
+				<real>0.64313725490196083</real>
 				<key>Red Component</key>
-				<real>0.45098039215686275</real>
+				<real>0.3411764705882353</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -1867,7 +1867,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNerdFontComplete-Regular 12</string>
+			<string>JetBrainsMonoNerdFontCompleteM-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
