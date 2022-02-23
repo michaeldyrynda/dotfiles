@@ -16,3 +16,8 @@ augroup framework_filetype_settings
     autocmd!
     autocmd BufRead,BufNewFile *.blade.php setlocal commentstring={{--\ %s\ --}} filetype=blade
 augroup END
+
+augroup environment_files
+    autocmd!
+    autocmd BufRead,BufNewFile .env* setlocal filetype=sh
+augroup END
