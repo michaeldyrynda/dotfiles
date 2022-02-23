@@ -8,9 +8,6 @@ Plug 'jesseleite/vim-sourcery'
 " nvim abstraction for tree-sitter (parser generator)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" Nord color scheme
-Plug 'arcticicestudio/nord-vim'
-
 " Syntax analysis and fixing
 Plug 'dense-analysis/ale'
 
