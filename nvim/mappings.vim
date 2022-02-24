@@ -97,6 +97,7 @@ nmap <c-l> <c-w><c-l>
 
 
 " Buffers
+nmap <silent> <leader>bd :bd<cr>
 nmap <silent> <leader>bda :bufdo bd<cr>
 
 "
