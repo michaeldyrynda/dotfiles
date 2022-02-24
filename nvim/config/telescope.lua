@@ -27,10 +27,13 @@ telescope.setup {
     find_files = {
       prompt_title = 'All Files',
       find_command = {'rg', '--files', '--no-ignore', '--hidden'},
-      hidden = true,
-      no_ignore = true,
       theme = 'dropdown',
-      preview = false,
+    },
+
+    git_files = {
+      prompt_title = 'Project Files',
+      find_command = {'rg', '--files'},
+      theme = 'dropdown',
     },
 
     current_buffer_fuzzy_find = {
