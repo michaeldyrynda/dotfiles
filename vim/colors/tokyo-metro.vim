@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/koirand/tokyo-metro.vim/master/colors/tokyo-metro.vim
