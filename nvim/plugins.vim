@@ -54,6 +54,7 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'michaeldyrynda/carbon'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
