@@ -11,6 +11,10 @@ nnoremap <silent> <leader>en :lua require'telescope.builtin'.edit_vim{}<cr>
 nnoremap <silent> <leader>ed :lua require'telescope.builtin'.dotfiles{}<cr>
 nnoremap <leader>ft :FloatermNew<cr>
 
+" Write
+nmap <leader>w :w<cr>
+imap jw <esc>:w<cr>a
+
 "
 " Top mappings via https://www.youtube.com/watch?v=hSHATqh8svM
 "
