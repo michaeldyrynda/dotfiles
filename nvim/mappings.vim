@@ -39,6 +39,8 @@ nmap <c-p> <cmd>Telescope find_files<cr>
 nmap <leader>b <cmd>Telescope buffers<cr>
 nmap <leader>lg <cmd>Telescope live_grep<cr>
 nmap <leader>fb <cmd>Telescope current_buffer_fuzzy_find<cr>
+nmap <leader>fg <cmd>Telescope git_files<cr>
+
 " Git git_worktrees
 nmap <leader>gw <cmd>lua require'telescope'.extensions.git_worktree.git_worktrees()<cr>
 nmap <leader>gcw <cmd>lua require'telescope'.extensions.git_worktree.create_git_worktree()<cr>
