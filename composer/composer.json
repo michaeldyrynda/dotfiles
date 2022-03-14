@@ -1,16 +1,17 @@
 {
   "require": {
-  "beyondcode/expose": "^2.0",
-  "friendsofphp/php-cs-fixer": "^3.0",
-  "laravel/forge-cli": "^1.0",
-  "laravel/installer": "^4.2",
-  "laravel/vapor-cli": "^1.0",
-  "rector/rector": "^0.11",
-  "statamic/cli": "^2.1",
-  "themsaid/ibis": "^0.1",
-  "tightenco/takeout": "^1.8",
-  "laravel/valet": "^2.16",
-  "spatie/github-actions-watcher": "^1.0"
+    "beyondcode/expose": "^2.0",
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "laravel/forge-cli": "^1.0",
+    "laravel/installer": "^4.2",
+    "laravel/valet": "^2.16",
+    "laravel/vapor-cli": "^1.0",
+    "rector/rector": "^0.11",
+    "spatie/github-actions-watcher": "^1.0",
+    "spatie/global-ray": "^1.0",
+    "statamic/cli": "^2.1",
+    "themsaid/ibis": "^0.1",
+    "tightenco/takeout": "^1.8"
   },
   "minimum-statbility": "dev",
   "prefer-stable": true,
