@@ -13,6 +13,7 @@ nnoremap <leader>ft :FloatermNew<cr>
 
 " Write
 nmap <leader>w :w<cr>
+nmap <leader>q :q<cr>
 imap jw <esc>:w<cr>a
 
 "
