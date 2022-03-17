@@ -55,6 +55,7 @@ Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --n
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'michaeldyrynda/carbon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'vim-vdebug/vdebug'
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
