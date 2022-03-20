@@ -7,7 +7,7 @@ alias t='tail -f'
 alias dud='du -d 1 -h'
 
 # Artisan
-alias a='php artisan'
+alias a='artisan'
 alias tinker='php artisan tinker'
 alias serve='php artisan serve'
 alias horizon='php artisan horizon'
