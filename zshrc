@@ -24,10 +24,6 @@ plugins=(
 fpath=($HOME/dotfiles/zsh-completions/completions $fpath)
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 
-# Enable pure-prompt
-autoload -U promptinit; promptinit
-prompt pure
-
 source $ZSH/oh-my-zsh.sh
 if [[ `uname` == 'Darwin' ]]
 then
@@ -70,3 +66,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ensure_tmux_is_running
+
+# Ensure that we aren't using any other prompt
+prompt off
+# Initialise starship prompt for zsh
+eval "$(starship init zsh)"

@@ -11,6 +11,7 @@
     ~/.bashrc: bashrc
     ~/.config/karabiner: karabiner
     ~/.config/nvim: nvim
+    ~/.config/starship.toml: starship.toml
     ~/.composer/composer.json: composer/composer.json
     ~/.ctags: ctags
     ~/.dotfiles: ""
