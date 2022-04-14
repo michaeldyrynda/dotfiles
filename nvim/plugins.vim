@@ -43,7 +43,6 @@ Plug 'vim-test/vim-test'
 Plug 'wakatime/vim-wakatime'
 Plug 'jwalton512/vim-blade'
 Plug 'mhinz/vim-signify'
-Plug 'L3MON4D3/LuaSnip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -58,8 +57,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'vim-vdebug/vdebug'
 
 " Completion
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp', {'commit': 'dbc72290295cfc63075dab9ea635260d2b72f2e5'}
+Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
