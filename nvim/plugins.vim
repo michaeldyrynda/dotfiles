@@ -50,7 +50,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'ThePrimeagen/git-worktree.nvim'
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'michaeldyrynda/carbon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
