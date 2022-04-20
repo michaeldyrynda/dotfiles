@@ -16,7 +16,9 @@ nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 imap jw <esc>:w<cr>a
 
-"
+" Correct bad indenting when pasting
+nnoremap p p=`]
+
 " Top mappings via https://www.youtube.com/watch?v=hSHATqh8svM
 "
 " Make Y behave like C, and D (yank to end of line)
