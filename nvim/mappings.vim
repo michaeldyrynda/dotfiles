@@ -19,8 +19,11 @@ imap jw <esc>:w<cr>a
 " Correct bad indenting when pasting
 nnoremap p p=`]
 
+" Append to ends of line from insert
+imap ;; <esc>A;
+imap ,, <esc>A,
+
 " Top mappings via https://www.youtube.com/watch?v=hSHATqh8svM
-"
 " Make Y behave like C, and D (yank to end of line)
 nnoremap Y y$
 
