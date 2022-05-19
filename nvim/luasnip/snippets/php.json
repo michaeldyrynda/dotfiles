@@ -35,6 +35,11 @@
     ],
     "description": "PHPUnit test method"
   },
+  "test with provider": {
+    "prefix": "testp",
+    "body": ["/**", " * @test", " * @dataProvider $1${2:Provider}", " */"],
+    "description": "Add a test data provider method"
+  },
   "pest test method": {
     "prefix": "pest",
     "body": ["it('$1', function () {", "    //$0", "})${3:->skip()};"],
@@ -44,5 +49,16 @@
     "prefix": "prop",
     "body": ["${1:public} $${2:property} = $0;"],
     "description": "Declare class property"
+  },
+  "dto constructor": {
+    "prefix": "dtoc",
+    "body": [
+      "public function __construct(array $parameters = [])",
+      "{",
+      "    parent::__construct(array_merge($parameters, [",
+      "        ${1}",
+      "    ]));",
+      "}",
+      "description": "Override the spatie/data-transfer-object constuctor"
   }
 }
