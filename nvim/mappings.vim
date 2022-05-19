@@ -54,7 +54,7 @@ nmap <leader>gcw <cmd>lua require'telescope'.extensions.git_worktree.create_git_
 " LSP
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>sr <cmd>lua vim.lsp.buf.rename()<cr>
-nnoremap <silent> <leader>a <cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>
+nnoremap <silent> <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 nnoremap <silent> <leader>gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
 nnoremap <silent> <leader>gv <cmd>lua require'telescope.builtin'.lsp_definitions{jump_type="vsplit"}<cr>
 nnoremap <silent> <leader>gt <cmd>lua require'telescope.builtin'.lsp_type_definitions{}<cr>
