@@ -12,14 +12,12 @@ telescope.setup {
         ["<esc>"] = actions.close,
       },
     },
-    preview = false,
     file_ignore_patterns = { 'node_modules' },
 
     winblend = 10,
 
     layout_config = {
       prompt_position = 'top',
-      width = 0.75
     },
   },
 
@@ -28,12 +26,19 @@ telescope.setup {
       prompt_title = 'All Files',
       find_command = {'rg', '--files', '--no-ignore', '--hidden'},
       theme = 'dropdown',
+      layout_config = {
+        width = 0.5,
+      },
+      previewer = false,
     },
 
     git_files = {
       prompt_title = 'Project Files',
       find_command = {'rg', '--files'},
       theme = 'dropdown',
+      layout_config = {
+        width = 0.5,
+      },
     },
 
     current_buffer_fuzzy_find = {
@@ -64,7 +69,6 @@ builtin.edit_vim = function ()
   builtin.find_files(require('telescope.themes').get_dropdown{
     cwd = "$HOME/.config/nvim",
     prompt_title = "nvim config",
-    previewer = false
   })
 end
 
@@ -72,7 +76,6 @@ builtin.dotfiles = function ()
   builtin.find_files(require('telescope.themes').get_dropdown{
     cwd = "$HOME/dotfiles",
     prompt_title = 'Dotfiles',
-    previewer = false,
   })
 end
 
