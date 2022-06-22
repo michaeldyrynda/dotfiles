@@ -72,5 +72,4 @@ alias ready="git pull --rebase && composer install && npm i && npm run dev"
 if command -v fzf &> /dev/null
 then
     alias preview="fzf --preview 'bat --color \"always\" {}'"
-    alias op="cd ~/code/\$(ls ~/code | fzf) && vim +GFiles"
 fi
