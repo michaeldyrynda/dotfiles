@@ -11,7 +11,7 @@
     "spatie/global-ray": "^1.0",
     "statamic/cli": "^2.1",
     "themsaid/ibis": "^0.1",
-    "tightenco/takeout": "^2.0"
+    "tightenco/takeout": "^1.0"
   },
   "minimum-statbility": "dev",
   "prefer-stable": true,
