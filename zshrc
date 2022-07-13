@@ -67,7 +67,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ensure_tmux_is_running
 
-# Ensure that we aren't using any other prompt
-prompt off
+ulimit -n 10000
+
 # Initialise starship prompt for zsh
 eval "$(starship init zsh)"
