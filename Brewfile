@@ -37,6 +37,7 @@ brew 'php'
 brew 'dnsmasq'
 brew 'btop'
 brew 'starship'
+brew 'difftastic'
 
 # Cask
 cask 'firefox'

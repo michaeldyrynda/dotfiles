@@ -1,7 +1,6 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env nvim
-    pager = delta
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
@@ -32,19 +31,12 @@
     forget="! git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
     forgetlist="! git fetch -p && git branch -vv | awk '/: gone]/{print $1}'"
 [diff]
-    tool = vimdiff
+    external = difft
+    tool = difftastic
 [difftool]
     prompt = false
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    syntax-theme = "Nord"
-    features = decorations
-    whitespace-error-style = 22 reverse
-[delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
+[difftool "difftastic"]
+    cmd = difft --background dark --color always --tab-width 4 "$LOCAL" "$REMOTE"
 [color]
     ui = true
 [commit]
@@ -58,4 +50,6 @@
 [credential]
     helper = cache
 [remote "origin"]
-	prune = true
+    prune = true
+[pager]
+    difftool = true
