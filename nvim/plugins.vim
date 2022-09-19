@@ -7,6 +7,7 @@ Plug 'jesseleite/vim-sourcery'
 
 " nvim abstraction for tree-sitter (parser generator)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 " Syntax analysis and fixing
 Plug 'dense-analysis/ale'
@@ -21,9 +22,6 @@ Plug 'nvim-lua/popup.nvim'
 
 " Telescope itself
 Plug 'nvim-telescope/telescope.nvim'
-
-" nvim abstraction for tree-sitter (parser generator)
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Improve behaviour of built-in netrw
 Plug 'tpope/vim-vinegar'
