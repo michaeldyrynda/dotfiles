@@ -80,6 +80,7 @@ xnoremap <silent> <leader>em :<C-U>call phpactor#ExtractMethod(visualmode())<cr>
 
 " Class mappings
 nnoremap <silent> <leader>cm :call phpactor#MoveFile()<cr>
+nnoremap <silent> <leader>cn :call phpactor#ClassNew()<cr>
 
 " Miscellaneous
 nnoremap <silent> <leader><space> :nohlsearch<cr>
