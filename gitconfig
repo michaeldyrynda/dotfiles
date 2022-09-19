@@ -36,7 +36,7 @@
 [difftool]
     prompt = false
 [difftool "difftastic"]
-    cmd = difft --background dark --color always --tab-width 4 "$LOCAL" "$REMOTE"
+    cmd = difft --skip-unchanged --background dark --color always --tab-width 4 "$LOCAL" "$REMOTE"
 [color]
     ui = true
 [commit]
