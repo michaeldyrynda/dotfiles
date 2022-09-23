@@ -1245,13 +1245,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.46274509803921571</real>
+				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.41176470588235292</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.36470588235294116</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -1310,7 +1310,7 @@
 				<real>0.26274508237838745</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<true/>
+			<false/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
