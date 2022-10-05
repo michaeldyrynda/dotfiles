@@ -37,6 +37,7 @@ brew 'btop'
 brew 'starship'
 brew 'difftastic'
 brew 'jq'
+brew 'iperf3'
 
 # Cask
 cask 'firefox'
