@@ -26,6 +26,7 @@ set updatetime=300
 set lazyredraw
 set scrolloff=8
 set wildmode=longest:full,full
+set mouse=
 
 " Persistent undo
 let &undodir=sourcery#system_vimfiles_path('undo')
