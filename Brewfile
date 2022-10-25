@@ -38,6 +38,7 @@ brew 'starship'
 brew 'difftastic'
 brew 'jq'
 brew 'iperf3'
+brew 'pwgen'
 
 # Cask
 cask 'firefox'
