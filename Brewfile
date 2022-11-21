@@ -39,6 +39,7 @@ brew 'difftastic'
 brew 'jq'
 brew 'iperf3'
 brew 'pwgen'
+brew 'delta'
 
 # Cask
 cask 'firefox'
