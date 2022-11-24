@@ -73,3 +73,5 @@
       command: "brew services start yabai"
     - description: Clear sudo credential cache
       command: "sudo --reset-timestamp"
+    - description: Install gh-cli dash extension
+      command: "gh extension install dlvhdr/gh-dash"
