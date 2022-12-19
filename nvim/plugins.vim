@@ -52,6 +52,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'michaeldyrynda/carbon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'vim-vdebug/vdebug'
+Plug 'arcticicestudio/nord-vim'
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
