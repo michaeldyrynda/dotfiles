@@ -53,7 +53,10 @@ telescope.setup {
         i = {
           ["<c-d>"] = "delete_buffer",
         }
-      }
+      },
+      layout_config = {
+        width = 0.75,
+      },
     }
   },
 
