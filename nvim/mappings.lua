@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>ft', ':FloatermNew<cr>')
 --
 vim.keymap.set('n', '<leader>w', ':w<cr>')      -- write current buffer
 vim.keymap.set('n', '<leader>wa', ':wa<cr>')    -- write all buffers
+vim.keymap.set('n', '<leader>x', ':x<cr>')      -- write and close
 vim.keymap.set('n', '<leader>q', ':q<cr>')      -- exit vim
 vim.keymap.set('i', 'jw', '<esc>:w<cr>a')       -- write the current buffer from insert mode
 
