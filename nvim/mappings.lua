@@ -30,10 +30,10 @@ vim.keymap.set('i', 'jw', '<esc>:w<cr>a')       -- write the current buffer from
 -- 
 -- Navigation
 --
-vim.keymap.set('v', 'J', ':m >+1<cr>gv=gv')
-vim.keymap.set('v', 'K', ':m <-2<cr>gv=gv')
-vim.keymap.set('i', '<C-j>', ':m .+1<cr>==')
-vim.keymap.set('i', '<C-k>', ':m .-2<cr>==')
+vim.keymap.set('v', 'J', ':m +1<cr>gv=gv')
+vim.keymap.set('v', 'K', ':m -2<cr>gv=gv')
+vim.keymap.set('i', '<C-j>', '<esc>:m .+1<cr>==gi')
+vim.keymap.set('i', '<C-k>', '<esc>:m .-2<cr>==gi')
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==')
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==')
 
