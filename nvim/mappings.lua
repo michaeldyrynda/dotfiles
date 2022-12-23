@@ -26,7 +26,6 @@ vim.keymap.set('n', '<leader>x', ':x<cr>')      -- write and close
 vim.keymap.set('n', '<leader>q', ':q<cr>')      -- exit vim
 vim.keymap.set('i', 'jw', '<esc>:w<cr>a')       -- write the current buffer from insert mode
 
-
 -- 
 -- Navigation
 --
@@ -119,6 +118,7 @@ vim.keymap.set('n', 'Y', 'y$')                                  -- Make Y behave
 vim.keymap.set('n', 'n', 'nzzzv')                               -- Keep search results centred (forwards)...
 vim.keymap.set('n', 'N', 'Nzzzv')                               -- ...and backwards
 vim.keymap.set('n', 'J', 'mzJ`z')                               -- Keep cursor in place when joining lines (rather than jumping to end)
+vim.keymap.set('v', 'y', 'myy`y')                               -- Keep cursor in place when yanking in visual mode
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<cr>')       -- Stop search highlighting
 vim.keymap.set('n', '<leader>v', ':vsplit<cr>')                 -- Vertical split
 vim.keymap.set('n', '<leader>h', ':hsplit<cr>')                 -- Horizontal split
