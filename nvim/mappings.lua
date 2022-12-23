@@ -119,6 +119,7 @@ vim.keymap.set('n', 'n', 'nzzzv')                               -- Keep search r
 vim.keymap.set('n', 'N', 'Nzzzv')                               -- ...and backwards
 vim.keymap.set('n', 'J', 'mzJ`z')                               -- Keep cursor in place when joining lines (rather than jumping to end)
 vim.keymap.set('v', 'y', 'myy`y')                               -- Keep cursor in place when yanking in visual mode
+vim.keymap.set('v', 'p', '"_dP')                                -- Replace visual selection without copying it
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<cr>')       -- Stop search highlighting
 vim.keymap.set('n', '<leader>v', ':vsplit<cr>')                 -- Vertical split
 vim.keymap.set('n', '<leader>h', ':hsplit<cr>')                 -- Horizontal split
