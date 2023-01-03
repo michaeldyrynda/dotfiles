@@ -1,6 +1,6 @@
 vim.o.colorcolumn = "120"
 vim.o.completeopt = menu,menueone,noselect
-vim.o.mouse = ''
+vim.o.mouse = ""
 vim.o.scrolloff = 8
 vim.o.shiftwidth = 4
 vim.o.signcolumn = "yes:2"
