@@ -1,4 +1,4 @@
-vim.o.colorcolumn = 120
+vim.o.colorcolumn = "120"
 vim.o.completeopt = menu,menueone,noselect
 vim.o.mouse = ''
 vim.o.scrolloff = 8
