@@ -20,6 +20,8 @@ telescope.setup {
         prompt_prefix = '   ',
         selection_caret = '  ',
 
+        file_ignore_patterns = { 'node_modules', '_ide_helper' },
+
         layout_config = {
             prompt_position = 'top',
         },
@@ -31,7 +33,6 @@ telescope.setup {
                 ["<esc>"] = actions.close,
             },
         },
-        file_ignore_patterns = { 'node_modules' },
 
         winblend = 10,
     },
