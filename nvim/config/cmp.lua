@@ -59,8 +59,9 @@ cmp.setup({
 
     sources = {
         { name = 'gh_issues', priority = 1050 },
-        { name = 'luasnip', priority = 1025 },
-        { name = 'nvim_lsp', priority = 1000 },
+        { name = 'nvim_lsp', priority = 1025 },
+        { name = 'nvim_lsp_signature_help', priority = 1000 },
+        { name = 'luasnip', priority = 950 },
         { name = 'path', priority = 750 },
         { name = 'buffer', priority = 500 },
     }
