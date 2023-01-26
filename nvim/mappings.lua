@@ -68,7 +68,7 @@ vim.keymap.set('n', '<leader>sr', '<cmd>lua vim.lsp.buf.rename()<cr>', { silent 
 vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', { silent = true })
 vim.keymap.set('n', '<leader>gd', "<cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gv', "<cmd>lua require'telescope.builtin'.lsp_definitions{ jump_type = 'vsplit' }<cr>", { silent = true })
-vim.keymap.set('n', '<leader>gd', "<cmd>lua require'telescope.builtin'.lsp_type_definitions{}<cr>", { silent = true })
+vim.keymap.set('n', '<leader>gt', "<cmd>lua require'telescope.builtin'.lsp_type_definitions{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gi', "<cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>fr', "<cmd>lua require'telescope.builtin'.lsp_references{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>f', "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>", { silent = true })
