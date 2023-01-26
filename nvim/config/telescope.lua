@@ -5,8 +5,27 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 
+vim.cmd([[
+  highlight link TelescopePromptTitle PMenuSel
+  highlight link TelescopePreviewTitle PMenuSel
+  highlight link TelescopePromptNormal NormalFloat
+  highlight link TelescopePromptBorder FloatBorder
+  highlight link TelescopeNormal CursorLine
+  highlight link TelescopeBorder CursorLineBg
+]])
+
 telescope.setup {
   defaults = {
+    path_display = { truncate = 1 },
+    prompt_prefix = '   ',
+    selection_caret = '  ',
+
+    layout_config = {
+      prompt_position = 'top',
+    },
+
+    sorting_strategy = 'ascending',
+
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -23,13 +42,12 @@ telescope.setup {
 
   pickers = {
     find_files = {
+      previewer = false,
       prompt_title = 'All Files',
       find_command = {'rg', '--files', '--no-ignore', '--hidden'},
-      theme = 'dropdown',
+      sorting_strategy = 'ascending',
       layout_config = {
         width = 0.5,
-      },
-      previewer = false,
     },
 
     git_files = {
@@ -43,19 +61,22 @@ telescope.setup {
 
     current_buffer_fuzzy_find = {
       prompt_title = 'Current buffer',
-      sorting_strategy = 'descending'
     },
 
     buffers = {
-      sort_lastused = true,
-      theme = 'dropdown',
+      previewer = false,
       mappings = {
         i = {
           ["<c-d>"] = "delete_buffer",
         }
       },
       layout_config = {
-        width = 0.75,
+        width = 80,
+      },
+
+
+      oldfiles = {
+        prompt_title = 'History',
       },
     }
   },
