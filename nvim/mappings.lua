@@ -123,6 +123,6 @@ vim.keymap.set('v', 'y', 'myy`y')                               -- Keep cursor i
 vim.keymap.set('v', 'p', '"_dP')                                -- Replace visual selection without copying it
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<cr>')       -- Stop search highlighting
 vim.keymap.set('n', '<leader>v', ':vsplit<cr>')                 -- Vertical split
-vim.keymap.set('n', '<leader>h', ':hsplit<cr>')                 -- Horizontal split
+vim.keymap.set('n', '<leader>h', ':split<cr>')                  -- Horizontal split
 vim.keymap.set('n', '<leader>-', ':wincmd _<cr>:wincmd |<cr>')  -- Focus active split
 vim.keymap.set('n', '<leader>=', ':wincmd =<cr>')               -- Balance open splits
