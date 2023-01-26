@@ -15,7 +15,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 vim.keymap.set('n', '<leader>ev', ':tabnew ~/.config/nvim/init.vim<cr>', { silent = true })
 vim.keymap.set('n', '<leader>en', ":lua require'telescope.builtin'.edit_vim{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>ed', ":lua require'telescope.builtin'.dotfiles{}<cr>", { silent = true })
-vim.keymap.set('n', '<leader>ft', ':FloatermNew<cr>')
+vim.keymap.set('n', '<leader>ft', ':FloatermToggle scratch<cr>')
+vim.keymap.set('t', '<leader>ft', '<C-\\><C-n>:FloatermToggle scratch<CR>')
 
 --
 -- Buffers
