@@ -66,7 +66,6 @@ Plug 'famiu/bufdelete.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/bufferline.nvim'
-Plug 'kyazdani42/nvim-tree.lua'
 Plug 'karb94/neoscroll.nvim'
 Plug 'weilbith/nvim-code-action-menu'
 
