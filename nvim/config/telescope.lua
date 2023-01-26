@@ -15,76 +15,71 @@ vim.cmd([[
 ]])
 
 telescope.setup {
-  defaults = {
-    path_display = { truncate = 1 },
-    prompt_prefix = '   ',
-    selection_caret = '  ',
+    defaults = {
+        path_display = { truncate = 1 },
+        prompt_prefix = '   ',
+        selection_caret = '  ',
 
-    layout_config = {
-      prompt_position = 'top',
+        layout_config = {
+            prompt_position = 'top',
+        },
+
+        sorting_strategy = 'ascending',
+
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
+        file_ignore_patterns = { 'node_modules' },
+
+        winblend = 10,
     },
 
-    sorting_strategy = 'ascending',
+    pickers = {
+        find_files = {
+            previewer = false,
+            prompt_title = 'All Files',
+            find_command = {'rg', '--files', '--no-ignore', '--hidden'},
+            sorting_strategy = 'ascending',
+            layout_config = {
+                width = 0.5,
+            },
+        },
 
-    mappings = {
-      i = {
-        ["<esc>"] = actions.close,
-      },
+        git_files = {
+            prompt_title = 'Project Files',
+            find_command = {'rg', '--files'},
+            previewer = false,
+            layout_config = {
+                width = 0.5,
+            },
+        },
+
+        current_buffer_fuzzy_find = {
+            prompt_title = 'Current buffer',
+        },
+
+        buffers = {
+            previewer = false,
+            mappings = {
+                i = {
+                    ["<c-d>"] = "delete_buffer",
+                }
+            },
+            layout_config = {
+                width = 80,
+            },
+        },
+
+        oldfiles = {
+            prompt_title = 'History',
+        },
     },
-    file_ignore_patterns = { 'node_modules' },
 
-    winblend = 10,
-
-    layout_config = {
-      prompt_position = 'top',
-    },
-  },
-}
-
-  pickers = {
-    find_files = {
-      previewer = false,
-      prompt_title = 'All Files',
-      find_command = {'rg', '--files', '--no-ignore', '--hidden'},
-      sorting_strategy = 'ascending',
-      layout_config = {
-        width = 0.5,
-    },
-
-    git_files = {
-      prompt_title = 'Project Files',
-      find_command = {'rg', '--files'},
-      theme = 'dropdown',
-      layout_config = {
-        width = 0.5,
-      },
-    },
-
-    current_buffer_fuzzy_find = {
-      prompt_title = 'Current buffer',
-    },
-
-    buffers = {
-      previewer = false,
-      mappings = {
-        i = {
-          ["<c-d>"] = "delete_buffer",
-        }
-      },
-      layout_config = {
-        width = 80,
-      },
-
-
-      oldfiles = {
-        prompt_title = 'History',
-      },
+    extensions = {
+        fzf = { }
     }
-  },
-
-  extensions = {
-    fzf = { }
-  }
 }
 
 --
