@@ -74,7 +74,7 @@ vim.keymap.set('n', '<leader>fr', "<cmd>lua require'telescope.builtin'.lsp_refer
 vim.keymap.set('n', '<leader>f', "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>fm', "<cmd>lua require'telescope.builtin'.lsp_document_symbols{ symbols = 'method' }<cr>", { silent = true })
 vim.keymap.set('n', '<leader>r', "<cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>", { silent = true })
-vim.keymap.set('n', '<leader>dg', ':Telescope diagnostics bufnr=0<cr>', { silent = true })
+vim.keymap.set('n', '<leader>dg', '<cmd>lua vim.diagnostic.open_float()<cr>', { silent = true })
 
 --
 -- PhpActor
