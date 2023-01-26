@@ -58,6 +58,7 @@ alias uf="unit --filter"
 alias phpunit="unit"
 alias hr="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
 alias please="sudo !!"
+alias vim="nvim"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
