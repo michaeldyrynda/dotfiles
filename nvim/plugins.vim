@@ -13,7 +13,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'dense-analysis/ale'
 
 " Quickstart config for the nvim LSP client
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig' | Plug 'b0o/schemastore.nvim' | Plug 'folke/lsp-colors.nvim'
 
 " Telescope
 " Telescope dependencies
@@ -53,12 +53,33 @@ Plug 'michaeldyrynda/carbon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'vim-vdebug/vdebug'
 Plug 'arcticicestudio/nord-vim'
+Plug 'airblade/vim-rooter'
+Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch' " Adds :Rename, :SudoWrite
+Plug 'tpope/vim-sleuth' " Indent autodetection with editorconfig support
+Plug 'jessarcher/vim-heritage' 
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'sickill/vim-pasta'
+Plug 'famiu/bufdelete.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'akinsho/bufferline.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'karb94/neoscroll.nvim'
+Plug 'weilbith/nvim-code-action-menu'
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'jessarcher/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'windwp/nvim-autopairs'
+Plug 'onsails/lspkind-nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
