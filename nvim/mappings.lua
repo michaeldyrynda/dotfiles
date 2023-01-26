@@ -48,7 +48,7 @@ vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
 -- 
 -- Buffers
 --
-vim.keymap.set('n', '<leader>bd', ':bd<cr>')        -- Destroy current buffer
+vim.keymap.set('n', '<leader>bd', ':Bdelete<cr>')   -- Destroy current buffer
 vim.keymap.set('n', '<leader>bda', ':bufdo bd<cr>') -- Destroy all buffers
 
 --
