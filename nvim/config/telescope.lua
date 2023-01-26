@@ -39,6 +39,7 @@ telescope.setup {
       prompt_position = 'top',
     },
   },
+}
 
   pickers = {
     find_files = {
