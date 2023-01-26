@@ -58,7 +58,7 @@ vim.keymap.set('n', '<c-p>', '<cmd>Telescope git_files<cr>')
 vim.keymap.set('n', '<c-p><c-p>', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>lg', '<cmd>Telescope live_grep<cr>')
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope current_buffer_fuzzy_finder<cr>')
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
 -- 
 -- LSP
