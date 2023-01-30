@@ -8,6 +8,7 @@ Plug 'jesseleite/vim-sourcery'
 " nvim abstraction for tree-sitter (parser generator)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Syntax analysis and fixing
 Plug 'dense-analysis/ale'
