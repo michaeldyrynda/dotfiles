@@ -9,6 +9,7 @@ Plug 'jesseleite/vim-sourcery'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/playground'
 
 " Syntax analysis and fixing
 Plug 'dense-analysis/ale'
