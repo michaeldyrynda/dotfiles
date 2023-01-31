@@ -53,7 +53,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'michaeldyrynda/carbon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'vim-vdebug/vdebug'
-Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-rooter'
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-commentary'
@@ -69,6 +68,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'weilbith/nvim-code-action-menu'
+
+" Themes
+Plug 'shaunsingh/nord.nvim' " This is optimised for tree-sitter and written in Lua
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
