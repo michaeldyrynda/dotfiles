@@ -53,3 +53,5 @@
     prune = true
 [pager]
     difftool = true
+[rerere]
+	enabled = true
