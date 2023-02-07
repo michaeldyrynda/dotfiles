@@ -29,3 +29,8 @@ vim.o.termguicolors = true
 vim.o.title = true
 vim.o.undofile = true
 vim.o.wrap = false
+
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = false,
+})
