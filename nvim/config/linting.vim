@@ -61,5 +61,8 @@ let g:ale_lint_on_text_changed = 0
 " Use the local PHPStan binary instead of the global binary
 let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
 
+" Use the local Psalm binary instead of the global binary
+let g:ale_php_psalm_executable = 'vendor/bin/psalm'
+
 " Use this as a marker in the sidebar when an linting error is found
 let g:ale_sign_error = '👀'
