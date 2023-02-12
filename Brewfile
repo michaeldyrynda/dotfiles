@@ -1,4 +1,4 @@
-# Taps
+#  Taps
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'koekeishiya/formulae' 		# yabai
@@ -29,7 +29,8 @@ brew 'watch'
 brew 'legit'
 brew 'pure'
 brew 'stripe'
-brew 'node@16' # Need v16 for intelephense to work
+brew 'node' # Need v16 for intelephense to work
+brew 'npm'
 brew 'nginx'
 brew 'php'
 brew 'dnsmasq'
@@ -57,3 +58,4 @@ cask 'invoker'
 cask 'docker'
 cask 'phpmon'
 cask '1password/tap/1password-cli'
+cask 'insomnia'
