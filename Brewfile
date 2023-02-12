@@ -41,6 +41,7 @@ brew 'jq'
 brew 'iperf3'
 brew 'pwgen'
 brew 'delta'
+brew 'rclone'
 
 # Cask
 cask 'firefox'
