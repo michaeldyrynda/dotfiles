@@ -7,6 +7,14 @@
 
 - clean: ["~"]
 
+- create:
+    - ~/.composer 
+    - ~/.config
+    - ~/intelephense
+    - ~/code
+    - ~/.vim/undo-history
+ 
+
 - link:
     ~/.bashrc: bashrc
     ~/.config/karabiner: karabiner
@@ -27,10 +35,6 @@
     ~/.zshrc: zshrc
     ~/bin: bin
 
-- create:
-    - ~/intelephense
-    - ~/code
-    - ~/.vim/undo-history
 
 - shell:
     - description: Install submodules
@@ -38,7 +42,12 @@
     - description: Hush login
       command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
     - description: Install Brew
-      command: "[ -x \"$(which brew)\" ] || arch -x86_64 /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+      command: "[ -x \"$(which brew)\" ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+      stdin: true
+      stdout: true
+      stderr: true
+    - description: Add brew to path
+      command: PATH=~"$(brew --prefix):$PATH"
     - description: Update Brew
       command: "brew update"
     - description: Install Brew bundler
@@ -55,8 +64,6 @@
       command: "sudo composer/install.sh"
     - description: Preparing pure-prompt
       command: "mkdir $HOME/dotfiles/pure"
-    - description: Installing oh-my-zsh
-      command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
