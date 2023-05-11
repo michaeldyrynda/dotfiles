@@ -42,6 +42,8 @@ brew 'iperf3'
 brew 'pwgen'
 brew 'delta'
 brew 'rclone'
+brew 'tree'
+brew 'git-fresh'
 
 # PHP
 brew 'shivammathur/php/php@8.0'
@@ -65,3 +67,4 @@ cask 'docker'
 cask 'phpmon'
 cask '1password/tap/1password-cli'
 cask 'insomnia'
+cask 'wkhtmltopdf'
