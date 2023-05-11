@@ -18,10 +18,10 @@ require('bufferline').setup({
   },
   highlights = {
     fill = {
-      bg = { attribute = 'bg', highlight = 'StatusLine' },
+      bg = { attribute = 'bg', highlight = 'StatusLineNonText' },
     },
     background = {
-      bg = { attribute = 'bg', highlight = 'StatusLine' },
+      bg = { attribute = 'bg', highlight = 'StatusLineNonText' },
     },
     tab = {
       bg = { attribute = 'bg', highlight = 'StatusLine' },

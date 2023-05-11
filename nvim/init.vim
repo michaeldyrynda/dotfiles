@@ -9,6 +9,6 @@ call plug#begin()
     source ~/.config/nvim/plugins.vim
 call plug#end()
 
-colorscheme tokyonight
-
 call sourcery#init()
+
+colorscheme tokyonight
