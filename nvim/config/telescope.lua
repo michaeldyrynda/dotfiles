@@ -35,6 +35,16 @@ telescope.setup {
         },
 
         winblend = 10,
+
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+        }
     },
 
     pickers = {
@@ -75,6 +85,10 @@ telescope.setup {
 
         oldfiles = {
             prompt_title = 'History',
+        },
+
+        live_grep = {
+            previewer = false,
         },
     },
 
