@@ -30,9 +30,6 @@ vim.o.title = true
 vim.o.undofile = true
 vim.o.wrap = false
 
-vim.ui.select = require"popui.ui-overrider"
-vim.ui.input = require"popui.input-overrider"
-
 vim.diagnostic.config({
     virtual_text = false,
     signs = false,
