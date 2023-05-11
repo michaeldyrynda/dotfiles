@@ -65,12 +65,12 @@ vim.keymap.set('n', '<leader>fb', '<cmd>Telescope current_buffer_fuzzy_find<cr>'
 --
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { silent = true })
 vim.keymap.set('n', '<leader>sr', '<cmd>lua vim.lsp.buf.rename()<cr>', { silent = true })
-vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', { silent = true })
-vim.keymap.set('n', '<leader>gd', "<cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>", { silent = true })
+vim.keymap.set('n', '<leader>a', ':CodeActionMenu<cr>', { silent = true })
+vim.keymap.set('n', '<leader>gd', "<cmd>lua vim.lsp.buf.definition()<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gv', "<cmd>lua require'telescope.builtin'.lsp_definitions{ jump_type = 'vsplit' }<cr>", { silent = true })
-vim.keymap.set('n', '<leader>gt', "<cmd>lua require'telescope.builtin'.lsp_type_definitions{}<cr>", { silent = true })
-vim.keymap.set('n', '<leader>gi', "<cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>", { silent = true })
-vim.keymap.set('n', '<leader>fr', "<cmd>lua require'telescope.builtin'.lsp_references{}<cr>", { silent = true })
+vim.keymap.set('n', '<leader>gt', "<cmd>lua vim.lsp.buf.type_definition()<cr>", { silent = true })
+vim.keymap.set('n', '<leader>gi', "<cmd>lua vim.lsp.buf.implementation()<cr>", { silent = true })
+vim.keymap.set('n', '<leader>fr', ":Telescope lsp_references<CR>", { silent = true })
 vim.keymap.set('n', '<leader>f', "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>", { silent = true })
 vim.keymap.set('n', '<leader>fm', "<cmd>lua require'telescope.builtin'.lsp_document_symbols{ symbols = 'method' }<cr>", { silent = true })
 vim.keymap.set('n', '<leader>r', "<cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>", { silent = true })
@@ -102,6 +102,11 @@ vim.keymap.set('n', '<leader>tv', ':w<cr>:TestVisit<cr>', { silent = true })
 vim.keymap.set('n', '<leader>lm', ':!php artisan make:')
 vim.keymap.set('n', '<leader>rw', ':vsp routes/web.php<cr>')
 vim.keymap.set('n', '<leader>ra', ':vsp routes/api.php<cr>')
+
+--
+-- Trouble
+--
+vim.keymap.set('n', '<leader>tt', ':TroubleToggle<cr>')
 
 --
 -- Plugins
