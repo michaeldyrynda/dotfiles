@@ -44,7 +44,7 @@ call FallbackToCustomLocalOrPsr12PhpCsFixerConfig()
 " -----------------------------------------------------------------------------
 
 " Use the following linters, in this order, when any are available
-autocmd linting FileType php let b:ale_linters = ['psalm', 'php', 'phpstan']
+autocmd linting FileType php let b:ale_linters = ['phpstan', 'psalm', 'php']
 
 " Only look for a binary once
 let g:ale_cache_executable_check_failures = 1
