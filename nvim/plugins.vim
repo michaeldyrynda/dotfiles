@@ -68,9 +68,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'weilbith/nvim-code-action-menu'
-
-" Themes
-Plug 'shaunsingh/nord.nvim' " This is optimised for tree-sitter and written in Lua
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
