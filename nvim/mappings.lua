@@ -84,8 +84,9 @@ vim.keymap.set('n', '<leader>u', ':call phpactor#ImportClass()<cr>', { silent = 
 vim.keymap.set('n', '<leader>ec', ':call phpactor#ExtractConstant()<cr>', { silent = true })                        -- Extract a constant
 vim.keymap.set('x', '<leader>ee', ':<c-u>call phpactor#ExtractExpression(visualmode())<cr>', { silent = true })     -- Extract an expression (variable)
 vim.keymap.set('x', '<leader>em', ':<c-u>call phpactor#ExtractMethod(visualmode())<cr>', { silent = true })         -- Extract a method
-vim.keymap.set('n', '<leader>cm', ':call phpactor#MoveFile()<cr>', { silent = true })                               -- Move a file
-vim.keymap.set('n', '<leader>cn', ':call phpactor#ClassNew()<cr>', { silent = true })                               -- Create a new class
+vim.keymap.set('n', '<leader>mf', ':PhpactorMoveFile<cr>')                                                          -- Move a file
+vim.keymap.set('n', '<leader>nc', ':PhpactorClassNew<cr>')                                                          -- Create a new class
+vim.keymap.set('n', '<leader>fu', ':PhpactorFindReferences<cr>')                                                    -- Find class references
 
 --
 -- vim-test
