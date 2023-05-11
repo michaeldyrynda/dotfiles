@@ -1,5 +1,5 @@
 vim.o.colorcolumn = "120"
-vim.o.completeopt = menu,menueone,noselect
+vim.o.completeopt = menuone,longest,preview
 vim.o.mouse = ""
 vim.o.scrolloff = 8
 vim.o.shiftwidth = 4
@@ -29,6 +29,9 @@ vim.o.termguicolors = true
 vim.o.title = true
 vim.o.undofile = true
 vim.o.wrap = false
+
+vim.ui.select = require"popui.ui-overrider"
+vim.ui.input = require"popui.input-overrider"
 
 vim.diagnostic.config({
     virtual_text = false,

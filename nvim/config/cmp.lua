@@ -1,5 +1,6 @@
 local cmp = require('cmp') 
 local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -7,8 +8,14 @@ local has_words_before = function()
 end
 
 cmp.setup({
-    experimental = {
-        ghost_text = true,
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = {
+                nvim_lsp = '[LSP]',
+                buffer = '[BUF]',
+            },
+        }),
     },
 
     mapping = cmp.mapping.preset.insert({
@@ -17,14 +24,14 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<C-y>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
         }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
+            if luasnip.jumpable(1) then
+                luasnip.jump(1)
+            elseif cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else
@@ -33,10 +40,10 @@ cmp.setup({
         end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
+            if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
+            elseif cmp.visible() then
+                cmp.select_prev_item()
             else
                 fallback()
             end
@@ -47,9 +54,6 @@ cmp.setup({
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
     },
-
-    min_length = 1;
-    preselect = true;
 
     snippet = {
         expand = function (args)

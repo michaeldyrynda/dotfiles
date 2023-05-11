@@ -19,11 +19,28 @@ vim.diagnostic.config({
     }
 })
 
+lspconfig.bashls.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.emmet_ls.setup({
+  capabilities = capabilities,
+})
+
 lspconfig.intelephense.setup({ 
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end,
     capabilities = capabilities,
 })
 
 lspconfig.vuels.setup {
+    capabilities = capabilities,
+}
+
+lspconfig.sqlls.setup {
     capabilities = capabilities,
 }
 

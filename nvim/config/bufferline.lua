@@ -1,21 +1,13 @@
 require('bufferline').setup({
   options = {
     indicator = {
-      icon = ' ',
+        style = 'none'
     },
     show_close_icon = false,
+    buffer_close_icon = "",
     tab_size = 0,
     max_name_length = 25,
-    offsets = {
-      {
-        filetype = 'NvimTree',
-        text = '  Files',
-        highlight = 'StatusLine',
-        text_align = 'left',
-      },
-    },
-    separator_style = 'slant',
-    modified_icon = '',
+    separator_style = 'slope',
     custom_areas = {
       left = function()
         return {
