@@ -60,5 +60,16 @@
       "    ]));",
       "}",
       "description": "Override the spatie/data-transfer-object constuctor"
+  },
+  "strict php": {
+    "prefix": "strict",
+    "body": [
+      "<?php",
+      "",
+      "declare(strict_types=1);",
+      "",
+      "${0}"
+    ],
+    "description": "Start a strict file"
   }
 }
