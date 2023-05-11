@@ -69,6 +69,8 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'weilbith/nvim-code-action-menu'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'onsails/lspkind-nvim'
+Plug 'folke/trouble.nvim'
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
