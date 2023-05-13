@@ -61,14 +61,7 @@ require('tokyonight').setup({
         hl.CopilotSuggestion = {
             fg = c.comment,
         }
-
-        -- NvimTree
-        hl.NvimTreeIndentMarker = {
-            fg = c.bg_highlight,
-        }
-        hl.NvimTreeOpenedFile = {
-            fg = c.fg,
-            bold = true
-        }
     end,
 })
+
+vim.cmd('colorscheme tokyonight')
