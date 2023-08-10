@@ -1,5 +1,12 @@
 {
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://bellows.composer.sh"
+    }
+  ],
   "require": {
+    "bellows-app/cli": "^0.6.0",
     "beyondcode/expose": "^2.5",
     "friendsofphp/php-cs-fixer": "^3.14.4",
     "laravel/envoy": "^2.8.6",
