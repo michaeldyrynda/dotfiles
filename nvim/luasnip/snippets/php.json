@@ -71,5 +71,10 @@
       "${0}"
     ],
     "description": "Start a strict file"
+  },
+  "strict declaration": {
+    "prefix": "dst",
+    "body": ["declare(strict_types=1);"],
+    "description": "Add strict type declaration"
   }
 }

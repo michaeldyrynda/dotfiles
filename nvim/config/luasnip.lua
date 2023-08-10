@@ -12,4 +12,5 @@ ls.add_snippets('php', {
   ls.parser.parse_snippet('prof', 'protected function $1($2): $3\n{\n    $0\n}'),
   ls.parser.parse_snippet('testt', 'public function test_$1()\n{\n    $0\n}'),
   ls.parser.parse_snippet('testa', '/** @test */\npublic function $1()\n{\n    $0\n}'),
+  ls.parser.parse_snippet('strict', '<?php\n\ndeclare(strict_types=1);\n\n namespace $1;\n\n$0'),
 })
