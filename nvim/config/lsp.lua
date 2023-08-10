@@ -27,6 +27,13 @@ lspconfig.intelephense.setup({
         client.server_capabilities.documentRangeFormattingProvider = false
     end,
     capabilities = capabilities,
+    settings = {
+        intelephense = {
+            diagnostics = {
+                enable = true
+            }
+        }
+    }
 })
 
 lspconfig.vuels.setup {
