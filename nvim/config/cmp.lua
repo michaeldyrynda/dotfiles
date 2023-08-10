@@ -1,6 +1,8 @@
 local cmp = require('cmp') 
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
+local compare = require('cmp.config.compare')
+
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -16,6 +18,16 @@ cmp.setup({
                 buffer = '[BUF]',
             },
         }),
+    },
+
+    sorting = {
+        comparators = {
+            cmp.config.compare.score,
+            cmp.config.compare.locality,
+            cmp.config.compare.order,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.offset,
+        }
     },
 
     mapping = cmp.mapping.preset.insert({
@@ -62,12 +74,12 @@ cmp.setup({
     },
 
     sources = {
-        { name = 'gh_issues', priority = 1050 },
-        { name = 'nvim_lsp', priority = 1025 },
-        { name = 'nvim_lsp_signature_help', priority = 1000 },
-        { name = 'luasnip', priority = 950 },
-        { name = 'path', priority = 750 },
-        { name = 'buffer', priority = 500 },
+        { name = 'gh_issues', priority = 60 },
+        { name = 'nvim_lsp', priority = 50 },
+        { name = 'nvim_lsp_signature_help', priority = 40 },
+        { name = 'luasnip', priority = 30 },
+        { name = 'path', priority = 20 },
+        { name = 'buffer', priority = 10 },
     }
 })
 
