@@ -73,6 +73,8 @@ alias sshkey="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Copied to clipboard.'"
 
 alias ready="git pull --rebase && composer install && npm i && npm run dev"
 
+alias vimdiff="nvim -d"
+
 if command -v fzf &> /dev/null
 then
     alias preview="fzf --preview 'bat --color \"always\" {}'"
