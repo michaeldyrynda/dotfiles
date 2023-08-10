@@ -44,6 +44,8 @@ brew 'delta'
 brew 'rclone'
 brew 'tree'
 brew 'git-fresh'
+brew 's3cmd'
+brew 'sshuttle'
 
 # PHP
 brew 'shivammathur/php/php@8.0'
