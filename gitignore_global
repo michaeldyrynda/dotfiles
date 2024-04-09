@@ -26,3 +26,4 @@ storage/debugbar
 .env.testing
 .phpunit.result.cache
 supervisord*
+.phpactor.json

@@ -36,6 +36,10 @@ lspconfig.intelephense.setup({
     }
 })
 
+lspconfig.phpactor.setup {
+    capabilities = capabilities,
+}
+
 lspconfig.vuels.setup {
     capabilities = capabilities,
 }
