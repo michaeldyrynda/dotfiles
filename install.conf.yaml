@@ -54,31 +54,23 @@
       command: "brew tap homebrew/bundle"
     - description: Install Brewfile bundle
       command: "brew bundle"
-    - description: Install pipfile
-      command: "pip3 install -r pipfile"
     - description: Install vim-plug
       command: "[ -f ~/.config/neovim/autoload/plug.vim ] || curl -fLo ~/.config/neovim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     - description: Install neovim plugins
       command: "nvim +PlugInstall +qa"
     - description: Installing and updating Composer
       command: "sudo composer/install.sh"
-    - description: Preparing pure-prompt
-      command: "mkdir $HOME/dotfiles/pure"
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
     - description: Install npm globals
       command: "npm i -g intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server vls prettier git-trim bash-language-server emmet-ls"
-    - description: Install Valet
-      command: "sudo valet install && sudo valet trust && valet park ~/code"
     - description: Setup intelephense
       command: "[ -f ~/intelephense/licence.txt ] || echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
       stdin: true
     - description: Set macOS defaults
       command: shell/macos/defaults.sh
-    - description: Enable services
-      command: "brew services start yabai"
     - description: Clear sudo credential cache
       command: "sudo --reset-timestamp"
     - description: Install gh-cli dash extension
