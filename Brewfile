@@ -4,7 +4,6 @@ tap 'koekeishiya/formulae' 		# yabai
 tap 'jesseduffield/lazygit' 	# lazygit
 tap 'stripe/stripe-cli' 		  # stripe-cli
 tap 'nicoverbruggen/homebrew-cask'
-tap 'shivammathur/php'
 
 # Brew
 brew 'ffmpeg'
@@ -29,10 +28,6 @@ brew 'watch'
 brew 'legit'
 brew 'pure'
 brew 'stripe'
-brew 'node' # Need v16 for intelephense to work
-brew 'npm'
-brew 'nginx'
-brew 'dnsmasq'
 brew 'btop'
 brew 'starship'
 brew 'difftastic'
@@ -45,11 +40,6 @@ brew 'tree'
 brew 'git-fresh'
 brew 's3cmd'
 brew 'sshuttle'
-
-# PHP
-brew 'shivammathur/php/php@8.0'
-brew 'shivammathur/php/php@8.1'
-brew 'shivammathur/php/php@8.2'
 
 # Cask
 cask 'firefox'
