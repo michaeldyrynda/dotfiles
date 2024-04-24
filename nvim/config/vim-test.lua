@@ -14,6 +14,5 @@ vim.cmd([[
       execute 'FloatermNew! --autoclose=2 --name=scratch '.a:cmd.' |less -X'
   endfunction
   
-  let g:test#custom_strategies = {'floaterm': function('FloatermStrategy')}
-  let g:test#strategy = 'floaterm'
+  let g:test#strategy = 'vimux'
 ]])
