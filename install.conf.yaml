@@ -77,3 +77,11 @@
       command: "gh extension install dlvhdr/gh-dash"
     - description: Install Kitty
       command: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
+    - description: Install fzf-git
+      command: git clone https://github.com/junegunn/fzf-git.sh.git ~/.local/fzf-git
+    - description: Create bat theme dir
+      command: mkdir -p "$(bat --config-dir)/themes"
+    - description: Install Tokyo Night theme
+      command: git clone https://github.com/folke/tokyonight.nvim.git ~/.local/tokyonight.nvim
+    - description: Configure Tokyo Night for bat
+      command: cd "$(bat --config-dir)/themes" && ln -sfn ~/.local/tokyonight.nvim/extras/sublime/tokyonight_night.tmTheme && bat cache --build
