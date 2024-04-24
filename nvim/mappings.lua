@@ -132,3 +132,9 @@ vim.keymap.set('n', '<leader>v', ':vsplit<cr>')                 -- Vertical spli
 vim.keymap.set('n', '<leader>h', ':split<cr>')                  -- Horizontal split
 vim.keymap.set('n', '<leader>-', ':wincmd _<cr>:wincmd |<cr>')  -- Focus active split
 vim.keymap.set('n', '<leader>=', ':wincmd =<cr>')               -- Balance open splits
+
+--
+-- Git
+--
+vim.keymap.set('n', '<leader>gb', ':Git blame<cr>');
+vim.keymap.set('i', '<leader>gb', ':Git blame<cr>');
