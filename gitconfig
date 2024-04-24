@@ -2,6 +2,8 @@
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env nvim
     pager = delta
+[include]
+    path = ~/.local/tokyonight.nvim/extras/delta/tokyonight_night.gitconfig
 [interactive]
     diffFilter = delta --color-only
 [user]
@@ -53,6 +55,7 @@
 [delta]
     navigate = true
     side-by-side = true
+    features = tokyonight_night
 [merge]
     conflictstyle = diff3
 
