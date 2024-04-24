@@ -4,6 +4,7 @@ tap 'koekeishiya/formulae' 		# yabai
 tap 'jesseduffield/lazygit' 	# lazygit
 tap 'stripe/stripe-cli' 		  # stripe-cli
 tap 'nicoverbruggen/homebrew-cask'
+tap 'homebrew/cask-fonts'
 
 # Brew
 brew 'ffmpeg'
