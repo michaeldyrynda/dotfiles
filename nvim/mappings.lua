@@ -138,3 +138,39 @@ vim.keymap.set('n', '<leader>=', ':wincmd =<cr>')               -- Balance open 
 --
 vim.keymap.set('n', '<leader>gb', ':Git blame<cr>');
 vim.keymap.set('i', '<leader>gb', ':Git blame<cr>');
+
+hidden_all = false
+
+local function hide_all_chrome()
+  if not hidden_all then
+    hidden_all = true
+    vim.o.number = false
+    vim.o.ruler = false
+    vim.o.relativenumber = false
+    vim.o.showtabline = 0
+    vim.o.laststatus = 0
+    vim.o.signcolumn = "yes:1"
+    vim.o.colorcolumn = "0"
+    vim.o.cursorline = false
+
+    require('gitsigns').detach()
+    require('treesitter-context').disable()
+    require('ibl').update {enabled = false}
+  else
+    hidden_all = false
+    vim.o.number = true
+    vim.o.ruler = true
+    vim.o.relativenumber = true
+    vim.o.showtabline = 2
+    vim.o.laststatus = 3
+    vim.o.signcolumn = "yes:2"
+    vim.o.colorcolumn = "120"
+    vim.o.cursorline = true
+
+    require('gitsigns').attach()
+    require('treesitter-context').enable()
+    require('ibl').update {enabled = true}
+  end
+end
+
+vim.keymap.set('n', '<leader>ha', hide_all_chrome, {noremap = true})
