@@ -1,6 +1,9 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
@@ -15,7 +18,6 @@
 [alias]
     bn = "!git rev-parse --abbrev-ref HEAD"
     rbm = "!git rebase -i `git merge-base master $(git branch-name)`"
-    d = difftool
     last-tag = describe --abbrev=0 --tags
     switch = !legit switch
     sync = !legit sync
@@ -31,13 +33,7 @@
     forget="! git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
     forgetlist="! git fetch -p && git branch -vv | awk '/: gone]/{print $1}'"
 [diff]
-    external = difft
-    tool = difftastic
-	colorMoved = zebra
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft --skip-unchanged --background dark --color always --tab-width 4 "$LOCAL" "$REMOTE"
+	colorMoved = default
 [color]
     ui = true
 [commit]
@@ -52,7 +48,11 @@
     helper = cache
 [remote "origin"]
     prune = true
-[pager]
-    difftool = true
 [rerere]
 	enabled = true
+[delta]
+    navigate = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
+
