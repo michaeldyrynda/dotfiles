@@ -1,5 +1,4 @@
 #  Taps
-tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'koekeishiya/formulae' 		# yabai
 tap 'jesseduffield/lazygit' 	# lazygit
