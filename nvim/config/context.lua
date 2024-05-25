@@ -1,3 +1,3 @@
 require'treesitter-context'.setup{
-  enable = true
+  enable = false
 }
