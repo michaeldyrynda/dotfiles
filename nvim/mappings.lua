@@ -65,7 +65,7 @@ vim.keymap.set('n', '<leader>fb', '<cmd>Telescope current_buffer_fuzzy_find<cr>'
 --
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { silent = true })
 vim.keymap.set('n', '<leader>sr', '<cmd>lua vim.lsp.buf.rename()<cr>', { silent = true })
-vim.keymap.set('n', '<leader>a', ':CodeActionMenu<cr>', { silent = true })
+vim.keymap.set('n', '<leader>a', ':FzfLua lsp_code_actions<cr>', { silent = true })
 vim.keymap.set('n', '<leader>gd', "<cmd>lua vim.lsp.buf.definition()<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gv', "<cmd>lua require'telescope.builtin'.lsp_definitions{ jump_type = 'vsplit' }<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gt', "<cmd>lua vim.lsp.buf.type_definition()<cr>", { silent = true })

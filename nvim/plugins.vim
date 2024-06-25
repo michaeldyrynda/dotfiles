@@ -64,11 +64,11 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
-Plug 'weilbith/nvim-code-action-menu'
 Plug 'johmsalas/text-case.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'onsails/lspkind-nvim'
 Plug 'folke/trouble.nvim'
+Plug 'ibhagwan/fzf-lua'
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
