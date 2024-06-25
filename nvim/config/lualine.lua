@@ -30,7 +30,7 @@ require('lualine').setup({
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
     },
     lualine_c = {
-      'filename'
+        {'filename', show_filename_only = false},
     },
      lualine_x = {
       'encoding',
