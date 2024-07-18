@@ -44,6 +44,8 @@ brew 'pv'
 brew 'fd'
 brew 'git-delta'
 brew 'eza'
+brew 'awscli'
+brew 'kubernetes-cli'
 
 # Cask
 cask 'firefox'
@@ -62,3 +64,4 @@ cask '1password/tap/1password-cli'
 cask 'wkhtmltopdf'
 cask 'amethyst'
 cask 'httpie'
+cask 'github'
