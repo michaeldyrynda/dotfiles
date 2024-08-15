@@ -48,7 +48,6 @@ brew 'awscli'
 brew 'kubernetes-cli'
 
 # Cask
-cask 'firefox'
 cask 'karabiner-elements'
 cask 'slack'
 cask 'telegram'
