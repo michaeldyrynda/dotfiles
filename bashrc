@@ -16,3 +16,5 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /Users/michael/.docker/init-bash.sh || true # Added by Docker Desktop
