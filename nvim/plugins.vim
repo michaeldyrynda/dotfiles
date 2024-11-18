@@ -69,6 +69,10 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'onsails/lspkind-nvim'
 Plug 'folke/trouble.nvim'
 Plug 'ibhagwan/fzf-lua'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-telescope/telescope-dap.nvim'
 
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
