@@ -46,6 +46,7 @@ brew 'git-delta'
 brew 'eza'
 brew 'awscli'
 brew 'kubernetes-cli'
+brew 'bottom'
 
 # Cask
 cask 'karabiner-elements'
@@ -65,3 +66,4 @@ cask 'amethyst'
 cask 'httpie'
 cask 'github'
 cask 'font-monaspace'
+cask 'nikitabobko/tap/aerospace'

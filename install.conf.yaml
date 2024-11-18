@@ -34,6 +34,7 @@
     ~/.yabairc: yabairc
     ~/.zshrc: zshrc
     ~/bin: bin
+    ~/.config/aerospace: aerospace
 
 
 - shell:
