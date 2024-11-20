@@ -189,6 +189,10 @@ run = 'layout floating'
 
 # Space M (Mail)
 [[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = ['layout floating', 'move-node-to-workspace M']
 
