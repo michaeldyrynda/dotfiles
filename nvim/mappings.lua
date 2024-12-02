@@ -138,6 +138,7 @@ vim.keymap.set('n', '<leader>=', ':wincmd =<cr>')               -- Balance open 
 --
 vim.keymap.set('n', '<leader>gb', ':Git blame<cr>');
 vim.keymap.set('i', '<leader>gb', ':Git blame<cr>');
+vim.keymap.set('n', '<leader>gco', ':Git checkout %<cr>:e %<cr>');
 
 hidden_all = false
 
