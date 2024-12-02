@@ -166,6 +166,7 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# Floating apps
 [[on-window-detected]]
 if.app-id = 'com.replay.sleeve'
 run = 'layout floating'
@@ -178,14 +179,17 @@ run = 'layout floating'
 if.app-id = 'com.1password.1password'
 run = 'layout floating'
 
+# Space M (Mail)
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = ['layout floating', 'move-node-to-workspace M']
 
+# Space B (Browser)
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace B'
 
+# Space T (Terminal)
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace T'
@@ -193,3 +197,21 @@ run = 'move-node-to-workspace T'
 [[on-window-detected]]
 if.app-id = 'de.beyondco.herd'
 run = 'move-node-to-workspace T'
+
+# Space 3
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus-setapp'
+run = 'move-node-to-workspace 3'
+
+# Space 4
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'ru.keepcoder.Telegram'
+run = 'move-node-to-workspace 4'
