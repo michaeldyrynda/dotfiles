@@ -4,7 +4,6 @@ tap 'koekeishiya/formulae' 		# yabai
 tap 'jesseduffield/lazygit' 	# lazygit
 tap 'stripe/stripe-cli' 		  # stripe-cli
 tap 'nicoverbruggen/homebrew-cask'
-tap 'homebrew/cask-fonts'
 
 # Brew
 brew 'ffmpeg'
@@ -18,7 +17,7 @@ brew 'python@3.9'
 brew 'sqlite'
 brew 'tmux'
 brew 'neovim'
-brew 'youtube-dl'
+brew 'yt-dlp'
 brew 'zsh-autosuggestions'
 brew 'lazygit'
 brew 'trash'
