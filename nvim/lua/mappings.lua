@@ -36,6 +36,7 @@ vim.keymap.set('i', '<C-j>', '<esc>:m .+1<cr>==gi')
 vim.keymap.set('i', '<C-k>', '<esc>:m .-2<cr>==gi')
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==')
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==')
+vim.keymap.set('n', '-', '<cmd>Oil<cr>')
 
 --
 -- Splits
