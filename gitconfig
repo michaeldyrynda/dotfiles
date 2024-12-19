@@ -9,7 +9,7 @@
 [user]
     name = Michael Dyrynda
     email = michael@dyrynda.com.au
-    signingkey = 6C7291F4FF64187A3312A765DB6707E977DAA4D4
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKOZfwW2FucmcK1oxCyDg+wIzx7mPqh3LM2zjLNy4bkv
 [push]
     default = current
 [filter "lfs"]
@@ -45,7 +45,8 @@
 [init]
     defaultBranch = main
 [gpg]
-    program = /usr/local/MacGPG2/bin/gpg
+	program = /usr/local/bin/gpg
+	format = ssh
 [credential]
     helper = cache
 [remote "origin"]
@@ -59,3 +60,5 @@
 [merge]
     conflictstyle = diff3
 
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
