@@ -1,8 +1,7 @@
 #  Taps
 tap 'homebrew/bundle'
-tap 'koekeishiya/formulae' 		# yabai
-tap 'jesseduffield/lazygit' 	# lazygit
-tap 'stripe/stripe-cli' 		  # stripe-cli
+tap 'jesseduffield/lazygit' 	      # lazygit
+tap 'stripe/stripe-cli' 		      # stripe-cli
 tap 'nicoverbruggen/homebrew-cask'
 
 # Brew
@@ -23,7 +22,6 @@ brew 'lazygit'
 brew 'trash'
 brew 'bat'
 brew 'rg'
-brew 'yabai'
 brew 'watch'
 brew 'legit'
 brew 'pure'
@@ -31,7 +29,6 @@ brew 'stripe'
 brew 'btop'
 brew 'starship'
 brew 'jq'
-brew 'iperf3'
 brew 'pwgen'
 brew 'delta'
 brew 'rclone'
