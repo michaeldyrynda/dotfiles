@@ -1,0 +1,16 @@
+font-family = Berkeley Mono
+font-size = 13
+theme = tokyonight
+cursor-style = bar
+cursor-style-blink = false
+background-opacity = 0.9
+background-blur = 20
+scrollback-limit = 10_000
+title = " "
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+window-decoration = false
+clipboard-trim-trailing-spaces = true
+copy-on-select = true
+macos-option-as-alt = true
