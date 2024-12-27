@@ -63,8 +63,6 @@
       command: "[ -f ~/.config/neovim/autoload/plug.vim ] || curl -fLo ~/.config/neovim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     - description: Install neovim plugins
       command: "nvim +PlugInstall +qa"
-    - description: Installing and updating Composer
-      command: "sudo composer/install.sh"
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
