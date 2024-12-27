@@ -51,6 +51,8 @@
       command: PATH=~"$(brew --prefix):$PATH"
     - description: Install oh-my-zsh
       command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+    - description: Source shell
+      command: source ~/.zshrc
     - description: Update Brew
       command: "brew update"
     - description: Install Brew bundler
