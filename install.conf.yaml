@@ -49,6 +49,8 @@
       stderr: true
     - description: Add brew to path
       command: PATH=~"$(brew --prefix):$PATH"
+    - description: Install oh-my-zsh
+      command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
     - description: Update Brew
       command: "brew update"
     - description: Install Brew bundler
