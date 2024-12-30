@@ -1,7 +1,7 @@
 font-family = TX-02
 font-size = 13
 theme = tokyonight
-adjust-cell-height = 20
+adjust-cell-height = 35
 cursor-style = bar
 cursor-style-blink = false
 background-opacity = 0.9
