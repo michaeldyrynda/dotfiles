@@ -32,12 +32,20 @@ return {
                     symbols = { added = ' ', modified = ' ', removed = ' ' },
                 },
                 function ()
-                    return '󰅭 ' .. vim.pesc(tostring(#vim.tbl_keys(vim.lsp.buf_get_clients())) or '')
+                    return '󰅭 ' .. vim.pesc(tostring(#vim.tbl_keys(vim.lsp.get_clients())) or '')
                 end,
                 { 'diagnostics', sources = { 'nvim_diagnostic' } },
             },
             lualine_c = {
-                {'filename', show_filename_only = false},
+                {
+                    'buffers',
+                    show_filename_only = false,
+                    mode = 0,
+                    buffers_color = {
+                        active = 'Delimiter',
+                        inactive = 'Comment',
+                    }
+                }
             },
             lualine_x = {
                 {
