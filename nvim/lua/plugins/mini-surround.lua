@@ -1,3 +1,0 @@
-return {
-    'echasnovski/mini.surround',
-}
