@@ -1,18 +1,12 @@
 {
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://bellows.composer.sh"
-    }
-  ],
   "require": {
-    "bellows-app/cli": "^0.6.0",
+    "bellows-app/cli": "^0.7",
     "beyondcode/expose": "^2.5",
     "crescat-io/saloon-sdk-generator": "^1.0",
     "friendsofphp/php-cs-fixer": "^3.14.4",
     "laravel/envoy": "^2.8.6",
     "laravel/forge-cli": "^1.8",
-    "laravel/installer": "^5.1",
+    "laravel/installer": "^5.6",
     "laravel/pint": "^1.13",
     "laravel/valet": "^4.5",
     "rector/rector": "^0.18",
