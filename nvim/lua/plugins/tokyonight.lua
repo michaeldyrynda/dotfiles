@@ -7,7 +7,6 @@ return {
 
   opts = { -- test
     on_colors = function (colors)
-      local util = require('tokyonight.util')
       colors.gitSigns = {
         add = colors.teal,
         change = colors.purple,
@@ -19,64 +18,12 @@ return {
       local util = require('tokyonight.util')
       local prompt = "#2d3149"
 
-      hl.BufferlineInactive = {
-        bg = c.bg_dark,
-      }
-
-      hl.BufferlineActiveSeparator = {
-        bg = c.bg,
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
-      }
-
-      hl.BufferlineInactiveSeparator = {
-        bg = c.bg_dark,
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
-      }
-
-      hl.NeoTreeFileNameOpened = {
-        fg = c.orange,
+      hl.ColorColumn = {
+        bg = c.fg_gutter,
       }
 
       hl.GitSignsCurrentLineBlame = {
         fg = c.fg_gutter,
-      }
-
-      -- Tabs
-      hl.TabActive = {
-        bg = c.bg,
-      }
-
-      hl.TabActiveSeparator = {
-        bg = c.bg,
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
-      }
-
-      hl.TabInactive = {
-        bg = c.bg_dark,
-      }
-
-      hl.TabInactiveSeparator = {
-        bg = c.bg_dark,
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
-      }
-
-      hl.SidebarTabActive = {
-        bg = c.bg_dark,
-      }
-
-      hl.SidebarTabActiveSeparator = {
-        bg = c.bg_dark,
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
-      }
-
-      hl.SidebarTabInactive = {
-        bg = util.darken(c.bg_dark, 0.75, '#000000'),
-        fg = c.comment,
-      }
-
-      hl.SidebarTabInactiveSeparator = {
-        bg = util.darken(c.bg_dark, 0.75, '#000000'),
-        fg = util.darken(c.bg_dark, 0.85, '#000000'),
       }
 
       hl.StatusLine = {
@@ -119,40 +66,34 @@ return {
 
       hl.TelescopeBorder = {
         bg = c.bg_dark,
-        fg = c.bg_dark,
+        fg = prompt,
       }
 
       hl.TelescopePromptNormal = {
-        bg = prompt,
+        bg = c.bg_dark,
+        fg = c.fg_dark,
       }
 
       hl.TelescopePromptBorder = {
-        bg = prompt,
+        bg = c.bg_dark,
         fg = prompt,
       }
 
       hl.TelescopePromptTitle = {
-        bg = c.bg,
-        fg = c.fg_dark,
+        fg = c.git.change,
       }
 
       hl.TelescopePreviewTitle = {
-        bg = c.bg_dark,
-        fg = c.bg_dark,
+        fg = c.git.change,
       }
 
       hl.TelescopeResultsTitle = {
-        bg = c.bg_dark,
-        fg = c.bg_dark,
+        fg = c.git.change,
       }
 
       -- Indent
       hl.IblIndent = {
-        fg = util.darken(c.bg_highlight, 0.30),
-      }
-
-      hl.IblScope = {
-        fg = util.darken(c.bg_highlight, 0.80),
+        fg = c.bg_dark,
       }
 
       -- Floaterm
@@ -161,13 +102,8 @@ return {
       }
 
       hl.FloatermBorder = {
-        bg = prompt,
-        fg = prompt,
-      }
-
-      -- NvimTree
-      hl.NvimTreeIndentMarker = {
-        fg = c.bg_highlight,
+        bg = c.bg,
+        fg = c.bg,
       }
     end,
   },
