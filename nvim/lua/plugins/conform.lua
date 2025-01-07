@@ -5,14 +5,14 @@ return {
 
   opts = {
     formatters_by_ft = {
-      php = {'pint'},
-      json = {'jq', 'pint'},
-      lua = {'lua-format'},
+      php = { 'pint' },
+      json = { 'jq', 'pint' },
+      lua = { 'lua-format' },
     },
 
     format_on_save = {
       lsp_fallback = false,
-      timeout_ms = 500,
+      timeout_ms = 2500,
     },
   },
 }
