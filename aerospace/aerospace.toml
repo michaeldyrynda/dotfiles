@@ -206,7 +206,6 @@ run = 'move-node-to-workspace B'
 if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace T'
 
-# Space T (Terminal)
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace T'
