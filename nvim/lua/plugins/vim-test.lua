@@ -9,20 +9,11 @@ return {
     { '<Leader>tv', ':silent TestVisit<CR>' },
   },
 
-  dependencies = { 'voldikss/vim-floaterm' },
+  dependencies = { 'preservim/vimux' },
 
   config = function()
     vim.cmd([[
-      function! PhpUnitTransform(cmd) abort
-        return join(map(split(a:cmd), 'v:val == "--colors" ? "--colors=always" : v:val'))
-      endfunction
-
-      let g:test#custom_transformations = {'phpunit': function('PhpUnitTransform')}
-      let g:test#transformation = 'phpunit'
-
-      let test#php#pest#options = '-v'
-
-      let g:test#strategy = 'vimus'
+      let g:test#strategy = 'vimux'
     ]])
   end
 }
