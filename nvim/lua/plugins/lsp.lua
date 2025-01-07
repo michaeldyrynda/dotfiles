@@ -38,11 +38,27 @@ return {
                 },
             },
 
+            settings = {
+                intelephense = {
+                    files = {
+                        maxSize = 5000000
+                    }
+                }
+            },
+
             capabilities = capabilities
         })
 
         require('lspconfig').phpactor.setup({
             capabilities = capabilities,
+
+            settings = {
+                phpactor = {
+                    files = {
+                        maxSize = 5000000
+                    }
+                }
+            },
 
             on_attach = function(client, bufnr)
                 client.server_capabilities.completionProvider = false
