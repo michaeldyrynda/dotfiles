@@ -55,7 +55,6 @@ return {
                 },
             },
             lualine_y = {
-                'filetype',
                 'encoding',
                 'fileformat',
                 '(vim.bo.expandtab and "␠ " or "⇥ ") .. vim.bo.shiftwidth',
