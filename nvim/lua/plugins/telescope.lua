@@ -46,7 +46,6 @@ return {
         "--smart-case",
       },
     }) end },
-    { '<leader>h', function() require('telescope.builtin').help_tags() end },
     { '<leader>fb', function() require('telescope.builtin').lsp_document_symbols() end },
   },
 
