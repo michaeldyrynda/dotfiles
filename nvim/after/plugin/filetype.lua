@@ -38,3 +38,11 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
     vim.bo.filetype = 'blade'
   end,
 })
+
+vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
+  pattern = { '.env*' },
+  group = force_filetype,
+  callback = function ()
+    vim.bo.filetype = 'sh'
+  end,
+})
