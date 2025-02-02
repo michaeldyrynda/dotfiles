@@ -95,6 +95,11 @@ return {
         },
         buffers = {
           previewer = false,
+          mappings = {
+            i = {
+              ["<c-d>"] = "delete_buffer",
+            }
+          },
           layout_config = {
             width = 80,
           },
