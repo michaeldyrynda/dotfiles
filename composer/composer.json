@@ -1,7 +1,7 @@
 {
   "require": {
-    "bellows-app/cli": "^0.7",
     "beyondcode/expose": "^2.5",
+    "cpx/cpx": "^1.0",
     "crescat-io/saloon-sdk-generator": "^1.0",
     "friendsofphp/php-cs-fixer": "^3.14.4",
     "laravel/envoy": "^2.8.6",
