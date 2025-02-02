@@ -12,7 +12,7 @@ return {
         { '<leader>ee', ':<c-u>call phpactor#ExtractExpression(visualmode())<cr>', mode = 'v' }, -- Extract an expression (variable)
         { '<leader>em', ':<c-u>call phpactor#ExtractMethod(visualmode())<cr>', mode = 'v' },     -- Extract a method
         { '<Leader>nc', ':PhpactorClassNew<CR>' },
-        { '<Leader>mf', ':PhpactorMovileFile<CR>' },
+        { '<Leader>mf', ':PhpactorMoveFile<CR>' },
         { '<Leader>fu', ':PhpactorFindReferences<CR>' },
     }
 }
