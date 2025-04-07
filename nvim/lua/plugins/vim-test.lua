@@ -13,7 +13,7 @@ return {
 
   config = function()
     vim.cmd([[
-      let g:test#strategy = 'vimux'
+      let test#strategy = 'vimux'
     ]])
   end
 }
