@@ -2,7 +2,7 @@
   "require": {
     "beyondcode/expose": "^2.5",
     "cpx/cpx": "^1.0",
-    "crescat-io/saloon-sdk-generator": "^1.0",
+    "crescat-io/saloon-sdk-generator": "^1.10",
     "friendsofphp/php-cs-fixer": "^3.14.4",
     "laravel/envoy": "^2.8.6",
     "laravel/forge-cli": "^1.8",
