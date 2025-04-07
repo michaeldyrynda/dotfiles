@@ -43,6 +43,11 @@ brew 'eza'
 brew 'awscli'
 brew 'kubernetes-cli'
 brew 'bottom'
+brew 'zsh'
+brew 'bash'
+brew 'bc'
+brew 'coreutils'
+brew 'nowplaying-cli'
 
 # Cask
 cask 'karabiner-elements'
