@@ -118,7 +118,6 @@ local function hide_all_chrome()
     vim.o.number = false
     vim.o.ruler = false
     vim.o.relativenumber = false
-    vim.o.showtabline = 0
     vim.o.laststatus = 0
     vim.o.signcolumn = "yes:1"
     vim.o.colorcolumn = "0"
@@ -132,7 +131,6 @@ local function hide_all_chrome()
     vim.o.number = true
     vim.o.ruler = true
     vim.o.relativenumber = true
-    vim.o.showtabline = 2
     vim.o.laststatus = 3
     vim.o.signcolumn = "yes:2"
     vim.o.colorcolumn = "120"
