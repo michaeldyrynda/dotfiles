@@ -217,7 +217,7 @@ run = 'move-node-to-workspace T'
 # Space 3
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus-setapp'
-run = 'move-node-to-workspace 3'
+run = ['layout floating', 'move-node-to-workspace 3']
 
 # Space 4
 [[on-window-detected]]
