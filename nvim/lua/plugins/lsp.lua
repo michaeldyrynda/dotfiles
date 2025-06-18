@@ -40,52 +40,17 @@ return {
 
             settings = {
                 intelephense = {
+                    telemetry = {
+                        enabled = false
+                    },
                     files = {
                         maxSize = 5000000
                     }
+                },
+                environment = {
+                    phpVersion = '8.4.4'
                 }
             },
-
-            capabilities = capabilities
-        })
-
-        require('lspconfig').phpactor.setup({
-            capabilities = capabilities,
-
-            settings = {
-                phpactor = {
-                    files = {
-                        maxSize = 5000000
-                    }
-                }
-            },
-
-            on_attach = function(client, bufnr)
-                client.server_capabilities.completionProvider = false
-                client.server_capabilities.hoverProvider = false
-                client.server_capabilities.implementationProvider = false
-                client.server_capabilities.referencesProvider = false
-                client.server_capabilities.renameProvider = false
-                client.server_capabilities.selectionRangeProvider = false
-                client.server_capabilities.signatureHelpProvider = false
-                client.server_capabilities.typeDefinitionProvider = false
-                client.server_capabilities.workspaceSymbolProvider = false
-                client.server_capabilities.definitionProvider = false
-                client.server_capabilities.documentHighlightProvider = false
-                client.server_capabilities.documentSymbolProvider = false
-                client.server_capabilities.documentFormattingProvider = false
-                client.server_capabilities.documentRangeFormattingProvider = false
-            end,
-
-            init_options = {
-                ["language_server_worse_reflection.inlay_hints.enable"] = true,
-                ["language_server_worse_reflection.inlay_hints.params"] = true,
-                ["language_server_worse_reflection.inlay_hints.types"] = false,
-            },
-
-            handlers = {
-                ['textDocument/publishDiagnostics'] = function() end
-            }
         })
 
         -- Vue, JavaScript, TypeScript
