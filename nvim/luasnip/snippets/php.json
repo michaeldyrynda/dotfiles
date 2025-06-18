@@ -59,7 +59,8 @@
       "        ${1}",
       "    ]));",
       "}",
-      "description": "Override the spatie/data-transfer-object constuctor"
+    ],
+    "description": "Override the spatie/data-transfer-object constuctor"
   },
   "strict php": {
     "prefix": "strict",
@@ -76,5 +77,14 @@
     "prefix": "dst",
     "body": ["declare(strict_types=1);"],
     "description": "Add strict type declaration"
+  },
+  "test todo": {
+    "prefix": "todot",
+    "body": [
+      "it('${1}', function () {",
+      "    // ${0}",
+      "})->todo();",
+    ],
+    "description": "Create a todo test"
   }
 }
