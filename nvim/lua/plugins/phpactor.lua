@@ -14,5 +14,6 @@ return {
         { '<Leader>nc', ':PhpactorClassNew<CR>' },
         { '<Leader>mf', ':PhpactorMoveFile<CR>' },
         { '<Leader>fu', ':PhpactorFindReferences<CR>' },
+        { '<Leader>pt', ':call phpactor#Transform()<cr>f<cr>' }
     }
 }
