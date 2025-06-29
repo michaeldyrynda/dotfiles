@@ -53,6 +53,7 @@ alias stash="git stash -u"
 alias pop="git stash pop"
 alias grc="git add . && git rebase --continue"
 alias yoink="git cherry-pick"
+alias nb="switch -c"
 
 # Convenience
 alias uf="unit --filter"
