@@ -63,7 +63,7 @@ alias please="sudo !!"
 alias vim="nvim"
 
 # ---- Eza (better ls) -----
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
