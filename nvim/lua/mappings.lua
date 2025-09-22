@@ -70,7 +70,6 @@ vim.keymap.set('n', '<leader>dg', '<cmd>lua vim.diagnostic.open_float()<cr>', { 
 --
 -- Laravel
 --
-vim.keymap.set('n', '<leader>lm', ':!php artisan make:')
 vim.keymap.set('n', '<leader>rw', ':vsp routes/web.php<cr>')
 vim.keymap.set('n', '<leader>ra', ':vsp routes/api.php<cr>')
 
