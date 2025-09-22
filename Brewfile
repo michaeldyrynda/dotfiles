@@ -47,6 +47,7 @@ brew 'bash'
 brew 'bc'
 brew 'coreutils'
 brew 'nowplaying-cli'
+brew 'lua-language-server'
 
 # Cask
 cask 'karabiner-elements'
