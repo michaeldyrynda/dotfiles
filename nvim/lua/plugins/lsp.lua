@@ -11,13 +11,13 @@ return {
 
     config = function()
         -- Setup Mason to automatically install LSP servers
-        require('mason').setup({
+        vim.lsp.config('mason', {
             ui = {
                 height = 0.8,
             },
         })
 
-        require('mason-lspconfig').setup({
+        vim.lsp.config('mason-lspconfig', {
             automatic_installation = true,
             automatic_enable = {
                 exclude = {
@@ -29,15 +29,15 @@ return {
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-        require('lspconfig').bashls.setup({
+        vim.lsp.config('bashls', {
             capabilities = capabilities,
         })
 
-        require('lspconfig').emmet_ls.setup({
+        vim.lsp.config('emmet_ls', {
             capabilities = capabilities,
         })
 
-        require('lspconfig').intelephense.setup({
+        vim.lsp.config('intelephense', {
             commands = {
                 IntelephenseIndex = {
                     function()
@@ -62,7 +62,7 @@ return {
         })
 
         -- Vue, JavaScript, TypeScript
-        require('lspconfig').volar.setup({
+        vim.lsp.config('vue_ls', {
             on_attach = function(client, bufnr)
                 client.server_capabilities.documentFormattingProvider = false
                 client.server_capabilities.documentRangeFormattingProvider = false
@@ -71,7 +71,7 @@ return {
             capabilities = capabilities,
         })
 
-        require('lspconfig').ts_ls.setup({
+        vim.lsp.config('ts_ls', {
             init_options = {
                 plugins = {
                     {
@@ -94,12 +94,12 @@ return {
         })
 
         -- Tailwind CSS
-        require('lspconfig').tailwindcss.setup({
+        vim.lsp.config('tailwindcss', {
             capabilities = capabilities
         })
 
         -- JSON
-        require('lspconfig').jsonls.setup({
+        vim.lsp.config('jsonls', {
             capabilities = capabilities,
 
             settings = {
@@ -110,7 +110,7 @@ return {
         })
 
         -- Lua
-        require('lspconfig').lua_ls.setup({
+        vim.lsp.config('lua_ls', {
             settings = {
                 Lua = {
                     runtime = { version = 'LuaJIT' },
@@ -139,5 +139,15 @@ return {
         vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
         vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
         vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+
+        vim.lsp.enable('mason')
+        vim.lsp.enable('mason-lspconfig')
+        vim.lsp.enable('bashls')
+        vim.lsp.enable('emmet_ls')
+        vim.lsp.enable('intelephense')
+        vim.lsp.enable('vue_ls')
+        vim.lsp.enable('ts_ls')
+        vim.lsp.enable('jsonls')
+        vim.lsp.enable('lua_ls')
     end
 }
