@@ -3,6 +3,7 @@ tap 'homebrew/bundle'
 tap 'jesseduffield/lazygit' 	      # lazygit
 tap 'stripe/stripe-cli' 		      # stripe-cli
 tap 'nicoverbruggen/homebrew-cask'
+tap 'teamookla/speedtest'
 
 # Brew
 brew 'ffmpeg'
@@ -50,6 +51,7 @@ brew 'nowplaying-cli'
 brew 'lua-language-server'
 brew 'anomalyco/tap/opencode'
 brew 'artisanexperiences/tap/arbor'
+brew 'speedtest'
 
 # Cask
 cask 'karabiner-elements'
