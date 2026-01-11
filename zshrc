@@ -133,3 +133,19 @@ export FZF_DEFAULT_OPTS=" --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38
 --color=border:#6C7086,label:#CDD6F4"
 
 export BAT_CONFIG_PATH="/Users/michael/.config/bat.conf"
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/michael/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="/Users/michael/Library/Application Support/Herd/config/php/74/"
+
+
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/michael/Library/Application Support/Herd/config/php/81/"
+
+# opencode
+export PATH=/Users/michael/.opencode/bin:$PATH
