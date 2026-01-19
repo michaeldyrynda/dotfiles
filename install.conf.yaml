@@ -83,3 +83,5 @@
       command: git clone https://github.com/folke/tokyonight.nvim.git ~/.local/tokyonight.nvim
     - description: Configure Tokyo Night for bat
       command: cd "$(bat --config-dir)/themes" && ln -sfn ~/.local/tokyonight.nvim/extras/sublime/tokyonight_night.tmTheme && bat cache --build
+    - description: Install Amp
+      command: curl -fsSL https://ampcode.com/install.sh | bash
