@@ -1,21 +1,19 @@
-local T
+local t
 
 return {
     'nvim-treesitter/nvim-treesitter',
 
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter-context',
-        'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-
     build = ':TSUpdate',
+    branch = 'main',
     lazy = false,
 
-    opts = {
-        context_commentstring = {
-            enable = true,
-        },
+    dependencies = {
+        { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
+        'nvim-treesitter/nvim-treesitter-context',
+        { 'JoosepAlviste/nvim-ts-context-commentstring', branch = 'main' },
+    },
 
+    opts = {
         ensure_installed = 'all',
         ignore_install = {'phpdoc'},
 
@@ -59,11 +57,18 @@ return {
                 },
             },
         },
+
+        context = {
+            enable = false,
+            mode = 'topline',
+            multiwindow = true,
+            multiline_threshold = 1,
+            separator = '0',
+        },
     },
 
     config = function (_, opts)
-        require('nvim-treesitter.configs').setup(opts)
-
-        t = require('nvim-treesitter.ts_utils')
+        require('nvim-treesitter.config').setup(opts)
+        require('treesitter-context').setup(opts.context)
     end
 }
