@@ -16,13 +16,11 @@
  
 
 - link:
-    ~/.bashrc: bashrc
     ~/.config/karabiner: karabiner
     ~/.config/ghostty: ghostty
     ~/.config/nvim: nvim
     ~/.config/starship.toml: starship.toml
     ~/.composer/composer.json: composer/composer.json
-    ~/.ctags: ctags
     ~/.dotfiles: ""
     ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
@@ -31,8 +29,9 @@
     ~/.slate: slate
     ~/.sqliterc: sqliterc
     ~/.tmux.conf: tmux.conf
-    ~/.yabairc: yabairc
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+      force: true
+      path: zshrc
     ~/bin: bin
     ~/.config/aerospace: aerospace
 
@@ -51,18 +50,15 @@
       command: PATH=~"$(brew --prefix):$PATH"
     - description: Install oh-my-zsh
       command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+      stdin: true
+      stdout: true
+      stderr: true
     - description: Source shell
       command: source ~/.zshrc
     - description: Update Brew
       command: "brew update"
-    - description: Install Brew bundler
-      command: "brew tap homebrew/bundle"
     - description: Install Brewfile bundle
       command: "brew bundle"
-    - description: Install vim-plug
-      command: "[ -f ~/.config/neovim/autoload/plug.vim ] || curl -fLo ~/.config/neovim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    - description: Install neovim plugins
-      command: "nvim +PlugInstall +qa"
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
@@ -80,9 +76,3 @@
       command: "gh extension install dlvhdr/gh-dash"
     - description: Install fzf-git
       command: git clone https://github.com/junegunn/fzf-git.sh.git ~/.local/fzf-git
-    - description: Create bat theme dir
-      command: mkdir -p "$(bat --config-dir)/themes"
-    - description: Install Tokyo Night theme
-      command: git clone https://github.com/folke/tokyonight.nvim.git ~/.local/tokyonight.nvim
-    - description: Configure Tokyo Night for bat
-      command: cd "$(bat --config-dir)/themes" && ln -sfn ~/.local/tokyonight.nvim/extras/sublime/tokyonight_night.tmTheme && bat cache --build
