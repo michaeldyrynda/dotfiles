@@ -201,6 +201,10 @@ run = ['layout floating', 'move-node-to-workspace M']
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace B'
 
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace B'
+
 # Space T (Terminal)
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
