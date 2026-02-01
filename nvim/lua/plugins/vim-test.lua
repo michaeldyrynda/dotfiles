@@ -9,11 +9,17 @@ return {
     { '<Leader>tv', ':silent TestVisit<CR>' },
   },
 
-  dependencies = { 'preservim/vimux' },
-
   config = function()
     vim.cmd([[
-      let test#strategy = 'vimux'
+      let test#php#pest#options = '-v'
+
+      let test#strategy = 'neovim_sticky'
+
+      let test#neovim#term_position = 'vert'
+      let g:test#preserve_screen = 0
+      let g:test#neovim_sticky#kill_previous = 1
+      let g:test#neovim_sticky#reopen_window = 1
+      let g:test#neovim_sticky#use_existing = 1
     ]])
   end
 }
