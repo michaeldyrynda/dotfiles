@@ -15,7 +15,7 @@ return {
 
       let test#strategy = 'neovim_sticky'
 
-      let test#neovim#term_position = 'vert'
+      let test#neovim#term_position = 'vert botright 100'
       let g:test#preserve_screen = 0
       let g:test#neovim_sticky#kill_previous = 1
       let g:test#neovim_sticky#reopen_window = 1
