@@ -16,6 +16,9 @@ return {
 
                     -- Window separator colors (if using splits)
                     WinSeparator = { fg = colors.surface0 },
+
+                    -- Lualine buffer icon highlighting
+                    LualineBufferIconActive = { fg = colors.base, bg = colors.lavender, style = { "bold" } },
                 }
             end
         })

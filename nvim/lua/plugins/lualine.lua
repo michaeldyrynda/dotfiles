@@ -6,9 +6,13 @@ return {
     dependencies = {
         'arkav/lualine-lsp-progress',
         'nvim-tree/nvim-web-devicons',
+        'catppuccin/nvim',
     },
 
-    opts = {
+    config = function()
+        local colors = require("catppuccin.palettes").get_palette("mocha")
+
+        require('lualine').setup({
         options = {
             section_separators = '',
             component_separators = '',
@@ -25,8 +29,29 @@ return {
             lualine_a = {
                 'mode',
             },
-            lualine_b = {
-                'branch',
+            lualine_b = {},
+            lualine_c = {
+                {
+                    'buffers',
+                    show_filename_only = false,
+                    mode = 0,
+                    buffers_color = {
+                        active = { fg = colors.base, bg = colors.lavender, gui = 'bold' },
+                        inactive = { fg = colors.overlay0, bg = colors.base },
+                    },
+                    symbols = {
+                        modified = ' ●',
+                        alternate_file = '',
+                        directory = '',
+                    },
+                }
+            },
+            lualine_x = {
+                {
+                    require("lazy.status").updates,
+                    cond = require("lazy.status").has_updates,
+                    color = { fg = colors.peach },
+                },
                 {
                     'diff',
                     symbols = { added = '+', modified = '*', removed = '-' },
@@ -36,33 +61,17 @@ return {
                 end,
                 { 'diagnostics', sources = { 'nvim_diagnostic' } },
             },
-            lualine_c = {
-                {
-                    'buffers',
-                    show_filename_only = false,
-                    mode = 0,
-                    buffers_color = {
-                        active = { fg = '#cdd6f4', bg = '#45475a', gui = 'bold' },   -- Catppuccin text on surface1
-                        inactive = { fg = '#6c7086', bg = '#1e1e2e' },                -- Catppuccin overlay0 on base
-                    }
-                }
-            },
-            lualine_x = {
-                {
-                    require("lazy.status").updates,
-                    cond = require("lazy.status").has_updates,
-                    color = { fg = "#ff9e64" },
-                },
-            },
             lualine_y = {
                 'encoding',
                 'fileformat',
                 '(vim.bo.expandtab and "␠ " or "⇥ ") .. vim.bo.shiftwidth',
+                'branch',
             },
             lualine_z = {
                 'location',
                 'progress',
             },
         },
-    },
+        })
+    end,
 }
