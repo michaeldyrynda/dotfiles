@@ -42,8 +42,8 @@ return {
                     show_filename_only = false,
                     mode = 0,
                     buffers_color = {
-                        active = 'Delimiter',
-                        inactive = 'Comment',
+                        active = { fg = '#cdd6f4', bg = '#45475a', gui = 'bold' },   -- Catppuccin text on surface1
+                        inactive = { fg = '#6c7086', bg = '#1e1e2e' },                -- Catppuccin overlay0 on base
                     }
                 }
             },
