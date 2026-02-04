@@ -125,6 +125,11 @@ return {
             }
         })
 
+        -- Go
+        vim.lsp.config('gopls', {
+            capabilities = capabilities
+        })
+
         -- Diagnostic configuration
         vim.diagnostic.config({
             virtual_text = false,
@@ -149,5 +154,6 @@ return {
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lua_ls')
+        vim.lsp.enable('gopls')
     end
 }
