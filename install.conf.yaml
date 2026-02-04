@@ -34,6 +34,7 @@
       path: zshrc
     ~/bin: bin
     ~/.config/aerospace: aerospace
+    ~/.config/bat.conf: bat.conf
 
 
 - shell:
