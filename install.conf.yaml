@@ -8,12 +8,12 @@
 - clean: ["~"]
 
 - create:
-    - ~/.composer 
+    - ~/.composer
     - ~/.config
     - ~/intelephense
     - ~/code
     - ~/.vim/undo-history
- 
+
 
 - link:
     ~/.config/karabiner: karabiner
