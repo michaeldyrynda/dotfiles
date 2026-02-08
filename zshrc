@@ -46,7 +46,6 @@ fi
 export GPG_TTY=$(tty)
 
 export FZF_DEFAULT_COMMAND='ag -u -g ""'
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 setopt auto_cd
 cdpath=($HOME/code)
@@ -126,14 +125,13 @@ _fzf_compgen_dir() {
 source ~/.local/fzf-git/fzf-git.sh
 
 # --- setup fzf theme ---
-export FZF_DEFAULT_OPTS=" --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort' --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
 --color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
 --color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
 --color=selected-bg:#45475A \
 --color=border:#6C7086,label:#CDD6F4"
 
 export BAT_CONFIG_PATH="/Users/michael/.config/bat.conf"
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 
 # Herd injected PHP 8.4 configuration.
