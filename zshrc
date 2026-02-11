@@ -147,3 +147,6 @@ export HERD_PHP_81_INI_SCAN_DIR="/Users/michael/Library/Application Support/Herd
 
 # opencode
 export PATH=/Users/michael/.opencode/bin:$PATH
+
+# Local config (machine-specific, not in version control)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
