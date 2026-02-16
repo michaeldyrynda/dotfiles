@@ -16,6 +16,7 @@ alias mmi='php artisan make:migration'
 alias mf='php artisan migrate:fresh'
 alias mfs='php artisan migrate:fresh --seed'
 alias sail='bash vendor/bin/sail'
+alias dump='clear && php artisan solo:dumps'
 
 # Composer
 alias co="composer dumpautoload -o"
