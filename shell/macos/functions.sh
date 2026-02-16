@@ -37,22 +37,4 @@ function clutter() {
     killall Finder
 }
 
-function screenshot() {
-    vim -Nu ~/.vim/.vimrc.clean $@
-}
 
-function xdebugenable() {
-    sed -ie 's!^;\(zend.*xdebug\.so\)!\1!' $(php --ini | awk '/php.ini$/' | awk '{print $4}')
-}
-
-function xdebugdisable() {
-  sed -ie 's!^\(zend.*xdebug\.so\)!;\1!' $(php --ini | awk '/php.ini$/' | awk '{print $4}')
-}
-
-function takeoutdbs() {
-    for db in frodo crm gnaf appointments storage geoscape pmacct coverage nbn faults
-    do
-        newdb $db;
-        newdb testing_$db;
-    done
-}

@@ -26,34 +26,26 @@ function composer-link() {
     composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
 }
 
-function fetchjson()
-{
+function fetchjson() {
     if [ $# -eq 0 ]; then
-        echo "Usage: json <base_uri> <endpoint>"
-    else
-        if [ -z "$2" ]; then
-            endpoint=""
-            outfile="index.json"
-        else
-            endpoint="${2}"
-            outfile="${2//\//_}.json"
-        fi
-
-        if [ -z "$3" ]; then
-            outfile="$3"
-        fi
-
-        curl -s ${1}/${endpoint} | python -m json.tool > ${outfile}
+        echo "Usage: fetchjson <base_uri> <endpoint> [outfile]"
+        return 1
     fi
+
+    local base_uri="$1"
+    local endpoint="${2:-}"
+    local outfile="${3:-}"
+
+    if [ -z "$endpoint" ]; then
+        outfile="${outfile:-index.json}"
+    else
+        outfile="${outfile:-${endpoint//\//_}.json}"
+    fi
+
+    curl -s "${base_uri}/${endpoint}" | jq '.' > "${outfile}"
 }
 
-function syncBranch() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: syncBranch <remote> <branch>"
-    else
-        git checkout ${2} && git fetch --prune && git merge --ff-only ${1} ${2}
-    fi
-}
+
 
 function unit() {
     if [ -f "./vendor/bin/pest" ]; then

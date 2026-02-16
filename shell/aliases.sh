@@ -1,7 +1,4 @@
-# Generic
-alias ll='ls -lAFh'   #long list,show almost all,show type,human readable
-
-alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zshrc='${=EDITOR} ~/.zshrc'
 
 alias t='tail -f'
 alias dud='du -d 1 -h'
@@ -13,7 +10,6 @@ alias serve='php artisan serve'
 alias horizon='php artisan horizon'
 alias pham='php artisan migrate'
 alias pham:r='php artisan migrate:rollback'
-alias phat='php artisan tinker'
 alias phacc='php artisan cache:clear'
 alias mmo='php artisan make:model'
 alias mmi='php artisan make:migration'
@@ -59,7 +55,6 @@ alias nb="switch -c"
 alias uf="unit --filter"
 alias phpunit="unit"
 alias hr="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
-alias please="sudo !!"
 alias vim="nvim"
 
 # ---- Eza (better ls) -----
@@ -72,7 +67,7 @@ alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{
 alias rd=releaseDate
 
 alias sshconf="vim ~/.ssh/config"
-alias sshkey="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Copied to clipboard.'"
+alias sshkey="/bin/cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Copied to clipboard.'"
 
 alias ready="git pull --rebase && composer install && npm i && npm run dev"
 
