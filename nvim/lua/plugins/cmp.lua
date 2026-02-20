@@ -100,13 +100,20 @@ return {
                 completion = cmp.config.window.bordered({
                     col_offset = -3,
                     side_padding = 0,
+                    border = 'rounded',
+                    winhighlight = 'Normal:Pmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
                 }),
                 documentation = cmp.config.window.bordered({
-                    winhighlight = 'Normal:CmpDoc,FloatBorder:CmpDocBorder',
+                    border = 'rounded',
+                    winhighlight = 'Normal:Pmenu,FloatBorder:CmpDocBorder',
                     max_width = 80,
                     max_height = 20,
                     position = 'below',
                 }),
+            },
+
+            experimental = {
+                ghost_text = false,
             },
 
             formatting = {
@@ -151,6 +158,7 @@ return {
                     -- Show class path for LSP completions inline
                     if entry.source.name == 'nvim_lsp' then
                         menu_text = item.detail or ""
+                        
                         -- Extract class path from "use Namespace\Class" statements
                         local class_path = menu_text:match("^use%s+([^;]+)")
                         if class_path then
@@ -247,5 +255,20 @@ return {
                 { { name = 'cmdline' } }
             )
         })
+
+        -- Set up highlight groups using Catppuccin Mocha colors
+        local hl_groups = {
+            -- Completion menu border - soft lavender
+            CmpBorder = { fg = '#b4befe' },
+            -- Documentation window border - soft pink  
+            CmpDocBorder = { fg = '#f5c2e7' },
+            -- Make Pmenu more distinct but still subtle
+            Pmenu = { bg = '#1e1e2e', fg = '#cdd6f4' },
+            PmenuSel = { bg = '#45475a', fg = '#cdd6f4', bold = true },
+        }
+
+        for name, opts in pairs(hl_groups) do
+            vim.api.nvim_set_hl(0, name, opts)
+        end
     end
 }
