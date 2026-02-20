@@ -92,8 +92,26 @@ return {
 
                     -- See: https://www.reddit.com/r/neovim/comments/103zetf/how_can_i_get_a_vscodelike_tailwind_css/
                     before = function(entry, vim_item)
-                        -- Replace the 'menu' field with the kind and source
-                        vim_item.menu = '  ' .. vim_item.kind .. ' (' .. (source_map[entry.source.name] or entry.source.name) .. ')'
+                        local menu_text = ""
+                        local item = entry.completion_item
+                        
+                        -- Show class path for LSP completions
+                        if entry.source.name == 'nvim_lsp' then
+                            menu_text = item.detail or ""
+                            -- Extract class path from "use Namespace\Class" statements
+                            local class_path = menu_text:match("^use%s+([^;]+)")
+                            if class_path then
+                                menu_text = class_path
+                            end
+                            if menu_text ~= "" then
+                                menu_text = "  " .. menu_text
+                            end
+                        else
+                            -- For non-LSP sources, show the source name
+                            menu_text = "  " .. (source_map[entry.source.name] or entry.source.name)
+                        end
+
+                        vim_item.menu = menu_text
                         vim_item.menu_hl_group = 'SpecialComment'
 
                         if vim_item.kind == 'Color' and entry.completion_item.documentation then
