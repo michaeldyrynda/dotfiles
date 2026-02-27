@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "catppuccin-macchiato",
+  "autoupdate": true,
+  "default_agent": "plan",
+  "agent": {
+    "plan": {
+      "model": "anthropic/claude-opus-4-5-20251101",
+      "color": "primary"
+    },
+    "build": {
+      "model": "anthropic/claude-sonnet-4-6",
+      "color": "warning"
+    }
+  },
+  "experimental": {
+    "disable_paste_summary": true
+  }
+}
