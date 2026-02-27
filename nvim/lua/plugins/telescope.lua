@@ -57,8 +57,14 @@ return {
         path_display = { truncate = 1 },
         prompt_prefix = '   ',
         selection_caret = '  ',
+        layout_strategy = 'horizontal',
         layout_config = {
           prompt_position = 'top',
+          horizontal = {
+            width = 0.9,
+            height = 0.9,
+            preview_width = 0.5,
+          },
         },
         preview = {
           filesize_limit = 1,
@@ -74,6 +80,8 @@ return {
           },
         },
         file_ignore_patterns = { '.git/', 'node_modules', '_ide_helper' },
+        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+        winblend = 0,
       },
       extensions = {
         live_grep_args = {
@@ -120,14 +128,14 @@ return {
     })
 
     require('telescope.builtin').edit_vim = function ()
-      require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{
+      require('telescope.builtin').find_files({
         cwd = "$HOME/.config/nvim",
         prompt_title = "nvim config"
       })
     end
 
     require('telescope.builtin').dotfiles = function ()
-      require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{
+      require('telescope.builtin').find_files({
         cwd = "$HOME/dotfiles",
         prompt_title = "Dotfiles"
       })
@@ -135,5 +143,20 @@ return {
 
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('ui-select')
+
+    -- Fix background colors to match editor
+    local catppuccin = require('catppuccin.palettes').get_palette('mocha')
+    vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
+    vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { bg = catppuccin.surface0 })
+    vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = catppuccin.surface0, fg = catppuccin.surface0 })
+    vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { bg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
+    vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', { bg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
+    vim.api.nvim_set_hl(0, 'TelescopeTitle', { bg = catppuccin.blue, fg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = catppuccin.blue, fg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = catppuccin.blue, fg = catppuccin.base })
+    vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = catppuccin.blue, fg = catppuccin.base })
   end,
 }
