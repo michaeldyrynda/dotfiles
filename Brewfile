@@ -1,7 +1,6 @@
 #  Taps
 tap 'jesseduffield/lazygit' 	      # lazygit
 tap 'nicoverbruggen/homebrew-cask'
-tap 'aarondfrancis/homebrew-tap'
 tap 'AlexsJones/llmfit'
 
 # Brew
@@ -42,7 +41,7 @@ brew 'nowplaying-cli'
 brew 'lua-language-server'
 brew 'anomalyco/tap/opencode'
 brew 'artisanexperiences/tap/arbor'
-brew 'counselors'
+brew 'aarondfrancis/homebrew-tap/counselors'
 brew 'llmfit'
 
 # Cask
