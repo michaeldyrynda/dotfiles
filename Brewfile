@@ -1,7 +1,8 @@
 #  Taps
 tap 'jesseduffield/lazygit' 	      # lazygit
 tap 'nicoverbruggen/homebrew-cask'
-tap 'teamookla/speedtest'
+tap 'aarondfrancis/homebrew-tap'
+tap 'AlexsJones/llmfit'
 
 # Brew
 brew 'fzf'
@@ -41,7 +42,8 @@ brew 'nowplaying-cli'
 brew 'lua-language-server'
 brew 'anomalyco/tap/opencode'
 brew 'artisanexperiences/tap/arbor'
-brew 'speedtest'
+brew 'counselors'
+brew 'llmfit'
 
 # Cask
 cask 'karabiner-elements'
@@ -54,3 +56,4 @@ cask 'ghostty'
 cask 'raycast'
 cask 'yaak'
 cask '1password-cli'
+cask 'steipete/tap/codexbar'
