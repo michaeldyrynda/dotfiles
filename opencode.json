@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catppuccin-macchiato",
   "autoupdate": true,
   "default_agent": "plan",
   "agent": {
