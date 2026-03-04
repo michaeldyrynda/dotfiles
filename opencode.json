@@ -4,7 +4,7 @@
   "default_agent": "plan",
   "agent": {
     "plan": {
-      "model": "anthropic/claude-opus-4-5-20251101",
+      "model": "anthropic/claude-opus-4-6",
       "color": "primary"
     },
     "build": {
