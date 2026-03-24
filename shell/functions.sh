@@ -103,6 +103,57 @@ function make-stereo() {
     ffmpeg -i $1 -af "pan=stereo|c0=c0|c1=c0" "$filename-stereo.$extension"
 }
 
+function opsecret() {
+    if ! command -v op > /dev/null; then
+        echo "1Password CLI (op) is not installed"
+        return 1
+    fi
+
+    if ! command -v fzf > /dev/null; then
+        echo "fzf is not installed"
+        return 1
+    fi
+
+    local vault="${1:-}"
+    local item="${2:-}"
+    local field="${3:-}"
+
+    # Select account (always interactive)
+    local account_line
+    account_line=$(op account list --format=json \
+        | jq -r '.[] | "\(.account_uuid)\t\(.email) (\(.url))"' \
+        | fzf --prompt="Account > " --height=~50% --with-nth=2..)
+    [ -z "$account_line" ] && return 1
+    local account
+    account=$(echo "$account_line" | cut -f1)
+
+    # Select vault
+    if [ -z "$vault" ]; then
+        vault=$(op vault list --account="$account" --format=json \
+            | jq -r '.[].name' \
+            | fzf --prompt="Vault > " --height=~50%)
+        [ -z "$vault" ] && return 1
+    fi
+
+    # Select item
+    if [ -z "$item" ]; then
+        item=$(op item list --vault="$vault" --account="$account" --format=json \
+            | jq -r '.[].title' \
+            | fzf --prompt="Item ($vault) > " --height=~50%)
+        [ -z "$item" ] && return 1
+    fi
+
+    # Select field
+    if [ -z "$field" ]; then
+        field=$(op item get "$item" --vault="$vault" --account="$account" --format=json \
+            | jq -r '[.fields[]? | select(.label != null and .label != "")] | sort_by(.label) | .[].label' \
+            | fzf --prompt="Field ($item) > " --height=~50%)
+        [ -z "$field" ] && return 1
+    fi
+
+    op read "op://$vault/$item/$field" --account="$account"
+}
+
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
 ensure_tmux_is_running() {
