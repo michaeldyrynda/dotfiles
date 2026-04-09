@@ -56,7 +56,7 @@ return {
                     }
                 },
                 environment = {
-                    phpVersion = '8.4.4'
+                    phpVersion = '8.5.4'
                 }
             },
         })
