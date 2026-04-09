@@ -61,6 +61,12 @@ return {
             },
         })
 
+        vim.lsp.config('phpantom_lsp', {
+            cmd = { '/Users/michael/bin/phpantom_lsp' },
+            filetypes = { 'php' },
+            root_markers = { 'composer.json', '.git' }
+        })
+
         -- Vue, JavaScript, TypeScript
         vim.lsp.config('vue_ls', {
             on_attach = function(client, bufnr)
@@ -150,7 +156,8 @@ return {
         vim.lsp.enable('mason-lspconfig')
         vim.lsp.enable('bashls')
         vim.lsp.enable('emmet_ls')
-        vim.lsp.enable('intelephense')
+        -- vim.lsp.enable('intelephense')
+        vim.lsp.enable('phpantom_lsp')
         vim.lsp.enable('vue_ls')
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('jsonls')
