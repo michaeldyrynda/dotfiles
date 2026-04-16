@@ -1,10 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+    "CLAUDE_CODE_NO_FLICKER": "1"
+  },
   "permissions": {
     "defaultMode": "auto"
   },
-  "env": {
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": 1,
-    "CLAUDE_CODE_NO_FLICKER": 1
-  }
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name'); level=$(echo \"$input\" | jq -r '.model.level // empty'); if [ -n \"$level\" ]; then echo \"$model ($level)\"; else echo \"$model\"; fi"
+  },
+  "enabledPlugins": {
+    "php-lsp@claude-plugins-official": true
+  },
+  "skipAutoPermissionPrompt": true
 }
