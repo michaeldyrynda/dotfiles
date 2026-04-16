@@ -1,18 +1,37 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
-  "default_agent": "plan",
   "agent": {
-    "plan": {
-      "model": "anthropic/claude-opus-4-6",
-      "color": "primary"
-    },
     "build": {
-      "model": "anthropic/claude-sonnet-4-6",
-      "color": "warning"
+      "color": "warning",
+      "model": "anthropic/claude-sonnet-4-6"
+    },
+    "plan": {
+      "color": "primary",
+      "model": "anthropic/claude-opus-4-6"
     }
   },
+  "autoupdate": true,
+  "default_agent": "plan",
   "experimental": {
     "disable_paste_summary": true
+  },
+  "model": "ollama/gemma4",
+  "plugin": [
+    "/Users/michael/code/opencode-claude-bridge/dist/index.js"
+  ],
+  "provider": {
+    "ollama": {
+      "models": {
+        "gemma4": {
+          "_launch": true,
+          "name": "gemma4"
+        }
+      },
+      "name": "Ollama",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      }
+    }
   }
 }
