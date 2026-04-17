@@ -14,5 +14,7 @@
   "enabledPlugins": {
     "php-lsp@claude-plugins-official": true
   },
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "effortLevel": "high",
+  "includeCoAuthoredBy": false
 }
