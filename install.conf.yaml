@@ -13,6 +13,8 @@
     - ~/intelephense
     - ~/code
     - ~/.vim/undo-history
+    - ~/.agents
+    - ~/.claude
 
 
 - link:
@@ -36,8 +38,9 @@
     ~/.config/aerospace: aerospace
     ~/.config/bat.conf: bat.conf
     ~/.config/opencode/opencode.json: opencode.json
+    ~/.agents/skills: agents/skills
     ~/.claude/settings.json: claude.json
-    ~/.claude/skills: claude/skills
+    ~/.claude/skills: agents/skills
 
 
 - shell:
