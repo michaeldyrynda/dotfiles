@@ -37,6 +37,7 @@
     ~/.config/bat.conf: bat.conf
     ~/.config/opencode/opencode.json: opencode.json
     ~/.claude/settings.json: claude.json
+    ~/.claude/skills: claude/skills
 
 
 - shell:
