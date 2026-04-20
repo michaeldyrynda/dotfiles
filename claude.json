@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
-    "CLAUDE_CODE_NO_FLICKER": "1"
+    "CLAUDE_CODE_NO_FLICKER": "1",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000"
   },
   "permissions": {
     "defaultMode": "auto"
