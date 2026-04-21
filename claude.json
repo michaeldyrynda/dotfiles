@@ -3,19 +3,24 @@
   "env": {
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_NO_FLICKER": "1",
-    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000"
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6"
   },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "defaultMode": "auto"
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
-    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name'); level=$(echo \"$input\" | jq -r '.model.level // empty'); if [ -n \"$level\" ]; then echo \"$model ($level)\"; else echo \"$model\"; fi"
+    "command": "jq -r '\"[\\(.model.display_name)] \\(.context_window.used_percentage // 0)% context\"'",
+    "padding": 0,
+    "refreshInterval": 60
   },
   "enabledPlugins": {
     "php-lsp@claude-plugins-official": true
   },
-  "skipAutoPermissionPrompt": true,
   "effortLevel": "high",
-  "includeCoAuthoredBy": false
+  "skipAutoPermissionPrompt": true
 }
