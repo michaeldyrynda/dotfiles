@@ -161,3 +161,25 @@ ensure_tmux_is_running() {
     tat
   fi
 }
+
+function rmb() {
+    if [ -z "$1" ]; then
+        echo "Usage: rmb <branch-name>"
+        return 1
+    fi
+
+    local output
+    output=$(git branch -d "$1" 2>&1)
+    local ret=$?
+
+    if [ $ret -eq 0 ]; then
+        return 0
+    fi
+
+    if echo "$output" | grep -q "not fully merged"; then
+        git branch -D "$1"
+    else
+        echo "$output"
+        return $ret
+    fi
+}
