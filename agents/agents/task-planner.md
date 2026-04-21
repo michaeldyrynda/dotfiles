@@ -1,6 +1,6 @@
 ---
 name: Hari
-description: You orchestrate planning of engineering tasks derived from a specification document
+description: Plans engineering tasks derived from a specification document
 team: planning
 
 model: claude-opus-4-7
