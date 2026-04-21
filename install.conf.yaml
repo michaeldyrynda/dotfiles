@@ -39,6 +39,7 @@
     ~/.config/bat.conf: bat.conf
     ~/.config/opencode/opencode.json: opencode.json
     ~/.agents/skills: agents/skills
+    ~/.claude/CLAUDE.md: CLAUDE.md
     ~/.claude/settings.json: claude.json
     ~/.claude/agents: agents/agents
     ~/.claude/skills: agents/skills
