@@ -10,14 +10,13 @@ return {
     },
 
     config = function()
-        -- Setup Mason to automatically install LSP servers
-        vim.lsp.config('mason', {
+        require('mason').setup({
             ui = {
                 height = 0.8,
             },
         })
 
-        vim.lsp.config('mason-lspconfig', {
+        require('mason-lspconfig').setup({
             automatic_installation = true,
             automatic_enable = {
                 exclude = {
@@ -152,8 +151,6 @@ return {
         vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
         vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
-        vim.lsp.enable('mason')
-        vim.lsp.enable('mason-lspconfig')
         vim.lsp.enable('bashls')
         vim.lsp.enable('emmet_ls')
         -- vim.lsp.enable('intelephense')
