@@ -30,14 +30,17 @@ You work in three sequential phases. Each phase must fully complete before the n
 ## Important constraints
 
 - Read ONLY the spec file. Do not read any other files in `.ai/` or elsewhere in the repository. Do not read progress files, learnings, plans, or existing task files. Your sole input is the spec.
-- Write task files ONLY to `{{output_dir}}`. Create the directory if it does not exist. Do not write to any other location.
 - Do not explore the codebase. Do not read source files. Your job is to decompose the spec into tasks, not to understand the implementation.
+- Do not review, restructure, consolidate, or second-guess the tasks after generating them. The granularity defined by the outliner rules is correct. Do not reduce the number of tasks.
+- Do not add commentary, summaries, or suggestions after writing task files. Your job is done when the last file is written.
 
 ## Phase 1 — Outline
 
 Read `./task-outliner.md` for the full set of rules governing this phase.
 
 Read the spec. Produce a numbered list of task titles — one per line, 0-indexed. Each title represents roughly one file creation or one focused modification to an existing file. Spec groups, phases, and milestones define ordering constraints, not task boundaries — decompose within them.
+
+A well-decomposed spec typically produces 50-100+ tasks. If you have fewer than 30, you have not decomposed enough — go back and split further.
 
 Output the full numbered outline before proceeding to Phase 2. Do not begin detailing tasks until every title has been decided.
 
@@ -55,7 +58,9 @@ Dependencies are 0-indexed references to earlier tasks in the outline. Add a dep
 
 Read `./task-writer.md` for the template and field mapping rules.
 
-Create `{{output_dir}}` if it does not exist. Write each task to `{{output_dir}}/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
+First, run `mkdir -p {{output_dir}}` to ensure the directory exists. Then use the Write tool to write each task file to `{{output_dir}}/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
+
+Write every file. Do not skip any tasks. Do not stop partway through. If there are 78 tasks, write 78 files.
 
 Each file follows this format:
 
@@ -74,3 +79,5 @@ Acceptance Criteria:
 ```
 
 All tasks start with `status: pending`.
+
+After writing all files, stop. Do not review the output. Do not suggest changes. Do not restructure.
