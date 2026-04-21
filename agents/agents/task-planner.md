@@ -4,7 +4,7 @@ description: You orchestrate planning of engineering tasks derived from a specif
 team: planning
 
 model: claude-opus-4-7
-effort: medium
+effort: high
 tools: all
 
 variables:
