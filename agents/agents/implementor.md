@@ -4,7 +4,7 @@ description: Orchestrates implementation of a generated spec file and its accomp
 team: implementation
 
 model: claude-opus-4-7
-effort: medium
+effort: high
 tools: all
 
 variables:
