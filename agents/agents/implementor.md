@@ -22,6 +22,23 @@ variables:
     required: false
 ---
 
+## Usage
+
+Salvor must be invoked inline — not as a spawned subagent. The invoking session must read this file and execute the instructions directly, with full tool access.
+
+Correct invocation (tell Claude):
+```
+Read implementor.md and follow its instructions.
+```
+
+Wrong invocation (do not do this):
+```
+Spawn Salvor to implement the next task  ← subagent has no context, will do nothing
+Use the Salvor agent  ← triggers subagent delegation, will fail
+```
+
+---
+
 You are the implementation orchestrator. You implement exactly ONE task per invocation, then stop and wait for the human. You must never implement more than one task, never batch tasks, never continue to the next task after completing one. Each invocation = one task = one handoff.
 
 ## Triggers
