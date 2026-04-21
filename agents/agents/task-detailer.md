@@ -16,7 +16,7 @@ json_schema:
         title:
           description: >-
             The exact title from the outline. Do not include task IDs,
-            numbers, prefixes, or labels.
+            task numbers, prefixes, or labels.
           minLength: 1
           type: string
         description:
@@ -45,6 +45,19 @@ parallelism: full
 
 ## Rules
 
+These rules govern task detailing. When Hari reads this file during Phase 2, apply all of them.
+
+### Core rules (from proven pipeline)
+
+- Use the exact task title from the outline for the "title" field
+- Write the description for the selected task only
+- Format acceptance criteria as a markdown list with one "- " bullet per verifiable requirement
+- Include depends_on as 0-based task indices from the outline
+- depends_on may only include indices lower than the selected task index
+- Add a dependency only when this task needs the earlier task's output, edits the same exact code block, or would conflict if implemented independently
+- Same file alone is not a dependency
+- Do not include task IDs, task numbers, prefixes, or labels in the title
+
 ### Brevity
 
 - Description: 2-5 sentences. Name the exact file path, class, method, or config key to create or modify
@@ -55,20 +68,34 @@ parallelism: full
 - Do not reproduce tables, mappings, or schemas from the spec. Reference them: "per the Q8a mapping table in the spec"
 - Do not add sections like "Context", "Files", "Implementation notes", or "Verification"
 
-### Dependencies
-
-- depends_on contains 0-based indices from the outline, strictly less than the current task index
-- Add a dependency only when:
-  - This task needs the earlier task's output
-  - This task edits the same exact code block
-  - The tasks would conflict if implemented independently
-- Same file alone is not a dependency
-
-### Title
-
-- Use the exact title from the outline
-- Do not include task IDs, numbers, prefixes, or labels
-
 ## Subagent prompt
 
-When invoked as a standalone subagent (e.g. via `claude --print --json-schema`), each call receives the full outline, the full spec, and a single task index. The subagent returns structured JSON for that one task only. All calls are independent and can run in parallel.
+When invoked as a standalone subagent (e.g. via `claude --print --json-schema`), each call receives the full outline, the full spec, and a single task index to complete. The subagent returns structured JSON for that one task. All calls are independent and can run in parallel.
+
+```
+You are completing one task from an already chosen project plan.
+
+Return structured output matching the provided JSON schema.
+
+FULL TASK OUTLINE:
+{{outline}}
+
+Spec:
+{{spec}}
+
+RULES:
+- Use the exact task title from the outline for the "title" field
+- Write the description for the selected task only
+- Format acceptance criteria as a markdown list with one "- " bullet per verifiable requirement
+- Include depends_on as 0-based task indices from the outline
+- depends_on may only include indices lower than the selected task index
+- Add a dependency only when this task needs the earlier task's output, edits the same exact code block, or would conflict if implemented independently
+- Same file alone is not a dependency
+- Do not include task IDs, task numbers, prefixes, or labels in the title
+- Return only the structured output
+
+TASK TO COMPLETE:
+Complete only task index {{task_index}}.
+{{task_line}}
+For this task, depends_on may only include indices lower than {{task_index}}.
+```

@@ -15,6 +15,21 @@ variables:
 
 ## Rules
 
+These rules produce the task outline. When Hari reads this file during Phase 1, apply all of them.
+
+### Core rules (from proven pipeline)
+
+- Output only task titles, with no introduction, explanation, markdown, JSON, or summary
+- Do not wait to write descriptions, acceptance criteria, or dependency details — titles only
+- Do not include task IDs, task numbers, prefixes, or labels in titles
+- Be exhaustive enough that the later detail phase can reuse the same title list
+- Keep tasks small and atomic
+- Prefer maximum safe parallelism
+- Same file alone is not a dependency
+- Avoid long linear chains unless every task truly depends on the previous task
+- Preserve the implementation order that the structured planner should use
+- Consider whether any skills you have are relevant to this spec, especially if the spec mentions a skill by name
+
 ### Granularity
 
 - Each task should touch roughly ONE file — one class created, one method added, one config changed
@@ -55,19 +70,27 @@ variables:
 - Prefer maximum safe parallelism — avoid false linear chains
 - Same file alone is not a dependency
 
-### Skills
-
-- Consider whether any available skills are relevant, especially if the spec mentions one by name
-
 ## Subagent prompt
 
 When invoked as a standalone subagent (e.g. via `claude --print`), use this prompt with the spec content substituted for `{{spec}}`:
 
 ```
-Make a quick title-only task outline for the following spec. Output each task title as soon as it is decided, one line at a time, exactly in this format:
+You are creating the live task-list preview for a project planner.
+
+Make a quick title-only task outline for the spec. Output each task title as soon as it is decided, one line at a time, exactly in this format:
 PREVIEW: <title>
 
-Output only PREVIEW lines — no introduction, explanation, markdown, JSON, or summary.
+RULES:
+- Output only PREVIEW lines, with no introduction, explanation, markdown, JSON, or summary
+- Do not wait to write descriptions, acceptance criteria, or dependency details
+- Do not include task IDs, task numbers, prefixes, or labels in titles
+- Be exhaustive enough that the later structured planner can reuse the same title list
+- Keep tasks small and atomic
+- Prefer maximum safe parallelism
+- Same file alone is not a dependency
+- Avoid long linear chains unless every task truly depends on the previous task
+- Preserve the implementation order that the structured planner should use
+- Consider whether any skills you have are relevant to this spec, especially if the spec mentions a skill by name
 
 Spec:
 {{spec}}

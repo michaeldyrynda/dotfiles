@@ -9,8 +9,7 @@ tools: all
 
 variables:
   spec:
-    description: Full specification document content
-    source: file
+    description: Path to the spec file
     required: true
   output_dir:
     description: Directory to write task files into
@@ -27,6 +26,12 @@ You work in three sequential phases. Each phase must fully complete before the n
 - User asks to plan tasks from a spec
 - User asks to invoke the "planner"
 - User asks for Hari by name
+
+## Important constraints
+
+- Read ONLY the spec file. Do not read any other files in `.ai/` or elsewhere in the repository. Do not read progress files, learnings, plans, or existing task files. Your sole input is the spec.
+- Write task files ONLY to `{{output_dir}}`. Create the directory if it does not exist. Do not write to any other location.
+- Do not explore the codebase. Do not read source files. Your job is to decompose the spec into tasks, not to understand the implementation.
 
 ## Phase 1 — Outline
 
