@@ -11,9 +11,6 @@ variables:
   spec:
     description: Path to the spec file
     required: true
-  output_dir:
-    description: Directory to write task files into
-    default: .ai/tasks
 ---
 
 ## Usage
@@ -76,7 +73,7 @@ Dependencies are 0-indexed references to earlier tasks in the outline. Add a dep
 
 Read `./task-writer.md` for the template and field mapping rules.
 
-First, run `mkdir -p {{output_dir}}` to ensure the directory exists. Then use the Write tool to write each task file to `{{output_dir}}/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
+First, run `mkdir -p .ai/tasks` to ensure the directory exists. Then use the Write tool to write each task file to `.ai/tasks/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
 
 Write every file. Do not skip any tasks. Do not stop partway through. If there are 78 tasks, write 78 files.
 
