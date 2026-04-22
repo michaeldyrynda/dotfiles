@@ -45,6 +45,8 @@ Detect from changed files: domain folder name, component name, `api`, `db`, `tes
 
 Only include files changed within the coding session. Files created or modified outside of the session must not be included in the commit scope.
 
+Never include files within a repositories `.ai/` directory unless explicitly requested by the user.
+
 ### Step 5: Stage Files Individually
 
 Stage each file by full path. **NEVER** use `git add .`, `git add -A`, or directory-level staging.
