@@ -57,32 +57,34 @@ Run these steps on every invocation before doing any implementation work.
 3. **Read all task files.** Glob `.ai/tasks/*.md`. For each file, read the YAML frontmatter to extract `number`, `status`, and `dependencies`. Build a task index in memory.
 
 4. **Select the task.**
-   - If the human provided a task number, select that task regardless of its current status. Set its status to `in_progress`.
+   - If the human provided a task number, select that task regardless of its current status.
    - Otherwise, find the lowest-numbered task where `status` is `pending` and every entry in `dependencies` refers to a task with `status: complete`. If no task qualifies, report the current status summary and stop.
 
-5. **Read the selected task in full** — title, description, and acceptance criteria.
+5. **Mark the task `in_progress`.** Immediately edit the task file's YAML frontmatter to set `status: in_progress`. Do this now, before reading the task body or doing any implementation work. This is not optional.
+
+6. **Read the selected task in full** — title, description, and acceptance criteria.
 
 ## Implementation
 
-6. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
+7. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
 
-7. **Implement the changes.** Write the code. Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
+8. **Implement the changes.** Write the code. Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
-8. **Run quality checks.** Determine which checks to run based on the files you changed:
+9. **Run quality checks.** Determine which checks to run based on the files you changed:
    - PHP files (`.php`): run the project's linter and static analyser (e.g., `pint`, `stan`)
    - TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`): run the type checker (e.g., `tsc`)
    - Test files or changes to tested code: run the relevant test suite scoped to affected tests (e.g., `pest`, `vitest`)
    - If you are unsure which commands to use, consult the project's `CLAUDE.md`, `Makefile`, `composer.json` scripts, or `package.json` scripts to discover the correct invocations. Log what you discover as a learning.
 
-9. **Fix failures.** If any check fails, read the error output, fix the code, and re-run the failing check. Repeat until all checks pass. If you cannot resolve a failure after a genuine effort, mark the task `failed` and proceed to the pause step — do not loop indefinitely.
+10. **Fix failures.** If any check fails, read the error output, fix the code, and re-run the failing check. Repeat until all checks pass. If you cannot resolve a failure after a genuine effort, mark the task `failed` and proceed to the pause step — do not loop indefinitely.
 
 ## Record
 
-10. **Update task status.** Edit the task file's YAML frontmatter:
-    - Set `status: complete` if all checks pass.
-    - Set `status: failed` if you could not resolve a check failure.
+11. **Update task status.** Edit the task file's YAML frontmatter to set the `status` field to exactly one of these values — use these exact strings, no synonyms:
+    - `complete` — all checks pass
+    - `failed` — you could not resolve a check failure
 
-11. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/learnings.md`. Create the file if it does not exist.
+12. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/learnings.md`. Create the file if it does not exist.
 
     Format:
     ```
@@ -101,7 +103,7 @@ Run these steps on every invocation before doing any implementation work.
 
 ## Pause for human review
 
-12. **Present a handoff summary.** This is the last thing you output. Format:
+13. **Present a handoff summary.** This is the last thing you output. Format:
 
     ```
     ## Task {{number}} — {{title}} [{{status}}]
@@ -121,14 +123,16 @@ Run these steps on every invocation before doing any implementation work.
     - Task {{next_number}}: {{next_title}} (or "All tasks complete" or "No eligible tasks — blocked on: ...")
     ```
 
-13. **Stop immediately.** You are done. Do not select another task. Do not continue working. Do not implement the next task. The human will review your changes, handle git operations, and explicitly re-invoke you when they are ready for the next task. Any work beyond the single selected task is a violation of this protocol.
+14. **Stop immediately.** You are done. Do not select another task. Do not continue working. Do not implement the next task. The human will review your changes, handle git operations, and explicitly re-invoke you when they are ready for the next task. Any work beyond the single selected task is a violation of this protocol.
 
 ## Status reference
+
+Valid `status` values — use these exact strings only, never synonyms like "done" or "finished":
 
 | Status        | Meaning                                                    |
 |---------------|------------------------------------------------------------|
 | `pending`     | Not yet started                                            |
-| `in_progress` | Currently being implemented (set at start of work)         |
+| `in_progress` | Set immediately after task selection, before any work      |
 | `complete`    | Implemented and all quality checks pass                    |
 | `failed`      | Implementation attempted but quality checks unresolvable   |
 
