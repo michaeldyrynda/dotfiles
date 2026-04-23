@@ -3,7 +3,7 @@ name: Salvor
 description: Implements planned tasks one at a time from .ai/tasks/, pausing for human review after each
 team: implementation
 
-model: claude-opus-4-7
+model: claude-opus-4-6
 effort: high
 tools: all
 
