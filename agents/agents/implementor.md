@@ -67,7 +67,12 @@ Run these steps on every invocation before doing any implementation work.
 
 6. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
 
-7. **Implement the changes.** Write the code. Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
+7. **Implement the changes using test-first development.** For each vertical slice:
+   1. Write the test first. Run it — it should fail.
+   2. Implement step by step (route, controller, request, resource, etc.), re-running the test after each change to confirm the failure message progresses (e.g., "route not found" → "controller not found" → "missing method" → passing).
+   3. Continue until the test passes.
+
+   Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
 8. **Run quality checks.** Determine which checks to run based on the files you changed:
    - PHP files (`.php`): run the project's linter and static analyser (e.g., `pint`, `stan`)

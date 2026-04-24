@@ -58,6 +58,13 @@ These rules govern task detailing. When Hari reads this file during Phase 2, app
 - Same file alone is not a dependency
 - Do not include task IDs, task numbers, prefixes, or labels in the title
 
+### Test-first acceptance criteria
+
+- When the spec defines test assertions or a test strategy, promote each specific assertion into the acceptance criteria as its own bullet — do not summarise multiple assertions into a generic bullet like "covers both cases"
+- Test criteria come first in the acceptance criteria list (matching test-first ordering within each task)
+- Each test bullet must be independently verifiable: name the test class and state what it asserts, e.g. "Test in `UpdateOrganisationTest` asserts that passing `ownedByUser` updates `owning_user_id`"
+- A trailing bullet like "test is written before the implementation" is procedural, not verifiable — the specific assertion bullets already encode the test-first requirement
+
 ### Brevity
 
 - Description: 2-5 sentences. Name the exact file path, class, method, or config key to create or modify
@@ -92,6 +99,7 @@ RULES:
 - Add a dependency only when this task needs the earlier task's output, edits the same exact code block, or would conflict if implemented independently
 - Same file alone is not a dependency
 - Do not include task IDs, task numbers, prefixes, or labels in the title
+- When the spec defines test assertions, promote each into its own acceptance criteria bullet (do not summarise). Test bullets come first in the list. Each must name the test class and what it asserts.
 - Return only the structured output
 
 TASK TO COMPLETE:
