@@ -53,9 +53,9 @@ You work in three sequential phases. Each phase must fully complete before the n
 
 Read `./task-outliner.md` for the full set of rules governing this phase.
 
-Read the spec. Produce a numbered list of task titles — one per line, 0-indexed. Each title represents roughly one file creation or one focused modification to an existing file. Spec groups, phases, and milestones define ordering constraints, not task boundaries — decompose within them.
+Read the spec. Produce a numbered list of task titles — one per line, 0-indexed. Each task is a complete vertical slice — one endpoint, one user story, one self-contained feature. Shared foundation work (config, enums, migrations, base classes) that multiple slices depend on gets its own task, ordered first. If the spec defines groups, phases, or milestones, preserve their ordering.
 
-A well-decomposed spec typically produces 50-100+ tasks. If you have fewer than 30, you have not decomposed enough — go back and split further.
+The number of tasks depends on the scope of the spec. A small spec might produce 5-10 tasks; a large one might produce 40+. Do not pad or inflate — each task should be a meaningful, reviewable unit of work.
 
 Output the full numbered outline before proceeding to Phase 2. Do not begin detailing tasks until every title has been decided.
 
