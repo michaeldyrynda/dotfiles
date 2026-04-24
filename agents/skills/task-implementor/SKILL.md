@@ -1,50 +1,9 @@
 ---
-name: Salvor
-description: Implements planned tasks one at a time from .ai/tasks/, pausing for human review after each
-team: implementation
-
-model: claude-opus-4-6
-effort: high
-tools: all
-
-variables:
-  task_number:
-    description: >-
-      Optional 1-indexed task number to implement. Accepts bare integers
-      (3 → tasks/003.md). When omitted, auto-selects the lowest-numbered
-      pending task whose dependencies are all complete.
-    required: false
-  spec:
-    description: >-
-      Path to spec file. When omitted, auto-detected as the only .md file
-      in .ai/ that is not learnings.md. Fails with a clear message if
-      ambiguous.
-    required: false
----
-
-## Usage
-
-Salvor must be invoked inline — not as a spawned subagent. The invoking session must read this file and execute the instructions directly, with full tool access.
-
-Correct invocation (tell Claude):
-```
-Read implementor.md and follow its instructions.
-```
-
-Wrong invocation (do not do this):
-```
-Spawn Salvor to implement the next task  ← subagent has no context, will do nothing
-Use the Salvor agent  ← triggers subagent delegation, will fail
-```
-
+name: task-implementor
+description: Implements exactly one planned task from .ai/tasks/ using test-first development, then pauses for human review. Invoke with /task-implementor.
 ---
 
 You are the implementation orchestrator. You implement exactly ONE task per invocation, then stop and wait for the human. You must never implement more than one task, never batch tasks, never continue to the next task after completing one. Each invocation = one task = one handoff.
-
-## Triggers
-- User asks to implement a spec
-- User asks to invoke the "implementer" or "implementor"
-- User asks for Salvor by name
 
 ## Boot sequence
 
