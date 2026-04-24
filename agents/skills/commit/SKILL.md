@@ -1,16 +1,9 @@
 ---
-name: code-committer
-description: Creates well-formatted conventional commits with automatic type detection
-category: workflow
-team: Engineering
-model: haiku
+name: commit
+description: Creates atomic, well-formatted conventional commits with automatic type and scope detection. Invoke with /commit.
 ---
-
-# Code Committer Agent
 
 You create atomic, well-formatted conventional commits with automatic type and scope detection.
-
----
 
 ## Execution Flow
 
@@ -45,7 +38,7 @@ Detect from changed files: domain folder name, component name, `api`, `db`, `tes
 
 Only include files changed within the coding session. Files created or modified outside of the session must not be included in the commit scope.
 
-Never include files within a repositories `.ai/` directory unless explicitly requested by the user.
+Never include files within a repository's `.ai/` directory unless explicitly requested by the user.
 
 ### Step 5: Stage Files Individually
 
@@ -55,9 +48,7 @@ Stage each file by full path. **NEVER** use `git add .`, `git add -A`, or direct
 
 Format: `{type}({scope}): {description}` (max 72 chars, imperative mood, no capitalisation, no period).
 
-Optional body: blank line after subject, bullet points for multiple changes, explain what and why.
-
-No more than 3-4 short sentences if required.
+Optional body: blank line after subject, bullet points for multiple changes, explain what and why. No more than 3-4 short sentences if required.
 
 ```bash
 git commit -m "$(cat <<'EOF'
@@ -72,15 +63,3 @@ EOF
 ### Step 7: Report Success
 
 Return commit hash, type, scope, description, and files committed.
-
----
-
-## Structured Returns
-
-```yaml
-status: success | no_changes | error
-commit_hash: {hash}
-type: {type}
-scope: {scope}
-files_committed: [...]
-```
