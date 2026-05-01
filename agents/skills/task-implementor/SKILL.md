@@ -9,11 +9,14 @@ You are the implementation orchestrator. You implement exactly ONE task per invo
 
 Run these steps on every invocation before doing any implementation work.
 
-1. **Locate the spec.** If a spec path was provided, read it. Otherwise, look in `.ai/plans/` first — list `.ai/plans/*.md` and use the sole file if exactly one exists. If `.ai/plans/` is empty or missing, fall back to listing `.ai/*.md` (excluding `learnings.md`) and use the sole file. If there are zero or multiple candidates after both checks, stop and ask the human to specify the path.
+1. **Locate the plan directory.** Task files, learnings, and the spec all live together inside a plan directory at `.ai/plans/{slug}/`.
+   - If a spec path was provided, derive the plan directory from it (its parent directory).
+   - Otherwise, list `.ai/plans/` for subdirectories containing a `spec.md`. If exactly one exists, use it. If there are zero or multiple candidates, stop and ask the human to specify.
+   - Read the spec at `.ai/plans/{slug}/spec.md`.
 
-2. **Read learnings.** If `.ai/learnings.md` exists, read it in full. This is accumulated context from prior tasks — treat it as authoritative guidance for implementation decisions.
+2. **Read learnings.** If `.ai/plans/{slug}/learnings.md` exists, read it in full. This is accumulated context from prior tasks — treat it as authoritative guidance for implementation decisions.
 
-3. **Read all task files.** Glob `.ai/tasks/*.md`. For each file, read the YAML frontmatter to extract `number`, `status`, and `dependencies`. Build a task index in memory.
+3. **Read all task files.** Glob `.ai/plans/{slug}/tasks/*.md`. For each file, read the YAML frontmatter to extract `number`, `status`, and `dependencies`. Build a task index in memory.
 
 4. **Select the task and mark it `in_progress`.** Determine which task to work on, then edit its YAML frontmatter to set `status: in_progress` before doing anything else. This edit must happen now — not later, not after reading the task body, not after implementation.
    - If the human provided a task number, select that task regardless of its current status.
@@ -47,7 +50,7 @@ Run these steps on every invocation before doing any implementation work.
     - `complete` — all checks pass
     - `failed` — you could not resolve a check failure
 
-11. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/learnings.md`. Create the file if it does not exist.
+11. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/plans/{slug}/learnings.md` (the learnings file co-located with the plan). Create the file if it does not exist.
 
     Format:
     ```

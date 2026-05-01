@@ -110,7 +110,12 @@ For each task in the outline, produce a title, description, acceptance criteria,
 
 ## Phase 3 — Write
 
-First, run `mkdir -p .ai/tasks` to ensure the directory exists. Then use the Write tool to write each task file to `.ai/tasks/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
+First, locate the plan directory. Task files live alongside the spec that produced them:
+
+- If the spec is at `.ai/plans/{slug}/spec.md`, write tasks to `.ai/plans/{slug}/tasks/`.
+- Run `mkdir -p .ai/plans/{slug}/tasks` to ensure the directory exists.
+
+Then use the Write tool to write each task file to `.ai/plans/{slug}/tasks/###.md` with 1-indexed, zero-padded 3-digit numbering (001.md, 002.md, ...). Remap dependency indices from 0-indexed (outline) to 1-indexed (file numbers).
 
 Write every file. Do not skip any tasks. Do not stop partway through.
 
