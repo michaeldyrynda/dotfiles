@@ -36,11 +36,12 @@ Run these steps on every invocation before doing any implementation work.
 
    Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
-8. **Run quality checks.** Determine which checks to run based on the files you changed:
-   - PHP files (`.php`): run the project's linter and static analyser (e.g., `pint`, `stan`)
-   - TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`): run the type checker (e.g., `tsc`)
-   - Test files or changes to tested code: run the relevant test suite scoped to affected tests (e.g., `pest`, `vitest`)
-   - If you are unsure which commands to use, consult the project's `CLAUDE.md`, `Makefile`, `composer.json` scripts, or `package.json` scripts to discover the correct invocations. Log what you discover as a learning.
+8. **Run quality checks.** Before running any checks, consult `CLAUDE.md` for the project's exact commands — do not guess or use generic defaults. Determine which checks to run based on the files you changed:
+   - PHP files (`.php`): run the project's linter and static analyser
+   - TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`): run the type checker
+   - Test files or changes to tested code: run the relevant test suite scoped to affected tests
+   - When running the full test suite, always use the parallel runner if one is available (e.g., `composer ptest` over `composer test`). Reserve the sequential runner for targeting a single file.
+   - If `CLAUDE.md` does not document the commands, check `Makefile`, `composer.json` scripts, or `package.json` scripts. Log what you discover as a learning.
 
 9. **Fix failures.** If any check fails, read the error output, fix the code, and re-run the failing check. Repeat until all checks pass. If you cannot resolve a failure after a genuine effort, mark the task `failed` and proceed to the pause step — do not loop indefinitely.
 
