@@ -2,6 +2,10 @@
 #
 # Attach or create tmux session named the same as current directory.
 
+if [ "$TERM_PROGRAM" = "solo" ]; then
+  return 2>/dev/null || exit
+fi
+
 session_name="$(basename "$PWD" | tr . -)"
 
 session_exists() {
