@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/env nvim
-    pager = delta
+    pager = hunk pager
 [interactive]
     diffFilter = delta --color-only
 [user]
@@ -61,8 +61,8 @@
 [gpg "ssh"]
     program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
