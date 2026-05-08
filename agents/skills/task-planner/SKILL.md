@@ -137,4 +137,12 @@ Acceptance Criteria:
 
 All tasks start with `status: pending`.
 
-After writing all files, stop. Do not review the output. Do not suggest changes. Do not restructure.
+After writing all files, proceed to Phase 4 (Solo sync) if Solo MCP tools are available, otherwise stop. Do not review the output. Do not suggest changes. Do not restructure.
+
+## Phase 4 — Solo sync (conditional)
+
+This phase runs **only** if Solo MCP tools are available (i.e. tools prefixed `mcp__solo__` exist). If they are not available, skip this phase entirely — do not mention it, do not warn, do not suggest configuring Solo.
+
+Read the `task-planner` section of `~/.claude/skills/_shared/solo-integration.md` and follow those steps.
+
+After syncing all todos and blockers, stop.
