@@ -7,7 +7,7 @@ Shared instructions for skills that sync with Solo's todo and scratchpad systems
 - **Project resolution:** Check the spec file's YAML frontmatter for `solo_project_id`. If present, call `mcp__solo__select_project` with that ID. If not present (or no spec exists yet), call `mcp__solo__list_projects` and select the project whose name matches the current working directory (auto-selects if only one exists).
 - **Plan tagging:** All todos and scratchpads for a plan use the tag `plan:{slug}` where `{slug}` is the plan directory name.
 - **Todo titles:** Prefixed with the zero-padded task number: `001: Implement POST /deals endpoint`.
-- **Frontmatter fields:** `solo_project_id` lives in `spec.md` frontmatter. `solo_todo_id` lives in each task file's frontmatter.
+- **Frontmatter fields:** `solo_project_id` lives in `spec.md` frontmatter. `solo_todo_id` and `solo_slug` live in each task file's frontmatter. `solo_slug` is the `url` value returned by `todo_create` (rich mode) or `todo_get` — a `solo://` deeplink.
 
 ---
 
@@ -40,14 +40,16 @@ After writing all task files (end of Phase 3):
    - `body`: the task description and acceptance criteria
    - `tags`: `["plan:{slug}"]`
    - `priority`: `"medium"`
-   Collect the returned `todo_id` for each task.
-3. **Write `solo_todo_id` back to each task file's frontmatter.** Add it after the existing fields:
+   - `response_mode`: `"rich"`
+   Collect the returned `todo_id` and `url` for each task.
+3. **Write `solo_todo_id` and `solo_slug` back to each task file's frontmatter.** Add them after the existing fields:
    ```
    ---
    dependencies: [1, 3]
    status: pending
    number: 5
    solo_todo_id: 42
+   solo_slug: "solo://proj/3/todo/001-implement-post-deals--42"
    ---
    ```
 4. **Wire up blockers.** For each task with `dependencies`, call `mcp__solo__todo_set_blockers` with:
@@ -61,7 +63,7 @@ After writing all task files (end of Phase 3):
 ### Boot (after reading all task files)
 
 - **Detect Solo MCP** and check the spec's frontmatter for `solo_project_id`. If present, call `mcp__solo__select_project`. Remember this availability flag.
-- **Read `solo_todo_id`** from each task file's frontmatter (already extracted in the task index).
+- **Read `solo_todo_id` and `solo_slug`** from each task file's frontmatter (already extracted in the task index).
 
 ### Mark in_progress (step 5)
 
