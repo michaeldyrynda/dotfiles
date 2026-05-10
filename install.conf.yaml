@@ -10,6 +10,7 @@
 - create:
     - ~/.composer
     - ~/.config
+    - ~/.config/hunk
     - ~/intelephense
     - ~/code
     - ~/.vim/undo-history
@@ -37,6 +38,7 @@
     ~/bin: bin
     ~/.config/aerospace: aerospace
     ~/.config/bat.conf: bat.conf
+    ~/.config/hunk/config.toml: hunk.toml
     ~/.config/opencode/opencode.json: opencode.json
     ~/.agents/skills: agents/skills
     ~/.claude/CLAUDE.md: CLAUDE.md
