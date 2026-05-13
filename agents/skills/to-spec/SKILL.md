@@ -18,6 +18,7 @@ The user may provide a path or slug. If not, derive the slug from the conversati
    ```
 
 3. **Write the spec.** Use the Write tool to create `.ai/plans/{slug}/spec.md`. The spec body is synthesized from the conversation. Use the template below as a guide, but adapt sections to fit the work discussed. Not every section applies to every spec.
+**Always write the full spec content** to the scratchpad, not a summary or link to the file. The scratchpad should be a complete, self-contained copy of the spec.
 
 4. **Solo sync (conditional).** If Solo MCP tools are available (i.e. tools prefixed `mcp__solo__` exist), read the `to-spec` section of `~/.claude/skills/_shared/solo-integration.md` and follow those steps. If Solo MCP tools are not available, skip silently — do not mention Solo or suggest configuring it.
 
