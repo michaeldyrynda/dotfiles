@@ -104,6 +104,7 @@ The implementor follows strict red-green-refactor TDD: they write ONE test, see 
 - **Each test bullet starts with "Test that"** and states what it asserts, e.g. "Test that `proceed()` returns true when no knockout methods call `fail()`". Name the test class or method under test where known.
 - **Non-test criteria come last** — quality checks (`composer stan` passes), style fixes, or integration verifications go after all test bullets.
 - When the spec defines test assertions or a test strategy, promote each specific assertion into the acceptance criteria as its own bullet — do not summarise or condense them.
+- Before writing any test bullets, read `~/.claude/skills/_shared/testing-rules.md` and apply its rules. Do not write test bullets that test the language or framework.
 
 ### Dependency rules
 
