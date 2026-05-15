@@ -95,11 +95,15 @@ For each task in the outline, produce a title, description, acceptance criteria,
 - Do not reproduce tables, mappings, or schemas from the spec. Reference them: "per the Q8a mapping table in the spec"
 - Do not add sections like "Context", "Files", "Implementation notes", or "Verification"
 
-### Test-first acceptance criteria
+### Test-first acceptance criteria — one test per code path
 
-- When the spec defines test assertions or a test strategy, promote each specific assertion into the acceptance criteria as its own bullet — do not summarise multiple assertions into a generic bullet like "covers both cases"
-- Test criteria come first in the acceptance criteria list (matching test-first ordering within each task)
-- Each test bullet must be independently verifiable: name the test class and state what it asserts, e.g. "Test in `UpdateOrganisationTest` asserts that passing `ownedByUser` updates `owning_user_id`"
+The implementor follows strict red-green-refactor TDD: they write ONE test, see it fail, write the minimum code to make it pass, then move to the next test bullet. The acceptance criteria you write directly control this loop — each test bullet becomes one red-green-refactor cycle.
+
+- **One bullet = one test = one code path.** Each test bullet must map to a single behaviour or code path that the implementor will make pass in isolation. Do not combine multiple assertions into one bullet (e.g., "passes when >= minimum and fails when < minimum" is two bullets, not one). Do not write a generic bullet like "covers both cases" or "handles edge cases".
+- **Test criteria come first** in the acceptance criteria list, ordered by implementation sequence. The implementor works through them top to bottom — order them so each test builds on the code written for the previous one (simplest/happiest path first, edge cases and error paths after).
+- **Each test bullet starts with "Test that"** and states what it asserts, e.g. "Test that `proceed()` returns true when no knockout methods call `fail()`". Name the test class or method under test where known.
+- **Non-test criteria come last** — quality checks (`composer stan` passes), style fixes, or integration verifications go after all test bullets.
+- When the spec defines test assertions or a test strategy, promote each specific assertion into the acceptance criteria as its own bullet — do not summarise or condense them.
 
 ### Dependency rules
 

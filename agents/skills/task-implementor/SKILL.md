@@ -32,10 +32,22 @@ Run these steps on every invocation before doing any implementation work.
 
 7. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
 
-8. **Implement the changes using test-first development.** For each vertical slice:
-   1. Write the test first. Run it — it should fail.
-   2. Implement step by step (route, controller, request, resource, etc.), re-running the test after each change to confirm the failure message progresses (e.g., "route not found" → "controller not found" → "missing method" → passing).
-   3. Continue until the test passes.
+8. **Implement using strict red-green-refactor TDD — one test at a time.**
+
+   Work through the acceptance criteria test bullets sequentially. For each test bullet:
+
+   1. **Red.** Write exactly ONE test method for the current bullet. Run it. It MUST fail. If it passes immediately, the test is not testing new behaviour — either the assertion is wrong or the code path already exists. Fix the test or skip to the next bullet.
+   2. **Green.** Write the minimum production code to make that one test pass. Run the test again to confirm green. Do not write code for any other test bullet yet.
+   3. **Refactor.** If the code you just wrote can be cleaned up without changing behaviour, do it now. Run the test again to confirm it still passes.
+   4. **Move on.** Only after the current test is green, proceed to the next acceptance criteria bullet and repeat from step 1.
+
+   This means you will have multiple red-green-refactor cycles per task — one per test bullet. You must NEVER:
+   - Write multiple test methods before implementing any production code
+   - Write all tests first and then make them pass in bulk
+   - Skip the red step — every test must be observed failing before you write production code for it
+   - Write production code that satisfies a future test bullet before that bullet's test exists
+
+   For integration/feature tests where the failure progresses through stages (e.g., "route not found" → "controller not found" → "method not found" → passing), re-run the test after each incremental change to confirm the failure message advances. This progressive-failure cycle is the green step for that single test.
 
    Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
@@ -111,6 +123,7 @@ Valid `status` values — use these exact strings only, never synonyms like "don
 ## Rules
 
 - **ONE task per invocation. No exceptions.** After completing a task and presenting the handoff summary, stop. Do not look at the next task. Do not begin implementing it. Do not use background agents or parallel work on other tasks.
+- **ONE test at a time. No exceptions.** Write one test, see it fail, write the code to make it pass, refactor, then move to the next test. Never write multiple tests before implementing production code. This is the single most important implementation rule.
 - Never create new task files. If you spot a gap in the plan, mention it in the handoff notes.
 - Never perform git operations (commit, push, branch, stage, stash, etc.).
 - Never modify task files other than updating the `status` field in frontmatter.

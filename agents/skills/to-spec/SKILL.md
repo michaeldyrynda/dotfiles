@@ -59,6 +59,17 @@ Step-by-step description of what the implementation does at runtime. Name the ac
 
 Invariants, things deliberately excluded, entry-point agnosticism, idempotency guarantees.
 
+Always include:
+- **TDD is mandatory.** Red-green-refactor, strictly one test at a time. Never write all tests then implement.
+
+## Testing
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Testing | Strict TDD red-green-refactor | One test at a time, green before next. Never write all tests then implement. |
+
+Specify test file locations and the kinds of tests expected (unit, feature, integration). If particular assertions or scenarios are known, list them — the task planner will promote each into its own acceptance criteria bullet, and the implementor will use each as a single red-green-refactor cycle.
+
 ## Edge Cases
 
 Bullet list of edge cases and how each is handled.
