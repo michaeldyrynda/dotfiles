@@ -10,6 +10,7 @@ Do not:
 - Instantiate a readonly DTO/value object and assert its properties hold the values passed to the constructor — this tests PHP, not your code
 - Assert that an enum case has its declared string value (e.g., `LoanProduct::ConsumerAsset->value === 'Consumer Asset'`) — this tests the language
 - Assert that a Laravel route exists after you registered it — the framework guarantees this
+- Assert that a database migration creates/drops columns, tables, indexes, or foreign keys — the framework guarantees this
 - Assert that a config value returns what you just set — this tests the framework's config system
 - Assert that a model's fillable/cast/relationship declarations work as declared — Eloquent already guarantees this
 
