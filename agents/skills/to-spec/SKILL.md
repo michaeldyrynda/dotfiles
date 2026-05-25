@@ -28,12 +28,37 @@ The user may provide a path or slug. If not, derive the slug from the conversati
 
 Use this as a structural guide. Omit sections that don't apply. Add sections that the conversation warrants. The goal is a spec that the `/task-planner` skill can decompose into vertical-slice tasks.
 
+**The "User Jobs / Product Surfaces" section is mandatory.** Without it, the task planner has no anchor for vertical slices and will fall back to horizontal technical layers (models first, then controllers, then UI). Every spec must name the real people who use the system and the goals they accomplish through it.
+
 ```markdown
 # {Title}
 
 ## Overview
 
 2-3 sentences on what this work achieves and why.
+
+## User Jobs / Product Surfaces
+
+This section is **required**. It defines the vertical slices the task planner will decompose into. Each entry is a real thing a real person does — not a technical layer.
+
+For each user job:
+
+| Field | Description |
+|-------|-------------|
+| **Role** | Who does this (e.g. "Customer", "Support agent", "Admin", "API consumer") |
+| **Goal** | What they are trying to accomplish, in their words |
+| **Entry point** | Where they start (URL, admin panel, CLI command, email link) |
+| **Completion state** | What "done" looks like from their perspective |
+| **Product surface** | The UI or interface where this happens (admin page, public form, email, API) |
+| **Depends on** | Other user jobs that must be buildable first (use sparingly) |
+
+Example entries:
+
+- **Customer reviews an order:** Role: Customer. Goal: See order status and line items after purchase. Entry point: email link → `/orders/{reference}`. Completion state: order page renders current status, totals, and delivery details. Surface: public account page. Depends on: none (first slice).
+- **Support agent refunds a payment:** Role: Support agent. Goal: Resolve a customer refund request. Entry point: admin order detail page. Completion state: refund is recorded, customer is notified, and the order timeline shows the action. Surface: admin workflow. Depends on: "Customer reviews an order" if it needs the same order model.
+- **API consumer creates a project:** Role: API consumer. Goal: Create a project through the public API. Entry point: `POST /api/projects`. Completion state: response returns the created project and it is visible through `GET /api/projects/{id}`. Surface: API endpoint. Depends on: authentication foundation if not already present.
+
+Group related jobs under a product surface heading if helpful. The task planner will use these entries — not the technical sections below — as the primary axis for slicing work.
 
 ## Payload Shape / API Contract / Interface
 

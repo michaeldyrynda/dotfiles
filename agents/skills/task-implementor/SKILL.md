@@ -28,11 +28,30 @@ Run these steps on every invocation before doing any implementation work.
 
 6. **Read the selected task in full** — title, description, and acceptance criteria.
 
+## Verticality gate
+
+7. **Check whether this task is a genuine vertical slice.** Before doing any implementation, apply these checks to the task title and acceptance criteria:
+
+   1. **Who benefits?** Can you name a specific user role, operator, admin, or external consumer who gains something from this task? Minimal foundation and quality-check tasks are exempt.
+   2. **What can they now do?** After this task is complete, is there a new behaviour a person can exercise or verify?
+   3. **Where does it surface?** Can you name a URL, page, email, CLI output, scheduled message, export, or API response the person interacts with?
+   4. **Is it complete end to end?** Does the task include all tests, backend, persistence, authorisation, UI/API/output, copy, and side effects needed for that one job?
+
+   If the task is **not** a valid foundation or quality-check task and fails any of these checks, it is a horizontal layer task (e.g. "create all models", "build notification service", "add admin page shell"). Do not implement it. Instead:
+
+   - Restore the task status to `pending` in the frontmatter because no implementation was attempted.
+   - In the handoff summary, add a **Plan gap** section explaining:
+      - Why the task is horizontal (which check it failed).
+      - A suggested rewrite: name the user role, the goal, and the completion state that would make it a proper vertical slice.
+   - Stop and wait for the human. Do not proceed to the next task.
+
+   **Foundation task exemption:** A task that creates shared infrastructure (migration, enum, config, guard, base layout) is permitted only if it explicitly names the immediate user job it unlocks and does not build broad infrastructure for later slices. If it has no named consuming user job, flag it the same way — its content should be inlined into the first slice that needs it or the plan should be reshaped.
+
 ## Implementation
 
-7. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
+8. **Understand the task.** Read the spec section and any code files relevant to the task. Use the description and acceptance criteria to understand what needs to change. Consult learnings for any prior discoveries that affect this work.
 
-8. **Implement using strict red-green-refactor TDD — one test at a time.**
+9. **Implement using strict red-green-refactor TDD — one test at a time.**
 
    Work through the acceptance criteria test bullets sequentially. For each test bullet:
 
@@ -53,24 +72,24 @@ Run these steps on every invocation before doing any implementation work.
 
    Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
-9. **Run quality checks.** Before running any checks, consult `CLAUDE.md` for the project's exact commands — do not guess or use generic defaults. Determine which checks to run based on the files you changed:
+10. **Run quality checks.** Before running any checks, consult `CLAUDE.md` for the project's exact commands — do not guess or use generic defaults. Determine which checks to run based on the files you changed:
    - PHP files (`.php`): run the project's linter and static analyser
    - TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`): run the type checker
    - Test files or changes to tested code: run the relevant test suite scoped to affected tests
    - When running the full test suite, always use the parallel runner if one is available (e.g., `composer ptest` over `composer test`). Reserve the sequential runner for targeting a single file.
    - If `CLAUDE.md` does not document the commands, check `Makefile`, `composer.json` scripts, or `package.json` scripts. Log what you discover as a learning.
 
-10. **Fix failures.** If any check fails, read the error output, fix the code, and re-run the failing check. Repeat until all checks pass. If you cannot resolve a failure after a genuine effort, mark the task `failed` and proceed to the pause step — do not loop indefinitely.
+11. **Fix failures.** If any check fails, read the error output, fix the code, and re-run the failing check. Repeat until all checks pass. If you cannot resolve a failure after a genuine effort, mark the task `failed` and proceed to the pause step — do not loop indefinitely.
 
 ## Record
 
-11. **Update task status.** Edit the task file's YAML frontmatter to set the `status` field to exactly one of these values — use these exact strings, no synonyms:
+12. **Update task status.** Edit the task file's YAML frontmatter to set the `status` field to exactly one of these values — use these exact strings, no synonyms:
     - `complete` — all checks pass
     - `failed` — you could not resolve a check failure
 
-12. **Sync Solo todo status (conditional).** If Solo MCP is available, follow the "Record" instructions from the solo-integration file.
+13. **Sync Solo todo status (conditional).** If Solo MCP is available, follow the "Record" instructions from the solo-integration file.
 
-13. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/plans/{slug}/learnings.md` (the learnings file co-located with the plan). Create the file if it does not exist.
+14. **Write learnings (only if warranted).** If you discovered something during implementation that would change how a future task should be approached, append an entry to `.ai/plans/{slug}/learnings.md` (the learnings file co-located with the plan). Create the file if it does not exist.
 
     Format:
     ```
@@ -89,7 +108,7 @@ Run these steps on every invocation before doing any implementation work.
 
 ## Pause for human review
 
-14. **Present a handoff summary.** This is the last thing you output. Format:
+15. **Present a handoff summary.** This is the last thing you output. Format:
 
     ```
     ## Task {{number}} — {{title}} [{{status}}]
@@ -109,7 +128,7 @@ Run these steps on every invocation before doing any implementation work.
     - Task {{next_number}}: {{next_title}} (or "All tasks complete" or "No eligible tasks — blocked on: ...")
     ```
 
-15. **Stop immediately.** You are done. Do not select another task. Do not continue working. Do not implement the next task. The human will review your changes, handle git operations, and explicitly re-invoke you when they are ready for the next task. Any work beyond the single selected task is a violation of this protocol.
+16. **Stop immediately.** You are done. Do not select another task. Do not continue working. Do not implement the next task. The human will review your changes, handle git operations, and explicitly re-invoke you when they are ready for the next task. Any work beyond the single selected task is a violation of this protocol.
 
 ## Status reference
 
@@ -127,6 +146,7 @@ Valid `status` values — use these exact strings only, never synonyms like "don
 - **ONE task per invocation. No exceptions.** After completing a task and presenting the handoff summary, stop. Do not look at the next task. Do not begin implementing it. Do not use background agents or parallel work on other tasks.
 - **ONE test at a time. No exceptions.** Write one test, see it fail, write the code to make it pass, refactor, then move to the next test. Never write multiple tests before implementing production code. This is the single most important implementation rule.
 - Never create new task files. If you spot a gap in the plan, mention it in the handoff notes.
+- Never implement a task that fails the verticality gate unless the human explicitly approves that exact horizontal/foundation task after you flag it.
 - Never perform git operations (commit, push, branch, stage, stash, etc.).
 - Never modify task files other than updating the `status` field in frontmatter.
 - Keep implementation changes scoped to the task. One task, one logical change.
