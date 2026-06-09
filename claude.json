@@ -22,5 +22,6 @@
     "php-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
+  "theme": "dark-daltonized",
   "skipAutoPermissionPrompt": true
 }
