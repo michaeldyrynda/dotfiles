@@ -57,7 +57,7 @@ vim.keymap.set('n', '<leader>bda', ':bufdo bd<cr>') -- Destroy all buffers
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { silent = true })
 vim.keymap.set('n', '<leader>sr', '<cmd>lua vim.lsp.buf.rename()<cr>', { silent = true })
 vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', { silent = true })
-vim.keymap.set('n', '<leader>gd', "<cmd>lua vim.lsp.buf.definition()<cr>", { silent = true })
+vim.keymap.set('n', '<leader>gd', "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gv', "<cmd>lua require'telescope.builtin'.lsp_definitions{ jump_type = 'vsplit' }<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gt', "<cmd>lua vim.lsp.buf.type_definition()<cr>", { silent = true })
 vim.keymap.set('n', '<leader>gi', "<cmd>lua vim.lsp.buf.implementation()<cr>", { silent = true })

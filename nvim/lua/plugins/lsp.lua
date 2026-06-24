@@ -21,7 +21,8 @@ return {
             automatic_enable = {
                 exclude = {
                     "phpactor",
-                    "intelephense"
+                    "intelephense",
+                    "ts_ls",
                 }
             }
         })
@@ -76,24 +77,31 @@ return {
             capabilities = capabilities,
         })
 
-        vim.lsp.config('ts_ls', {
-            init_options = {
-                plugins = {
-                    {
-                        name = "@vue/typescript-plugin",
-                        location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-                        languages = {"javascript", "typescript", "vue"},
-                    },
-                },
+        local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+        local vue_plugin = {
+            name = '@vue/typescript-plugin',
+            location = vue_language_server_path,
+            languages = { 'vue' },
+            configNamespace = 'typescript'
+        }
+
+        vim.lsp.config('vtsls', {
+
+            settings = {
+                vtsls = {
+                    tsserver = {
+                        globalPlugins = {
+                            vue_plugin
+                        }
+                    }
+                }
             },
 
             filetypes = {
+                "typescript",
                 "javascript",
                 "javascriptreact",
-                "javascript.jsx",
-                "typescript",
                 "typescriptreact",
-                "typescript.tsx",
                 "vue",
             },
         })
@@ -153,10 +161,9 @@ return {
 
         vim.lsp.enable('bashls')
         vim.lsp.enable('emmet_ls')
-        -- vim.lsp.enable('intelephense')
         vim.lsp.enable('phpantom_lsp')
         vim.lsp.enable('vue_ls')
-        vim.lsp.enable('ts_ls')
+        vim.lsp.enable('vtsls')
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lua_ls')
         vim.lsp.enable('gopls')
