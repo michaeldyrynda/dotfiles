@@ -49,6 +49,25 @@
 - shell:
     - description: Install submodules
       command: "git submodule update --init --recursive"
+    - description: Install Tailwind theme
+      command: |
+        if [ -d "$HOME/code/tw-theme" ]; then
+          echo "tw-theme already installed at $HOME/code/tw-theme"
+        elif [ -n "$TW_THEME_REPO" ]; then
+          git clone "$TW_THEME_REPO" "$HOME/code/tw-theme"
+        else
+          echo "Skipping tw-theme install; set TW_THEME_REPO to clone the private repo"
+        fi
+    - description: Link Tailwind Ghostty themes
+      command: |
+        if [ -d "$HOME/code/tw-theme/ghostty" ]; then
+          mkdir -p "$HOME/.config/ghostty/themes"
+          for theme in tailwind-dark tailwind-dark-enhanced tailwind-light tailwind-light-enhanced; do
+            ln -sfn "$HOME/code/tw-theme/ghostty/$theme" "$HOME/.config/ghostty/themes/$theme"
+          done
+        else
+          echo "Skipping Tailwind Ghostty theme links; $HOME/code/tw-theme/ghostty does not exist"
+        fi
     - description: Hush login
       command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
     - description: Install Brew
