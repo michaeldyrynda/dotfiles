@@ -67,8 +67,34 @@ return {
         },
     },
 
-    config = function (_, opts)
+config = function (plugin, opts)
+        -- `nvim-treesitter` on its `main` branch ships queries under
+        -- `runtime/queries/` rather than the modern `queries/` directory
+        -- that Neovim 0.10+ searches via runtimepath. Prepend that
+        -- `runtime/` directory so the queries become discoverable.
+        local runtime_dir = plugin.dir .. '/runtime'
+        if vim.uv.fs_stat(runtime_dir) and not vim.tbl_contains(vim.opt.rtp:get(), runtime_dir) then
+            vim.opt.rtp:prepend(runtime_dir)
+        end
+
         require('nvim-treesitter.config').setup(opts)
+
+        -- The `main` branch no longer reliably starts highlight modules from
+        -- the legacy `highlight.enable` option alone. Start Neovim's native
+        -- highlighter for each buffer so normal buffers get the same
+        -- Treesitter captures that preview windows use.
+        vim.api.nvim_create_autocmd('FileType', {
+            group = vim.api.nvim_create_augroup('treesitter_start', { clear = true }),
+            callback = function(args)
+                local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+                if not lang then
+                    return
+                end
+
+                pcall(vim.treesitter.start, args.buf, lang)
+            end,
+        })
+
         require('treesitter-context').setup(opts.context)
     end
 }

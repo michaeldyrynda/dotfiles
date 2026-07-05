@@ -52,6 +52,27 @@ return {
   config = function ()
     local actions = require('telescope.actions')
 
+    local function apply_telescope_colors()
+      local colors = require('config.theme').palette()
+
+      vim.api.nvim_set_hl(0, 'TelescopeNormal', { fg = colors.fg, bg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = colors.bg, fg = colors.border })
+      vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { fg = colors.fg, bg = colors.bg_line })
+      vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = colors.bg_line, fg = colors.bg_line })
+      vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { fg = colors.fg, bg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { bg = colors.bg, fg = colors.border })
+      vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', { fg = colors.fg, bg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = colors.bg, fg = colors.border })
+      vim.api.nvim_set_hl(0, 'TelescopeSelection', { fg = colors.fg, bg = colors.bg_line, bold = true })
+      vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = colors.syntax["function"], bg = colors.bg_line })
+      vim.api.nvim_set_hl(0, 'TelescopeMatching', { fg = colors.syntax["string"], bold = true })
+      vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', { fg = colors.syntax["function"], bg = colors.bg_line })
+      vim.api.nvim_set_hl(0, 'TelescopeTitle', { bg = colors.syntax["function"], fg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = colors.syntax["function"], fg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = colors.syntax["function"], fg = colors.bg })
+      vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = colors.syntax["function"], fg = colors.bg })
+    end
+
     require('telescope').setup({
       defaults = {
         path_display = { truncate = 1 },
@@ -145,18 +166,11 @@ return {
     require('telescope').load_extension('ui-select')
 
     -- Fix background colors to match editor
-    local catppuccin = require('catppuccin.palettes').get_palette('mocha')
-    vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
-    vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { bg = catppuccin.surface0 })
-    vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = catppuccin.surface0, fg = catppuccin.surface0 })
-    vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { bg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
-    vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', { bg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
-    vim.api.nvim_set_hl(0, 'TelescopeTitle', { bg = catppuccin.blue, fg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = catppuccin.blue, fg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = catppuccin.blue, fg = catppuccin.base })
-    vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = catppuccin.blue, fg = catppuccin.base })
+    vim.api.nvim_create_autocmd('ColorScheme', {
+      pattern = '*',
+      callback = apply_telescope_colors,
+    })
+
+    apply_telescope_colors()
   end,
 }

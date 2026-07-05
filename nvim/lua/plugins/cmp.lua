@@ -175,7 +175,7 @@ return {
                     end
                     
                     vim_item.menu = menu_text
-                    vim_item.menu_hl_group = 'SpecialComment'
+                    vim_item.menu_hl_group = 'CmpItemMenu'
                     
                     -- Color support for Tailwind
                     if entry.completion_item.kind == 15 and entry.completion_item.documentation then  -- 15 = Color
@@ -257,15 +257,74 @@ return {
             )
         })
 
-        -- Set up highlight groups using Catppuccin Mocha colors
+        local palette = require("config.theme").palette()
+        local colors = {
+            fg = palette.fg,
+            muted = palette.fg_muted,
+            subtle = palette.fg_subtle,
+            bg = palette.bg_float,
+            bg_selected = palette.bg_line,
+            border = palette.raw["input.border"] or palette.border,
+            match = palette.syntax["string"],
+            fn = palette.syntax["function"],
+            type = palette.syntax["type"],
+            keyword = palette.syntax["keyword"],
+            constant = palette.syntax.constant,
+            variable = palette.syntax.variable,
+            operator = palette.syntax.operator,
+        }
         local hl_groups = {
-            -- Completion menu border - soft lavender
-            CmpBorder = { fg = '#b4befe' },
-            -- Documentation window border - soft pink  
-            CmpDocBorder = { fg = '#f5c2e7' },
-            -- Make Pmenu more distinct but still subtle
-            Pmenu = { bg = '#1e1e2e', fg = '#cdd6f4' },
-            PmenuSel = { bg = '#45475a', fg = '#cdd6f4', bold = true },
+            Pmenu = { fg = colors.fg, bg = colors.bg },
+            PmenuSel = { fg = colors.fg, bg = colors.bg_selected, bold = true },
+            PmenuSbar = { bg = colors.bg },
+            PmenuThumb = { bg = colors.border },
+            PmenuBorder = { fg = colors.border, bg = colors.bg },
+            PmenuKind = { fg = colors.fn, bg = colors.bg },
+            PmenuKindSel = { fg = colors.fn, bg = colors.bg_selected },
+            PmenuExtra = { fg = colors.muted, bg = colors.bg },
+            PmenuExtraSel = { fg = colors.subtle, bg = colors.bg_selected },
+            PmenuMatch = { fg = colors.match, bg = colors.bg, bold = true },
+            PmenuMatchSel = { fg = colors.match, bg = colors.bg_selected, bold = true },
+
+            CmpNormal = { fg = colors.fg, bg = colors.bg },
+            CmpBorder = { fg = colors.border, bg = colors.bg },
+            CmpDoc = { fg = colors.fg, bg = colors.bg },
+            CmpDocBorder = { fg = colors.border, bg = colors.bg },
+            CmpGhostText = { fg = colors.muted, italic = true },
+            CmpItemAbbr = { fg = colors.fg, bg = colors.bg },
+            CmpItemAbbrMatch = { fg = colors.match, bg = colors.bg, bold = true },
+            CmpItemAbbrMatchFuzzy = { fg = colors.match, bg = colors.bg },
+            CmpItemAbbrDeprecated = { fg = colors.muted, bg = colors.bg, strikethrough = true },
+            CmpItemMenu = { fg = colors.muted, bg = colors.bg },
+            CmpItemKind = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindText = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindMethod = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindFunction = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindConstructor = { fg = colors.type, bg = colors.bg },
+            CmpItemKindField = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindProperty = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindVariable = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindClass = { fg = colors.type, bg = colors.bg },
+            CmpItemKindInterface = { fg = colors.type, bg = colors.bg },
+            CmpItemKindStruct = { fg = colors.type, bg = colors.bg },
+            CmpItemKindEnum = { fg = colors.type, bg = colors.bg },
+            CmpItemKindEnumMember = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindModule = { fg = colors.type, bg = colors.bg },
+            CmpItemKindKeyword = { fg = colors.keyword, bg = colors.bg },
+            CmpItemKindSnippet = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindFile = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindDirectory = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindFolder = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindValue = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindUnit = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindNumber = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindBoolean = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindString = { fg = colors.match, bg = colors.bg },
+            CmpItemKindColor = { fg = colors.constant, bg = colors.bg },
+            CmpItemKindOperator = { fg = colors.operator, bg = colors.bg },
+            CmpItemKindReference = { fg = colors.variable, bg = colors.bg },
+            CmpItemKindEvent = { fg = colors.fn, bg = colors.bg },
+            CmpItemKindTypeParameter = { fg = colors.type, bg = colors.bg },
         }
 
         for name, opts in pairs(hl_groups) do

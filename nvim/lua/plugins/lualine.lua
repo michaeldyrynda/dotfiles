@@ -6,11 +6,10 @@ return {
     dependencies = {
         'arkav/lualine-lsp-progress',
         'nvim-tree/nvim-web-devicons',
-        'catppuccin/nvim',
     },
 
     config = function()
-        local colors = require("catppuccin.palettes").get_palette("mocha")
+        local colors = require("config.theme").palette()
 
         require('lualine').setup({
         options = {
@@ -19,9 +18,14 @@ return {
             globalstatus = true,
             theme = {
                 normal = {
-                    a = 'StatusLine',
-                    b = 'StatusLine',
-                    c = 'StatusLine',
+                    a = { fg = colors.fg, bg = colors.bg_statusline, gui = 'bold' },
+                    b = { fg = colors.fg_alt, bg = colors.bg_statusline },
+                    c = { fg = colors.fg_alt, bg = colors.bg_statusline },
+                },
+                inactive = {
+                    a = { fg = colors.fg_muted, bg = colors.bg_statusline },
+                    b = { fg = colors.fg_muted, bg = colors.bg_statusline },
+                    c = { fg = colors.fg_muted, bg = colors.bg_statusline },
                 },
             },
         },
@@ -36,8 +40,8 @@ return {
                     show_filename_only = false,
                     mode = 0,
                     buffers_color = {
-                        active = { fg = colors.base, bg = colors.lavender, gui = 'bold' },
-                        inactive = { fg = colors.overlay0, bg = colors.base },
+                        active = { fg = colors.fg, bg = colors.bg_line, gui = 'bold' },
+                        inactive = { fg = colors.fg_muted, bg = colors.bg_statusline },
                     },
                     symbols = {
                         modified = ' ●',
@@ -50,7 +54,7 @@ return {
                 {
                     require("lazy.status").updates,
                     cond = require("lazy.status").has_updates,
-                    color = { fg = colors.peach },
+                    color = { fg = colors.diag.warning, bg = colors.bg_statusline },
                 },
                 {
                     'diff',

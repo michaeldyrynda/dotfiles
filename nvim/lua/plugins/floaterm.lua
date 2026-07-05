@@ -19,14 +19,19 @@ return {
         vim.g.floaterm_wintype = 'float'
         vim.g.floaterm_position = 'center'
 
-        -- Match telescope colors
+        local function apply_floaterm_colors()
+            local colors = require('config.theme').palette()
+
+            vim.api.nvim_set_hl(0, 'Floaterm', { fg = colors.fg, bg = colors.bg })
+            vim.api.nvim_set_hl(0, 'FloatermBorder', { bg = colors.bg, fg = colors.border })
+        end
+
+        -- Match telescope/editor colors.
         vim.api.nvim_create_autocmd('ColorScheme', {
             pattern = '*',
-            callback = function()
-                local catppuccin = require('catppuccin.palettes').get_palette('mocha')
-                vim.api.nvim_set_hl(0, 'Floaterm', { bg = catppuccin.base })
-                vim.api.nvim_set_hl(0, 'FloatermBorder', { bg = catppuccin.base, fg = catppuccin.surface0 })
-            end,
+            callback = apply_floaterm_colors,
         })
+
+        apply_floaterm_colors()
     end,
 }
