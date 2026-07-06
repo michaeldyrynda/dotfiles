@@ -5,6 +5,7 @@ return {
 
   opts = {
     formatters_by_ft = {
+      blade = { 'blade-formatter' },
       php = { 'pint' },
       json = { 'jq', 'pint' },
       lua = { 'lua-format' },
