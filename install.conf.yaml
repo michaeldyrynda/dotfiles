@@ -44,6 +44,7 @@
     ~/.claude/CLAUDE.md: CLAUDE.md
     ~/.claude/settings.json: claude.json
     ~/.claude/skills: agents/skills
+    ~/bin/ghostty: /Applications/Ghostty.app/Contents/MacOS/ghostty
 
 
 - shell:
