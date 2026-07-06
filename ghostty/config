@@ -1,4 +1,5 @@
-font-family = Berkeley Mono Regular
+font-family = Berkeley Mono
+font-family-bold = Berkeley Mono SemiBold
 font-size = 11
 font-feature = -calt
 font-feature = -liga
