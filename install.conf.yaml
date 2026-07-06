@@ -93,8 +93,20 @@
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
-    - description: Install npm globals
-      command: "npm i -g intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server vls prettier git-trim bash-language-server emmet-ls hunkdiff"
+    - description: Install npm tools
+      command: |
+        npm_bin="$(command -v npm || true)"
+        if [ -z "$npm_bin" ] && [ -x /opt/homebrew/bin/npm ]; then
+          npm_bin=/opt/homebrew/bin/npm
+        fi
+        if [ -z "$npm_bin" ]; then
+          echo "npm not found; install Homebrew node or rerun after brew bundle completes"
+          exit 1
+        fi
+
+        npm_prefix="$HOME/.local/share/npm-tools"
+        "$npm_bin" install --prefix "$npm_prefix" intelephense neovim vscode-html-languageserver-bin @tailwindcss/language-server vls prettier git-trim bash-language-server emmet-ls hunkdiff blade-formatter
+        ln -sfn "$npm_prefix/node_modules/.bin/blade-formatter" "$HOME/bin/blade-formatter"
     - description: Setup intelephense
       command: "[ -f ~/intelephense/licence.txt ] || echo -n 'Intelephense licence key: ' && read licence && echo $licence > ~/intelephense/licence.txt"
       stdin: true

@@ -6,3 +6,4 @@ node_modules/
 pure/
 Brewfile.lock.json
 ghostty/themes/
+bin/blade-formatter
