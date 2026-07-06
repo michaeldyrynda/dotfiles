@@ -44,7 +44,6 @@ brew 'anomalyco/tap/opencode'
 brew 'artisanexperiences/tap/arbor'
 brew 'aarondfrancis/homebrew-tap/counselors'
 brew 'llmfit'
-brew 'codex'
 
 # Cask
 cask 'karabiner-elements'
@@ -57,4 +56,5 @@ cask 'ghostty'
 cask 'raycast'
 cask 'yaak'
 cask '1password-cli'
+cask 'codex'
 cask 'steipete/tap/codexbar'
