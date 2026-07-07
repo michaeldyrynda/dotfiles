@@ -138,6 +138,13 @@ return {
             capabilities = capabilities
         })
 
+        vim.api.nvim_create_user_command('LspRestart', function()
+            for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+                client:stop()
+            end
+            vim.cmd.edit()
+        end, {})
+
         -- Diagnostic configuration
         vim.diagnostic.config({
             virtual_text = false,
