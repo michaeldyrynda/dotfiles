@@ -15,6 +15,8 @@ git log main..HEAD --oneline
 git diff main --stat
 ```
 
+If the branch targets a non-default base (e.g. a parent feature branch), diff against that base instead.
+
 ### Step 2: Resolve PR Template
 
 1. Look for a PR template in the repository (common locations: `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `docs/pull_request_template.md`)
@@ -23,11 +25,18 @@ git diff main --stat
 
 ### Step 3: Analyse Changes
 
-Group commits by type: features added, bugs fixed, refactoring done, tests added. Read SUMMARY.md if it exists for key accomplishments.
+Read the full diff (production code, not tests) to understand what **behaviour** changed. Identify:
+
+- New or changed rules, conditions, or decision logic
+- Changed values or constants — note old vs new
+- Removed or replaced behaviour
+- Structural refactors that affect how the system behaves
+
+Do NOT catalogue files, classes, or methods. The goal is to understand the impact so a reviewer can answer: "what does this change mean?"
 
 ### Step 4: Generate PR Title
 
-Format: `{type}: {concise description}` — types: `feat`, `fix`, `refactor`, `docs`.
+Format: `{type}: {concise description}` — types: `feat`, `fix`, `refactor`, `docs`, `chore`.
 
 ### Step 5: Generate PR Body
 
@@ -37,7 +46,11 @@ Use the template from Step 2. Populate each section from available sources (SUMM
 
 - **Present tense throughout** — write "adds", "changes", "removes", not past ("added") or future ("will add"). The PR description describes what the code does now.
 - **Describe the final state, not the journey** — the description represents HEAD, not the sequence of commits that got there. Don't mention intermediate refactors, reverts, or iterations. A reader should understand what the branch does, not how it was developed.
-- **No lists of files or test files** — don't itemise changed files, test files, or annotate test summaries. Describe behaviour and purpose in prose.
+- **Describe behaviour, not code** — a reviewer needs to understand what *logic* changed, not which files were touched. Write about what the system does differently. Never list changed files, test files, or commit-by-commit narratives.
+- **Use tables for before/after comparisons** — when values change (constants, limits, configuration), present them in a table with old and new columns. Tables are scannable and make the scope of change immediately clear.
+- **Group by logical concept, not by file** — use subheadings that describe the change in domain terms, not implementation terms. Each group should describe one coherent behavioural change.
+- **Call out new behaviour explicitly** — if something didn't exist before, mark it clearly (e.g. "—" in the old column of a table, or "new" in prose).
+- **Minor refactors get a light touch** — if a refactor doesn't change behaviour (e.g. extracting a method, renaming for clarity, using an enum instead of a string), a single bullet under a "Minor refactors" subheading is sufficient. Don't over-explain mechanical changes.
 
 #### Template Adherence
 
@@ -52,7 +65,9 @@ Whether using a repo template or the fallback: confirm all section headings are 
 
 ### Step 7: Push and Create PR
 
-Optional arguments: `--base {branch}` (default: master), `--draft` (create as draft), `--no-push` (generate description only).
+Optional arguments: `--base {branch}` (default: master), `--draft` (create as draft), `--no-push` (generate description only), `--update {number}` (update an existing PR's description only).
+
+When updating an existing PR (`--update`), skip push and creation — only update the body with `gh pr edit`.
 
 ```bash
 git push -u origin $(git branch --show-current)
