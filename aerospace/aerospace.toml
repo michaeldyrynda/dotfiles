@@ -1,3 +1,6 @@
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+config-version = 2
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -10,6 +13,11 @@ after-startup-command = []
 
 # Start AeroSpace at login
 start-at-login = true
+
+# Workspaces that exist even when they contain no windows.
+# In config-version = 1 this list was inferred from keyboard bindings;
+# since config-version = 2 it must be declared explicitly (fallback is an empty array).
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'B', 'D', 'M', 'T']
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -188,10 +196,6 @@ if.app-id = 'com.apple.Notes'
 run = 'layout floating'
 
 # Space M (Mail)
-[[on-window-detected]]
-if.app-id = 'com.apple.QuickTimePlayerX'
-run = 'layout floating'
-
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = ['layout floating', 'move-node-to-workspace M']
