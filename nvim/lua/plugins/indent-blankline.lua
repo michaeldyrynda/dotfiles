@@ -4,11 +4,17 @@ return {
     main = 'ibl',
 
     opts = {
+        indent = {
+            char = '▏',
+            tab_char = '▏',
+        },
+
         whitespace = {
             remove_blankline_trail = true
         },
 
         scope = {
+            char = '▏',
             show_start = false,
         },
 
