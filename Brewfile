@@ -45,6 +45,7 @@ brew 'anomalyco/tap/opencode'
 brew 'artisanexperiences/tap/arbor'
 brew 'aarondfrancis/homebrew-tap/counselors'
 brew 'llmfit'
+brew 'jj'
 
 # Cask
 cask 'karabiner-elements'
