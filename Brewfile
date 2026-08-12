@@ -2,6 +2,7 @@
 tap 'jesseduffield/lazygit' 	      # lazygit
 tap 'nicoverbruggen/homebrew-cask'
 tap 'AlexsJones/llmfit'
+tap 'shivammathur/php'
 
 # Brew
 brew 'fzf'
@@ -46,6 +47,7 @@ brew 'artisanexperiences/tap/arbor'
 brew 'aarondfrancis/homebrew-tap/counselors'
 brew 'llmfit'
 brew 'jj'
+brew 'shivammathur/extensions/pcov@8.5'
 
 # Cask
 cask 'karabiner-elements'
