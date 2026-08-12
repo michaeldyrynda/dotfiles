@@ -61,6 +61,12 @@ return {
             },
         })
 
+        vim.lsp.config('laravel_lsp', {
+            cmd = { "laravel-lsp" },
+            filetypes = { "php", "blade" },
+            root_markers = { "artisan", "composer.json", ".git" },
+        })
+
         -- Vue, JavaScript, TypeScript
         vim.lsp.config('vue_ls', {
             on_attach = function(client, bufnr)
@@ -80,7 +86,6 @@ return {
         }
 
         vim.lsp.config('vtsls', {
-
             settings = {
                 vtsls = {
                     tsserver = {
@@ -164,6 +169,7 @@ return {
         vim.lsp.enable('emmet_ls')
         -- vim.lsp.enable('intelephense')
         vim.lsp.enable('phpantom_lsp')
+        vim.lsp.enable('laravel_lsp')
         vim.lsp.enable('vue_ls')
         vim.lsp.enable('vtsls')
         vim.lsp.enable('jsonls')

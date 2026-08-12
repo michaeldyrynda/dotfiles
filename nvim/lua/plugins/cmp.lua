@@ -10,7 +10,6 @@ return {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
         'onsails/lspkind-nvim',
-        'adibhanna/laravel.nvim',
     },
 
     config = function ()
@@ -24,7 +23,6 @@ return {
         end
 
         local source_map = {
-            laravel = "Laravel",
             buffer = "Buffer",
             nvim_lsp = "LSP",
             nvim_lsp_signature_help = "Signature",
@@ -89,7 +87,6 @@ return {
             }),
 
             sources = {
-                { name = 'laravel' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lsp_signature_help' },
                 { name = 'luasnip' },
