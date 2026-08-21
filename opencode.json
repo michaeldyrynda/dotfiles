@@ -3,11 +3,11 @@
   "agent": {
     "build": {
       "color": "warning",
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "openai/gpt-5.6-terra"
     },
     "plan": {
       "color": "primary",
-      "model": "anthropic/claude-opus-4-6"
+      "model": "openai/gpt-5.6-sol"
     }
   },
   "autoupdate": true,
@@ -15,23 +15,16 @@
   "experimental": {
     "disable_paste_summary": true
   },
-  "model": "ollama/gemma4",
-  "plugin": [
-    "/Users/michael/code/opencode-claude-bridge/dist/index.js"
-  ],
-  "provider": {
-    "ollama": {
-      "models": {
-        "gemma4": {
-          "_launch": true,
-          "name": "gemma4"
-        }
-      },
-      "name": "Ollama",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://127.0.0.1:11434/v1"
-      }
+  "model": "openai/gpt-5.6-terra",
+  "lsp": {
+    "laravel-lsp": {
+      "command": [
+        "laravel-lsp"
+      ],
+      "extensions": [
+        ".php",
+        ".blade.php"
+      ]
     }
   }
 }
