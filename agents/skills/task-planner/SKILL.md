@@ -24,11 +24,12 @@ Read the spec's **User Jobs / Product Surfaces** section first. This is the prim
 
 ### Step 1b — Identify minimum enabling foundation
 
-Some user jobs share infrastructure that must exist first: a migration, a config key, a shared enum. Collect these into the smallest possible foundation tasks. A foundation task is only permitted when:
-- It is the minimum enabling foundation for the next named user-job slice, AND
-- It cannot be inlined into that slice without making the slice too large or causing immediate rework.
+Some user jobs share infrastructure that must exist first: a migration, a config key, a shared enum. Collect these into the smallest possible foundation tasks. A foundation task is only permitted when ALL of the following are true:
+- It is consumed by **two or more independent vertical slices that cannot run in parallel without it**
+- It cannot be inlined into the first consuming slice without making that slice too large or causing immediate rework
+- The consuming slices are genuinely independent (not a sequential chain where each builds on the last)
 
-If only one slice needs a piece of infrastructure and it can fit inside that slice, that infrastructure belongs inside that slice — not in a separate task.
+If only one slice needs a piece of infrastructure, it belongs inside that slice. If multiple slices need it but they are sequential anyway, inline it into the first slice — there is no parallelism benefit to separating it.
 
 ### Step 1c — Produce the outline
 
@@ -100,6 +101,18 @@ Each of these must be rewritten to name a role, a goal, and a completion state:
 - ~~"Implement reminder workflow"~~ → "Trial user receives subscription-expiring reminder" (specific recipient, trigger, copy, and dedupe behaviour)
 - ~~"Build admin dashboard"~~ → "Support agent reviews failed payments requiring action" (specific support job and visible completion state)
 
+### Wrong granularity (same feature split by technical layer) — SUBTLE BUT COMMON
+
+These tasks each name a user role and technically pass the verticality questions, but they are horizontal layers of the same feature disguised as vertical slices:
+
+- "Create PaymentFrequency enum" → "Update validation to use PaymentFrequency" → "Update save logic to persist PaymentFrequency" → "Update submission payload to serialise PaymentFrequency" → "Update pre-flight specification to require PaymentFrequency" → "Add PaymentFrequency dropdown to the form"
+
+Each task touches a different layer (enum, validation, persistence, serialisation, specification, UI) for the **same field or concept**. The giveaway: the same domain term appears in every task title. None of these tasks delivers a usable feature in isolation — a user cannot select a value from a dropdown until all layers are in place.
+
+**The fix:** merge all layers of the same feature into one task. The task introduces the enum, wires it through validation, save, DTOs, specification, and UI — so a user can exercise the feature end-to-end after one review.
+
+**The test:** after this task is complete, can someone open a browser and use the new behaviour? If the answer is "only partially — they need the next task too", merge the tasks.
+
 ### Right granularity
 
 - "Add DealsRead and DealsWrite scopes to ExternalApiScopes enum" — shared foundation, needed by two or more slices
@@ -127,12 +140,14 @@ For each non-foundation, non-quality-check task, ask:
 1. **Who benefits?** Can you name a specific role (customer, staff member, admin, API consumer, operator)? If not, the task is horizontal.
 2. **What can they now do?** After this task is complete, is there a new behaviour a person can exercise? If the answer is "nothing yet — this sets up infrastructure for later tasks", the task is horizontal.
 3. **Where does it surface?** Can you name a URL, page, email, or CLI output the person interacts with? If the answer is only "internal classes" or "database tables", the task is horizontal.
+4. **Browser test:** After this task alone is complete, can someone open a browser (or run a CLI command) and exercise the new behaviour end-to-end? If the answer is "only partially — they would need the next task too", merge the tasks.
+5. **Same-concept check:** Does the same field name, enum, or domain concept appear in multiple task titles? If so, those tasks are horizontal layers of one vertical feature — merge them unless the combined task would exceed ~500 lines of production code.
 
 If a task fails any check, rewrite it:
 - Merge the infrastructure into the first user-job slice that needs it, OR
 - Reframe it around the user goal it enables (name the role and the completion state in the title).
 
-For each foundation task, verify it meets the foundation criteria from Step 1b: it is the minimum enabling foundation for the next named user-job slice, and it cannot be inlined without making that slice too large or causing immediate rework. Demote any that fail back into their consuming slice.
+For each foundation task, verify it meets the foundation criteria from Step 1b: it is consumed by two or more independent parallel slices, and it cannot be inlined without making the first consuming slice too large or causing immediate rework. Demote any that fail back into their consuming slice.
 
 Output the revised outline (only if changes were made) before proceeding to Phase 2.
 
