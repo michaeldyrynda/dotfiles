@@ -147,7 +147,9 @@ return {
             for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
                 client:stop()
             end
-            vim.cmd.edit()
+            vim.defer_fn(function()
+                vim.cmd.edit()
+            end, 200)
         end, {})
 
         -- Diagnostic configuration
