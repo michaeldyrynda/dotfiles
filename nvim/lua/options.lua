@@ -13,6 +13,7 @@ vim.o.autowrite = true
 vim.o.backup = false
 vim.o.colorcolumn = "120"
 vim.o.completeopt = "menu,menuone,noselect"
+vim.o.concealcursor = 'nc'
 vim.o.confirm = true
 vim.o.cursorline = true
 vim.o.expandtab = true
