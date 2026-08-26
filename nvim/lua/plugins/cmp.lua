@@ -1,239 +1,135 @@
 return {
-    'hrsh7th/nvim-cmp',
+    'saghen/blink.cmp',
+
+    version = '1.*',
 
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
         'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'onsails/lspkind-nvim',
     },
 
-    config = function ()
-        local cmp = require('cmp')
-        local luasnip = require('luasnip')
-        local lspkind = require('lspkind')
+    opts = {
+        keymap = {
+            preset = 'default',
+            ['<C-d>'] = { 'scroll_documentation_up', 'fallback' },
+            ['<C-u>'] = { 'scroll_documentation_down', 'fallback' },
+            ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+            ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+            ['<C-o>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
+        },
 
-        local has_words_before = function()
-            local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-            return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-        end
-
-        local source_map = {
-            buffer = "Buffer",
-            nvim_lsp = "LSP",
-            luasnip = "LuaSnip",
-            nvim_lua = "Lua",
-            path = "Path",
-        }
-
-        cmp.setup {
-            preselect = false,
-
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
-
-            mapping = cmp.mapping.preset.insert({
-                ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-u>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<C-e>'] = cmp.mapping.abort(),
-                ['<C-y>'] = cmp.mapping.confirm({
-                    behavior = cmp.ConfirmBehavior.Insert,
-                    select = true,
-                }),
-
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.locally_jumpable(1) then
-                        luasnip.jump(1)
-                    elseif has_words_before() then
-                        cmp.complete()
-                        print('complete...')
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.locally_jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-
-                ['<C-o>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        if cmp.visible_docs() then
-                            cmp.close_docs()
-                        else
-                            cmp.open_docs()
-                        end
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-            }),
-
-            sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'buffer' },
-                { name = 'path' },
-            },
-
-            window = {
-                completion = cmp.config.window.bordered({
-                    col_offset = -3,
-                    side_padding = 0,
-                    border = 'rounded',
-                    winhighlight = 'Normal:Pmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
-                }),
-                documentation = cmp.config.window.bordered({
-                    border = 'rounded',
-                    winhighlight = 'Normal:Pmenu,FloatBorder:CmpDocBorder',
-                    max_width = 80,
-                    max_height = 20,
-                    position = 'below',
-                }),
-            },
-
-            experimental = {
-                ghost_text = false,
-            },
-
-            formatting = {
-                fields = {"kind", "abbr", "menu"},
-
-                format = function(entry, vim_item)
-                    -- Custom icon mapping
-                    local kind_icons = {
-                        Text = "",
-                        Method = "󰆧",
-                        Function = "󰊕",
-                        Constructor = "",
-                        Field = "󰇽",
-                        Variable = "󰂡",
-                        Class = "󰠱",
-                        Interface = "",
-                        Module = "",
-                        Property = "󰜢",
-                        Unit = "󰑭",
-                        Value = "󰎠",
-                        Enum = "",
-                        Keyword = "󰌋",
-                        Snippet = "",
-                        Color = "󰏘",
-                        File = "󰈙",
-                        Reference = "󰈇",
-                        Folder = "󰉋",
-                        EnumMember = "",
-                        Constant = "󰏿",
-                        Struct = "󰙅",
-                        Event = "",
-                        Operator = "󰆕",
-                        TypeParameter = "󰅲",
-                    }
-                    
-                    -- Set icon
-                    vim_item.kind = kind_icons[vim_item.kind] or vim_item.kind
-                    
-                    local menu_text = ""
-                    local item = entry.completion_item
-                    
-                    -- Show class path for LSP completions inline
-                    if entry.source.name == 'nvim_lsp' then
-                        menu_text = item.detail or ""
-                        
-                        -- Extract class path from "use Namespace\Class" statements
-                        local class_path = menu_text:match("^use%s+([^;]+)")
-                        if class_path then
-                            -- Remove alias if present (e.g., "use Foo\Bar as Baz" -> "Foo\Bar")
-                            menu_text = class_path:match("^(.-)%s+as%s+") or class_path
-                        end
-                        if menu_text ~= "" then
-                            menu_text = " " .. menu_text
-                        end
-                    else
-                        -- For non-LSP sources, show the source name
-                        menu_text = " " .. (source_map[entry.source.name] or entry.source.name)
-                    end
-                    
-                    vim_item.menu = menu_text
-                    vim_item.menu_hl_group = 'CmpItemMenu'
-                    
-                    -- Color support for Tailwind
-                    if entry.completion_item.kind == 15 and entry.completion_item.documentation then  -- 15 = Color
-                        local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
-                        if r then
-                            local color = string.format('%02x', r) .. string.format('%02x', g) ..string.format('%02x', b)
-                            local group = 'Tw_' .. color
-                            if vim.fn.hlID(group) < 1 then
-                                vim.api.nvim_set_hl(0, group, {fg = '#' .. color})
-                            end
-                            vim_item.kind_hl_group = group
-                        end
-                    end
-
-                    return vim_item
-                end,
-            },
-
-            sorting = {
-                comparators = {
-                    -- Buffer source always last
-                    function(entry1, entry2)
-                        local is_buf1 = entry1.source.name == 'buffer'
-                        local is_buf2 = entry2.source.name == 'buffer'
-                        if is_buf1 ~= is_buf2 then
-                            return not is_buf1
-                        end
-                        return nil
-                    end,
-                    cmp.config.compare.score,
-                    cmp.config.compare.sort_text,
-                    cmp.config.compare.locality,
-                    cmp.config.compare.recently_used,
-                    cmp.config.compare.offset,
-                    cmp.config.compare.order,
-                }
-            },
-
-            view = {
-                entries = {
-                    name = 'custom',
-                    selection_order = 'near_cursor',
-                },
-                docs = {
-                    auto_open = false,
+        completion = {
+            list = {
+                selection = {
+                    preselect = true,
+                    auto_insert = true,
                 },
             },
-        }
 
-        -- Configure documentation window to show class info
-        cmp.setup.cmdline('/', {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = {
-                { name = 'buffer' }
-            }
-        })
+            menu = {
+                border = 'rounded',
+                winhighlight = 'Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None',
+                draw = {
+                    columns = {
+                        { 'kind_icon' },
+                        { 'label', 'label_description', gap = 1 },
+                        { 'source_name' },
+                    },
+                    components = {
+                        source_name = {
+                            text = function(ctx)
+                                if ctx.source_name == 'LSP' and ctx.item.detail and ctx.item.detail ~= '' then
+                                    local detail = ctx.item.detail:gsub('\n', ' '):gsub('%s+', ' ')
+                                    local class_path = detail:match("^use%s+([^;]+)")
+                                    if class_path then
+                                        return class_path:match("^(.-)%s+as%s+") or class_path
+                                    end
+                                    return detail
+                                end
+                                return ctx.source_name
+                            end,
+                            highlight = 'BlinkCmpSource',
+                        },
+                    },
+                },
+            },
 
-        cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = cmp.config.sources(
-                { { name = 'path' } },
-                { { name = 'cmdline' } }
-            )
-        })
+            documentation = {
+                auto_show = false,
+                auto_show_delay_ms = 200,
+                window = {
+                    border = 'rounded',
+                    winhighlight = 'Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder',
+                },
+            },
+
+            ghost_text = {
+                enabled = false,
+            },
+        },
+
+        signature = {
+            enabled = false,
+        },
+
+        snippets = {
+            preset = 'luasnip',
+        },
+
+        sources = {
+            default = { 'lsp', 'snippets', 'buffer', 'path' },
+            providers = {
+                buffer = {
+                    score_offset = -3,
+                },
+            },
+        },
+
+        cmdline = {
+            sources = function()
+                local type = vim.fn.getcmdtype()
+                if type == '/' or type == '?' then
+                    return { 'buffer' }
+                end
+                if type == ':' then
+                    return { 'cmdline', 'path' }
+                end
+                return {}
+            end,
+        },
+
+        appearance = {
+            kind_icons = {
+                Text = "",
+                Method = "󰆧",
+                Function = "󰊕",
+                Constructor = "",
+                Field = "󰇽",
+                Variable = "󰂡",
+                Class = "󰠱",
+                Interface = "",
+                Module = "",
+                Property = "󰜢",
+                Unit = "󰑭",
+                Value = "󰎠",
+                Enum = "",
+                Keyword = "󰌋",
+                Snippet = "",
+                Color = "󰏘",
+                File = "󰈙",
+                Reference = "󰈇",
+                Folder = "󰉋",
+                EnumMember = "",
+                Constant = "󰏿",
+                Struct = "󰙅",
+                Event = "",
+                Operator = "󰆕",
+                TypeParameter = "󰅲",
+            },
+        },
+    },
+
+    config = function(_, opts)
+        require('blink.cmp').setup(opts)
 
         local palette = require("config.theme").palette()
         local colors = {
@@ -251,62 +147,55 @@ return {
             variable = palette.syntax.variable,
             operator = palette.syntax.operator,
         }
-        local hl_groups = {
-            Pmenu = { fg = colors.fg, bg = colors.bg },
-            PmenuSel = { fg = colors.fg, bg = colors.bg_selected, bold = true },
-            PmenuSbar = { bg = colors.bg },
-            PmenuThumb = { bg = colors.border },
-            PmenuBorder = { fg = colors.border, bg = colors.bg },
-            PmenuKind = { fg = colors.fn, bg = colors.bg },
-            PmenuKindSel = { fg = colors.fn, bg = colors.bg_selected },
-            PmenuExtra = { fg = colors.muted, bg = colors.bg },
-            PmenuExtraSel = { fg = colors.subtle, bg = colors.bg_selected },
-            PmenuMatch = { fg = colors.match, bg = colors.bg, bold = true },
-            PmenuMatchSel = { fg = colors.match, bg = colors.bg_selected, bold = true },
 
-            CmpNormal = { fg = colors.fg, bg = colors.bg },
-            CmpBorder = { fg = colors.border, bg = colors.bg },
-            CmpDoc = { fg = colors.fg, bg = colors.bg },
-            CmpDocBorder = { fg = colors.border, bg = colors.bg },
-            CmpGhostText = { fg = colors.muted, italic = true },
-            CmpItemAbbr = { fg = colors.fg, bg = colors.bg },
-            CmpItemAbbrMatch = { fg = colors.match, bg = colors.bg, bold = true },
-            CmpItemAbbrMatchFuzzy = { fg = colors.match, bg = colors.bg },
-            CmpItemAbbrDeprecated = { fg = colors.muted, bg = colors.bg, strikethrough = true },
-            CmpItemMenu = { fg = colors.muted, bg = colors.bg },
-            CmpItemKind = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindText = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindMethod = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindFunction = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindConstructor = { fg = colors.type, bg = colors.bg },
-            CmpItemKindField = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindProperty = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindVariable = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindClass = { fg = colors.type, bg = colors.bg },
-            CmpItemKindInterface = { fg = colors.type, bg = colors.bg },
-            CmpItemKindStruct = { fg = colors.type, bg = colors.bg },
-            CmpItemKindEnum = { fg = colors.type, bg = colors.bg },
-            CmpItemKindEnumMember = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindModule = { fg = colors.type, bg = colors.bg },
-            CmpItemKindKeyword = { fg = colors.keyword, bg = colors.bg },
-            CmpItemKindSnippet = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindFile = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindDirectory = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindFolder = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindValue = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindUnit = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindNumber = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindBoolean = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindString = { fg = colors.match, bg = colors.bg },
-            CmpItemKindColor = { fg = colors.constant, bg = colors.bg },
-            CmpItemKindOperator = { fg = colors.operator, bg = colors.bg },
-            CmpItemKindReference = { fg = colors.variable, bg = colors.bg },
-            CmpItemKindEvent = { fg = colors.fn, bg = colors.bg },
-            CmpItemKindTypeParameter = { fg = colors.type, bg = colors.bg },
+        local hl_groups = {
+            BlinkCmpMenu = { fg = colors.fg, bg = colors.bg },
+            BlinkCmpMenuBorder = { fg = colors.border, bg = colors.bg },
+            BlinkCmpMenuSelection = { fg = colors.fg, bg = colors.bg_selected, bold = true },
+            BlinkCmpScrollBarThumb = { bg = colors.border },
+            BlinkCmpScrollBarGutter = { bg = colors.bg },
+            BlinkCmpLabel = { fg = colors.fg },
+            BlinkCmpLabelDeprecated = { fg = colors.muted, strikethrough = true },
+            BlinkCmpLabelMatch = { fg = colors.match, bold = true },
+            BlinkCmpLabelDetail = { fg = colors.muted },
+            BlinkCmpLabelDescription = { fg = colors.muted },
+            BlinkCmpSource = { fg = colors.muted },
+            BlinkCmpGhostText = { fg = colors.muted, italic = true },
+            BlinkCmpDoc = { fg = colors.fg, bg = colors.bg },
+            BlinkCmpDocBorder = { fg = colors.border, bg = colors.bg },
+            BlinkCmpSignatureHelp = { fg = colors.fg, bg = colors.bg },
+            BlinkCmpSignatureHelpBorder = { fg = colors.border, bg = colors.bg },
+            BlinkCmpSignatureHelpActiveParameter = { fg = colors.fn, bold = true },
+            BlinkCmpKind = { fg = colors.fn },
+            BlinkCmpKindText = { fg = colors.variable },
+            BlinkCmpKindMethod = { fg = colors.fn },
+            BlinkCmpKindFunction = { fg = colors.fn },
+            BlinkCmpKindConstructor = { fg = colors.type },
+            BlinkCmpKindField = { fg = colors.variable },
+            BlinkCmpKindProperty = { fg = colors.variable },
+            BlinkCmpKindVariable = { fg = colors.variable },
+            BlinkCmpKindClass = { fg = colors.type },
+            BlinkCmpKindInterface = { fg = colors.type },
+            BlinkCmpKindStruct = { fg = colors.type },
+            BlinkCmpKindEnum = { fg = colors.type },
+            BlinkCmpKindEnumMember = { fg = colors.constant },
+            BlinkCmpKindModule = { fg = colors.type },
+            BlinkCmpKindKeyword = { fg = colors.keyword },
+            BlinkCmpKindSnippet = { fg = colors.fn },
+            BlinkCmpKindFile = { fg = colors.variable },
+            BlinkCmpKindFolder = { fg = colors.fn },
+            BlinkCmpKindValue = { fg = colors.constant },
+            BlinkCmpKindUnit = { fg = colors.constant },
+            BlinkCmpKindConstant = { fg = colors.constant },
+            BlinkCmpKindColor = { fg = colors.constant },
+            BlinkCmpKindOperator = { fg = colors.operator },
+            BlinkCmpKindReference = { fg = colors.variable },
+            BlinkCmpKindEvent = { fg = colors.fn },
+            BlinkCmpKindTypeParameter = { fg = colors.type },
         }
 
-        for name, opts in pairs(hl_groups) do
-            vim.api.nvim_set_hl(0, name, opts)
+        for name, hl_opts in pairs(hl_groups) do
+            vim.api.nvim_set_hl(0, name, hl_opts)
         end
-    end
+    end,
 }

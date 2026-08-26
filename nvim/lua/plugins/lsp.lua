@@ -7,6 +7,7 @@ return {
         'mason-org/mason.nvim',
         'mason-org/mason-lspconfig.nvim',
         'b0o/schemastore.nvim',
+        'saghen/blink.cmp',
     },
 
     config = function()
@@ -27,14 +28,13 @@ return {
             }
         })
 
-        local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+        local capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-        vim.lsp.config('bashls', {
+        vim.lsp.config('*', {
             capabilities = capabilities,
         })
 
         vim.lsp.config('emmet_ls', {
-            capabilities = capabilities,
         })
 
         vim.lsp.config('intelephense', {
@@ -61,19 +61,6 @@ return {
             },
         })
 
-        -- Force phpantom_lsp to full document sync (workaround for incremental sync desync)
-        vim.api.nvim_create_autocmd('LspAttach', {
-            callback = function(args)
-                local client = vim.lsp.get_client_by_id(args.data.client_id)
-                if client and client.name == 'phpantom_lsp' then
-                    local sync = client.server_capabilities.textDocumentSync
-                    if type(sync) == 'table' then
-                        sync.change = 1
-                    end
-                end
-            end,
-        })
-
         vim.lsp.config('laravel_lsp', {
             cmd = { "laravel-lsp" },
             filetypes = { "php", "blade" },
@@ -87,7 +74,6 @@ return {
                 client.server_capabilities.documentRangeFormattingProvider = false
             end,
 
-            capabilities = capabilities,
         })
 
         local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
@@ -120,13 +106,10 @@ return {
 
         -- Tailwind CSS
         vim.lsp.config('tailwindcss', {
-            capabilities = capabilities
         })
 
         -- JSON
         vim.lsp.config('jsonls', {
-            capabilities = capabilities,
-
             settings = {
                 json = {
                     schemas = require('schemastore').json.schemas(),
@@ -153,7 +136,6 @@ return {
 
         -- Go
         vim.lsp.config('gopls', {
-            capabilities = capabilities
         })
 
         vim.api.nvim_create_user_command('LspRestart', function()
