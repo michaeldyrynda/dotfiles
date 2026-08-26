@@ -41,8 +41,9 @@
     ~/.config/hunk/config.toml: hunk.toml
     ~/.config/opencode/opencode.json: opencode.json
     ~/.agents/skills: agents/skills
-    ~/.claude/CLAUDE.md: CLAUDE.md
-    ~/.claude/settings.json: claude.json
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/themes: claude/themes
     ~/.claude/skills: agents/skills
     ~/bin/ghostty: /Applications/Ghostty.app/Contents/MacOS/ghostty
 

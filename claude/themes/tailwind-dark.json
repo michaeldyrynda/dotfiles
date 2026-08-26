@@ -1,0 +1,18 @@
+{
+  "name": "Tailwind Dark",
+  "base": "dark",
+  "overrides": {
+    "claude": "#00a6f4",
+    "text": "#f8fafc",
+    "inverseText": "#1d293d",
+    "inactive": "#62748e",
+    "success": "#00d492",
+    "error": "#ff637e",
+    "warning": "#ffb900",
+    "promptBorder": "#314158",
+    "planMode": "#c27aff",
+    "userMessageBackground": "#27354a",
+    "diffAdded": "#155352",
+    "diffRemoved": "#55374d"
+  }
+}
