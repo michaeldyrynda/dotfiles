@@ -193,37 +193,21 @@ return {
 
             sorting = {
                 comparators = {
-                    -- Priority: Classes (7) > Methods (2) > Properties (10) > everything else > Buffer
+                    -- Buffer source always last
                     function(entry1, entry2)
-                        local kind_priority = {
-                            [7] = 1,   -- Class
-                            [2] = 2,   -- Method
-                            [10] = 3,  -- Property
-                            [5] = 3,   -- Field (treat as property)
-                        }
-                        
-                        local kind1 = entry1:get_kind()
-                        local kind2 = entry2:get_kind()
-                        
-                        local priority1 = kind_priority[kind1] or 4
-                        local priority2 = kind_priority[kind2] or 4
-                        
-                        -- Buffer source always last
-                        if entry1.source.name == 'buffer' then priority1 = 5 end
-                        if entry2.source.name == 'buffer' then priority2 = 5 end
-                        
-                        if priority1 ~= priority2 then
-                            return priority1 < priority2
+                        local is_buf1 = entry1.source.name == 'buffer'
+                        local is_buf2 = entry2.source.name == 'buffer'
+                        if is_buf1 ~= is_buf2 then
+                            return not is_buf1
                         end
                         return nil
                     end,
-                    -- Sort alphabetically within each priority group
-                    cmp.config.compare.sort_text,
                     cmp.config.compare.score,
+                    cmp.config.compare.sort_text,
                     cmp.config.compare.locality,
-                    cmp.config.compare.order,
                     cmp.config.compare.recently_used,
                     cmp.config.compare.offset,
+                    cmp.config.compare.order,
                 }
             },
 
