@@ -8,6 +8,7 @@ vim.g.markdown_recommended_style = 0
 -- LazyVim autoformat
 vim.g.autoformat = true
 
+vim.o.autoindent = true
 vim.o.autowrite = true
 vim.o.backup = false
 vim.o.colorcolumn = "120"

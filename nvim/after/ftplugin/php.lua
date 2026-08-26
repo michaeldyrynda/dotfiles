@@ -1,7 +1,5 @@
-vim.o.ts = 4
-vim.o.sw = 4
-vim.o.sts = 4
-vim.o.expandtab = true
-vim.opt.iskeyword:append { '$' }
-
-vim.bo.filetype = 'php'
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+vim.bo.softtabstop = 4
+vim.bo.expandtab = true
+vim.opt_local.iskeyword:append { '$' }
