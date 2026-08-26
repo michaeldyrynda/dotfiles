@@ -3,7 +3,6 @@ return {
 
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-nvim-lsp-signature-help',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
@@ -25,7 +24,6 @@ return {
         local source_map = {
             buffer = "Buffer",
             nvim_lsp = "LSP",
-            nvim_lsp_signature_help = "Signature",
             luasnip = "LuaSnip",
             nvim_lua = "Lua",
             path = "Path",
@@ -88,7 +86,6 @@ return {
 
             sources = {
                 { name = 'nvim_lsp' },
-                { name = 'nvim_lsp_signature_help' },
                 { name = 'luasnip' },
                 { name = 'buffer' },
                 { name = 'path' },
