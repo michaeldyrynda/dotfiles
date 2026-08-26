@@ -92,6 +92,14 @@ config = function (plugin, opts)
                 end
 
                 pcall(vim.treesitter.start, args.buf, lang)
+
+                vim.schedule(function()
+                    if not vim.api.nvim_buf_is_valid(args.buf) then
+                        return
+                    end
+                    vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    vim.bo[args.buf].autoindent = true
+                end)
             end,
         })
 
