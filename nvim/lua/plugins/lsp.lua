@@ -61,6 +61,19 @@ return {
             },
         })
 
+        -- Force phpantom_lsp to full document sync (workaround for incremental sync desync)
+        vim.api.nvim_create_autocmd('LspAttach', {
+            callback = function(args)
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if client and client.name == 'phpantom_lsp' then
+                    local sync = client.server_capabilities.textDocumentSync
+                    if type(sync) == 'table' then
+                        sync.change = 1
+                    end
+                end
+            end,
+        })
+
         vim.lsp.config('laravel_lsp', {
             cmd = { "laravel-lsp" },
             filetypes = { "php", "blade" },
