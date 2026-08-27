@@ -21,6 +21,7 @@
 - link:
     ~/.config/karabiner: karabiner
     ~/.config/ghostty: ghostty
+    ~/.config/lazygit: lazygit
     ~/.config/nvim: nvim
     ~/.config/starship.toml: starship.toml
     ~/.composer/composer.json: composer/composer.json
