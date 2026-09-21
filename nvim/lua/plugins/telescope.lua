@@ -1,55 +1,20 @@
--- Fuzzy finder
-
+-- Telescope (LSP pickers, buffers, ui-select)
 
 return {
   'nvim-telescope/telescope.nvim',
 
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-live-grep-args.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-telescope/telescope-ui-select.nvim',
   },
 
   keys = {
-    { '<c-p>', function() require('telescope.builtin').find_files() end },
-    { '<c-p><c-p>', function() require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' }) end },
     { '<leader>b', function() require('telescope.builtin').buffers() end },
-    { '<leader>lg', function() require('telescope').extensions.live_grep_args.live_grep_args({
-      prompt_title = 'Grep Project',
-      vimgrep_arguments = {
-        "rg",
-        "--hidden",
-        "-L",
-        "--color=never",
-        "--sort=path",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
-      }
-    }) end },
-    { '<leader>lG', function() require('telescope').extensions.live_grep_args.live_grep_args({
-      prompt_title = 'Grep All Files',
-      vimgrep_arguments = {
-        "rg",
-        "--hidden",
-        "--no-ignore",
-        "-L",
-        "--color=never",
-        "--sort=path",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
-      },
-    }) end },
     { '<leader>fb', function() require('telescope.builtin').lsp_document_symbols() end },
   },
 
-  config = function ()
+  config = function()
     local actions = require('telescope.actions')
 
     local function apply_telescope_colors()
@@ -76,7 +41,7 @@ return {
     require('telescope').setup({
       defaults = {
         path_display = { truncate = 1 },
-        prompt_prefix = '   ',
+        prompt_prefix = '   ',
         selection_caret = '  ',
         layout_strategy = 'horizontal',
         layout_config = {
@@ -100,28 +65,15 @@ return {
             ['<C-Up>'] = actions.cycle_history_prev,
           },
         },
-        file_ignore_patterns = { '.git/', 'node_modules', '_ide_helper' },
         borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
         winblend = 0,
       },
       extensions = {
-        live_grep_args = {
-          mappings = {
-            i = {
-              ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
-              ["<C-space>"] = actions.to_fuzzy_refine,
-            },
-          },
-        },
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
       },
       pickers = {
-        find_files = {
-          hidden = true,
-          prompt_title = 'All Files',
-        },
         buffers = {
           previewer = false,
           mappings = {
@@ -148,24 +100,9 @@ return {
       },
     })
 
-    require('telescope.builtin').edit_vim = function ()
-      require('telescope.builtin').find_files({
-        cwd = "$HOME/.config/nvim",
-        prompt_title = "nvim config"
-      })
-    end
-
-    require('telescope.builtin').dotfiles = function ()
-      require('telescope.builtin').find_files({
-        cwd = "$HOME/dotfiles",
-        prompt_title = "Dotfiles"
-      })
-    end
-
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('ui-select')
 
-    -- Fix background colors to match editor
     vim.api.nvim_create_autocmd('ColorScheme', {
       pattern = '*',
       callback = apply_telescope_colors,
