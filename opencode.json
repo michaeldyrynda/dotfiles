@@ -26,5 +26,13 @@
         ".blade.php"
       ]
     }
+  },
+  "mcp": {
+    "Solo": {
+      "type": "local",
+      "command": [
+        "/Applications/Solo.app/Contents/MacOS/mcp"
+      ]
+    }
   }
 }
