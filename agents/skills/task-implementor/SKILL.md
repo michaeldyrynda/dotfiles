@@ -68,7 +68,7 @@ Run these steps on every invocation before doing any implementation work.
 
    For integration/feature tests where the failure progresses through stages (e.g., "route not found" → "controller not found" → "method not found" → passing), re-run the test after each incremental change to confirm the failure message advances. This progressive-failure cycle is the green step for that single test.
 
-   Before writing any tests, read `~/.claude/skills/_shared/testing-rules.md` and apply its rules. If an acceptance criteria bullet asks for a test that merely tests the language or framework, skip it and move to the next bullet.
+   Before writing any tests, read `../_shared/testing-rules.md`, relative to this skill directory, and apply its rules. If an acceptance criteria bullet only echoes declarations or tests dependency mechanics, report why it is low-value and skip it. If it protects a real application contract with a weak assertion, test the contract through behaviour instead. Use discriminating inputs and independently derived expectations.
 
    Keep changes scoped tightly to what the task requires — do not refactor surrounding code, add unrelated features, or fix unrelated issues.
 
