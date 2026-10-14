@@ -8,6 +8,36 @@
     "plan": {
       "color": "primary",
       "model": "openai/gpt-5.6-sol"
+    },
+    "implement-glm-fast": {
+      "description": "Fast implementation worker",
+      "mode": "primary",
+      "model": "zai-coding-plan/glm-5.3-flash",
+      "variant": "low"
+    },
+    "implement-glm-balanced": {
+      "description": "Balanced implementation worker",
+      "mode": "primary",
+      "model": "zai-coding-plan/glm-5.3",
+      "variant": "high"
+    },
+    "implement-gpt-fast": {
+      "description": "Fast implementation worker",
+      "mode": "primary",
+      "model": "openai/gpt-5.4-mini",
+      "variant": "low"
+    },
+    "implement-gpt-balanced": {
+      "description": "Balanced implementation worker",
+      "mode": "primary",
+      "model": "openai/gpt-6-astra",
+      "variant": "medium"
+    },
+    "implement-gpt-deep": {
+      "description": "Deep implementation worker",
+      "mode": "primary",
+      "model": "openai/gpt-6.1-sol",
+      "variant": "high"
     }
   },
   "autoupdate": true,
