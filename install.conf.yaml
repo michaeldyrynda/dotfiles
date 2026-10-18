@@ -10,6 +10,7 @@
 - create:
     - ~/.composer
     - ~/.config
+    - ~/.config/gh-dash
     - ~/.config/hunk
     - ~/.config/rex
     - ~/intelephense
@@ -43,6 +44,9 @@
     ~/.config/aerospace: aerospace
     ~/.config/bat.conf: bat.conf
     ~/.config/hunk/config.toml: hunk.toml
+    ~/.config/gh-dash/config.yml:
+      force: true
+      path: gh-dash.yaml
     ~/.config/opencode/opencode.json: opencode.json
     ~/.agents/skills: agents/skills
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
