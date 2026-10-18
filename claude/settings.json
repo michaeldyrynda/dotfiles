@@ -20,7 +20,7 @@
     "php-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "theme": "dark-daltonized",
+  "theme": "custom:tailwind-dark",
   "skipAutoPermissionPrompt": true,
   "skipDangerousModePermissionPrompt": true,
   "hooks": {
