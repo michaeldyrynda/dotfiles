@@ -215,10 +215,6 @@ prefix("p", "client.tab.previous")
 prefix(",", "client.tab.rename")
 prefix("shift+7", "client.tab.close")
 
-for i = 1, 9 do
-  rex.bind("alt+" .. i, "client.tab.goto", { index = i })
-end
-
 -- Panes
 prefix("-", "split_here", { direction = "down" })
 prefix("\\", "split_here", { direction = "right" })
