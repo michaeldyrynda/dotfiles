@@ -17,6 +17,7 @@
     - ~/.vim/undo-history
     - ~/.agents
     - ~/.claude
+    - ~/.codex
 
 
 - link:
@@ -48,6 +49,7 @@
     ~/.claude/settings.json: claude/settings.json
     ~/.claude/themes: claude/themes
     ~/.claude/skills: agents/skills
+    ~/.codex/hooks.json: codex/hooks.json
     ~/bin/ghostty: /Applications/Ghostty.app/Contents/MacOS/ghostty
 
 
@@ -93,6 +95,15 @@
       command: "brew update"
     - description: Install Brewfile bundle
       command: "brew bundle"
+    - description: Set up Rex terminfo, ssh guard and agent skills
+      command: |
+        rex_bin="/Applications/Rex Beta.app/Contents/Helpers/Rex Server.rex/Contents/MacOS/rex"
+        if [ -x "$rex_bin" ]; then
+          "$rex_bin" terminfo setup
+          "$rex_bin" skill setup
+        else
+          echo "Skipping Rex setup; Rex is not installed"
+        fi
     - description: Installing ZSH plugins
       command: "shell/zsh-plugins.sh"
     - description: Install TPM
