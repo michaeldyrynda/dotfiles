@@ -253,8 +253,8 @@ prefix("ctrl+k", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-pick
 prefix("w", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-picker", width = 0.4, height = 0.4 })
 prefix("h", "split_here", { direction = "right", command = "btop" })
 prefix("t", "split_here", { direction = "right", command = "nvim todo.md", cwd = os.getenv("HOME") })
-prefix("g", "popup", { command = "lazygit" })
-prefix("shift+g", "popup", { command = "gh dash" })
+prefix("g", "split_here", { direction = "right", command = "lazygit" })
+prefix("shift+g", "split_here", { direction = "right", command = "gh dash" })
 
 --------------------------------------------------------------------------
 -- Seamless navigation with nvim (replaces vim-tmux-navigator)
