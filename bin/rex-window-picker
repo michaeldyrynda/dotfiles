@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Pick another window (tab) in the current Rex session with fzf.
+
+window=$(
+  rex window ls --json \
+    | jq -r '.active_window_id as $active | .windows | to_entries[] | select(.value.window_id != $active) | "\(.key + 1):\(.value.label)"' \
+    | fzf --reverse \
+    | cut -d ':' -f 1
+)
+
+[ -n "$window" ] && rex focus "$window"

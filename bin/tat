@@ -6,6 +6,11 @@ if [ "$TERM_PROGRAM" = "solo" ]; then
   return 2>/dev/null || exit
 fi
 
+if [ -n "$REX_SESSION" ]; then
+  echo "tat: inside Rex, use ctrl+a ctrl+b to go to the project session" >&2
+  exit 1
+fi
+
 session_name="$(basename "$PWD" | tr . -)"
 
 session_exists() {

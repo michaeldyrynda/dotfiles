@@ -35,10 +35,6 @@ export GPG_TTY=$(tty)
 setopt auto_cd
 cdpath=($HOME/code)
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
-
 ensure_tmux_is_running
 
 ulimit -n 10000
@@ -47,6 +43,9 @@ ulimit -n 10000
 eval "$(starship init zsh)"
 
 eval "$(fzf --zsh)"
+
+# rex is only on PATH inside Rex terminals
+command -v rex >/dev/null && eval "$(rex completion zsh)"
 
 # Use fd with fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"

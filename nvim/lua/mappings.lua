@@ -41,10 +41,22 @@ vim.keymap.set('n', '-', '<cmd>Oil<cr>')
 --
 -- Splits
 --
-vim.keymap.set('n', '<c-j>', '<c-w><c-j>')
-vim.keymap.set('n', '<c-k>', '<c-w><c-k>')
-vim.keymap.set('n', '<c-h>', '<c-w><c-h>')
-vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
+-- At the edge of the nvim splits, hand focus back to Rex (see ~/.config/rex/init.lua)
+local function navigate(key, direction)
+  return function()
+    local window = vim.api.nvim_get_current_win()
+    vim.cmd.wincmd(key)
+
+    if window == vim.api.nvim_get_current_win() and vim.env.REX_SESSION and not vim.env.TMUX then
+      vim.system({ 'rex', 'focus', direction })
+    end
+  end
+end
+
+vim.keymap.set('n', '<c-j>', navigate('j', 'down'))
+vim.keymap.set('n', '<c-k>', navigate('k', 'up'))
+vim.keymap.set('n', '<c-h>', navigate('h', 'left'))
+vim.keymap.set('n', '<c-l>', navigate('l', 'right'))
 
 --
 -- Buffers

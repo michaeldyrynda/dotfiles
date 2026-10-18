@@ -11,6 +11,7 @@
     - ~/.composer
     - ~/.config
     - ~/.config/hunk
+    - ~/.config/rex
     - ~/intelephense
     - ~/code
     - ~/.vim/undo-history
@@ -23,6 +24,7 @@
     ~/.config/ghostty: ghostty
     ~/.config/lazygit: lazygit
     ~/.config/nvim: nvim
+    ~/.config/rex/init.lua: rex/init.lua
     ~/.config/starship.toml: starship.toml
     ~/.composer/composer.json: composer/composer.json
     ~/.dotfiles: ""
