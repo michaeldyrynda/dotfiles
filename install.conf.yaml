@@ -8,27 +8,42 @@
 - clean: ["~"]
 
 - create:
-    - ~/.composer
-    - ~/.config
-    - ~/.config/gh-dash
-    - ~/.config/hunk
-    - ~/.config/rex
-    - ~/intelephense
-    - ~/code
-    - ~/.vim/undo-history
     - ~/.agents
     - ~/.claude
     - ~/.codex
+    - ~/.composer
+    - ~/.config
+    - ~/.config/amp
+    - ~/.config/gh-dash
+    - ~/.config/hunk
+    - ~/.config/rex
+    - ~/.vim/undo-history
+    - ~/code
+    - ~/intelephense
 
 
 - link:
-    ~/.config/karabiner: karabiner
+    ~/.agents/skills: agents/skills
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/skills: agents/skills
+    ~/.claude/themes: claude/themes
+    ~/.codex/hooks.json: codex/hooks.json
+    ~/.composer/composer.json: composer/composer.json
+    ~/.config/aerospace: aerospace
+    ~/.config/amp/settings.json: amp/settings.json
+    ~/.config/bat.conf: bat.conf
+    ~/.config/gh-dash/config.yml:
+      force: true
+      path: gh-dash.yaml
     ~/.config/ghostty: ghostty
+    ~/.config/hunk/config.toml: hunk.toml
+    ~/.config/karabiner: karabiner
     ~/.config/lazygit: lazygit
     ~/.config/nvim: nvim
+    ~/.config/opencode/opencode.json: opencode.json
     ~/.config/rex/init.lua: rex/init.lua
     ~/.config/starship.toml: starship.toml
-    ~/.composer/composer.json: composer/composer.json
     ~/.dotfiles: ""
     ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
@@ -40,21 +55,8 @@
     ~/.zshrc:
       force: true
       path: zshrc
-    ~/bin: bin
-    ~/.config/aerospace: aerospace
-    ~/.config/bat.conf: bat.conf
-    ~/.config/hunk/config.toml: hunk.toml
-    ~/.config/gh-dash/config.yml:
-      force: true
-      path: gh-dash.yaml
-    ~/.config/opencode/opencode.json: opencode.json
-    ~/.agents/skills: agents/skills
-    ~/.claude/CLAUDE.md: claude/CLAUDE.md
-    ~/.claude/settings.json: claude/settings.json
-    ~/.claude/themes: claude/themes
-    ~/.claude/skills: agents/skills
-    ~/.codex/hooks.json: codex/hooks.json
     ~/bin/ghostty: /Applications/Ghostty.app/Contents/MacOS/ghostty
+    ~/bin: bin
 
 
 - shell:

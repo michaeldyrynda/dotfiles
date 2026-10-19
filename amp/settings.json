@@ -1,0 +1,9 @@
+{
+  "$schema": "https://ampcode.com/cli-settings.schema.json",
+  "amp.git.commit.coauthor.enabled": false,
+  "amp.mcpServers": {
+    "clickup": {
+      "url": "https://mcp.clickup.com/mcp"
+    }
+  }
+}
