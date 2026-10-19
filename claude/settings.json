@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null || true'",
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null | awk -v RS= -v ORS=\"\\n\\n\" \"!/Name the session/\" || true'",
             "timeout": 5
           }
         ]
