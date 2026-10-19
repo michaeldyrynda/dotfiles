@@ -240,7 +240,6 @@ end
 
 -- Sessions
 prefix("ctrl+b", "project_session")
-prefix("ctrl+j", "session.switch")
 prefix("shift+1", "session.close")
 prefix("shift+x", "session.close")
 prefix("shift+4", "session.rename")
