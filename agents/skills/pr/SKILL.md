@@ -67,11 +67,13 @@ Whether using a repo template or the fallback: confirm all section headings are 
 
 Optional arguments: `--base {branch}` (default: master), `--draft` (create as draft), `--no-push` (generate description only), `--update {number}` (update an existing PR's description only).
 
+**Always** use `--web` allowing the user to review the PR before submitting.
+
 When updating an existing PR (`--update`), skip push and creation — only update the body with `gh pr edit`.
 
 ```bash
 git push -u origin $(git branch --show-current)
-gh pr create --title "{title}" --body "$(cat <<'EOF'
+gh pr create --title "{title}" --web --body "$(cat <<'EOF'
 {body}
 EOF
 )"
