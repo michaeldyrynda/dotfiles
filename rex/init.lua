@@ -176,6 +176,56 @@ rex.action{
   end,
 }
 
+-- Put the focused pane and its neighbour side by side (horizontal) or stacked (vertical)
+rex.action{
+  name  = "rotate_split",
+  title = "Rotate Split",
+  args  = { direction = "string?" },
+  run   = function(ctx, args)
+    local view = check(rex.session.view{})
+    local parent
+
+    local function find(node)
+      if node == nil or node.split == nil then return end
+
+      if node.split.before.block_id == ctx.block_id or node.split.after.block_id == ctx.block_id then
+        parent = node.split
+      else
+        find(node.split.before)
+        find(node.split.after)
+      end
+    end
+
+    for _, window in ipairs(view.windows or {}) do
+      for _, layer in ipairs(window.layers or {}) do
+        if layer.kind == "tiled" then find(layer.layout) end
+      end
+    end
+
+    if parent == nil then error("Pane is not in a split", 0) end
+
+    local before = parent.before.block_id == ctx.block_id
+    local sibling = before and parent.after or parent.before
+
+    if sibling.block_id == nil then
+      error("Rotate requires the pane's neighbour to be a single pane", 0)
+    end
+
+    local direction = args.direction or (parent.direction == "horizontal" and "vertical" or "horizontal")
+
+    if direction == parent.direction then return end
+
+    check(rex.session.move_block{
+      block_id = ctx.block_id,
+      anchor_block_id = sibling.block_id,
+      direction = direction,
+      side = before and "before" or "after",
+      ratio = parent.ratio,
+    })
+    check(rex.session.focus_block{ block_id = ctx.block_id })
+  end,
+}
+
 -- tmux: C-b (`tat`), switch to a session named after the current directory
 rex.action{
   name  = "project_session",
@@ -224,6 +274,10 @@ prefix("z", "pane.zoom")
 prefix("x", "pane.close")
 prefix("o", "pane.focus_next")
 prefix("=", "pane.balance")
+prefix("shift+j", "rotate_split", { direction = "vertical" })
+prefix("shift+k", "rotate_split", { direction = "vertical" })
+prefix("shift+h", "rotate_split", { direction = "horizontal" })
+prefix("shift+l", "rotate_split", { direction = "horizontal" })
 
 -- tmux: s (swap-pane). Move the pane once with h/j/k/l or the arrows.
 prefix("s", "client.mode.enter", { name = "move", once = true })
@@ -253,6 +307,7 @@ prefix("w", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-picker", 
 prefix("h", "split_here", { direction = "right", command = "btop" })
 prefix("t", "split_here", { direction = "right", command = "nvim todo.md", cwd = os.getenv("HOME") })
 prefix("g", "split_here", { direction = "right", command = "lazygit" })
+prefix("a", "split_here", { direction = "right", command = "amp" })
 prefix("shift+g", "split_here", { direction = "right", command = "gh dash" })
 
 --------------------------------------------------------------------------
