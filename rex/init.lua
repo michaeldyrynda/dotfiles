@@ -302,7 +302,7 @@ prefix("shift+4", "session.rename")
 prefix("shift+m", "rebalance_layout")
 
 -- Quick-launch
-prefix("ctrl+k", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-picker", width = 1.4, height = 0.4 })
+prefix("ctrl+k", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-picker", width = 0.8, height = 0.4 })
 prefix("w", "popup", { command = os.getenv("HOME") .. "/bin/rex-window-picker", width = 0.4, height = 0.4 })
 prefix("h", "split_here", { direction = "right", command = "btop" })
 prefix("t", "split_here", { direction = "right", command = "nvim todo.md", cwd = os.getenv("HOME") })
