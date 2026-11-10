@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+#
+# Pick a k8s environment and pod, then exec a command in it.
+#
+# Usage: k8r [dev|staging|prod]
+
+set -euo pipefail
+
+environment="${1:-}"
+
+if [ -z "$environment" ]; then
+  environment="$(printf '%s\n' staging dev prod | fzf --height=~10 --reverse --prompt='environment> ')" || exit 1
+fi
+
+case "$environment" in
+  dev | d) kubeconfig="$HOME/.kube/nodifi-dev" ;;
+  staging | stg | s) kubeconfig="$HOME/.kube/nodifi-stg" ;;
+  prod | p) kubeconfig="$HOME/.kube/nodifi-prod" ;;
+  *)
+    echo "k8r: unknown environment '$environment' (expected dev, staging or prod)" >&2
+    exit 1
+    ;;
+esac
+
+kube() {
+  kubectl --kubeconfig="$kubeconfig" "$@"
+}
+
+pod="$(
+  kube get pods --field-selector=status.phase=Running |
+    fzf --height=~50% --reverse --header-lines=1 --prompt="$environment pod> " |
+    awk '{print $1}'
+)" || exit 1
+
+[ -n "$pod" ] || exit 1
+
+default_commands=(
+  "/bin/bash"
+  "php artisan tinker"
+  "/bin/sh"
+)
+
+# --print-query lets you type a custom command; fzf exits 1 when it matches none
+# of the defaults, and alt-enter runs the typed text even when it does match one.
+status=0
+selection="$(
+  printf '%s\n' "${default_commands[@]}" |
+    fzf --height=~10 --reverse --print-query \
+      --bind='alt-enter:print-query' \
+      --prompt="$pod \$ " \
+      --header='enter: pick / run typed command · alt-enter: run typed command as-is'
+)" || status=$?
+
+[ "$status" -le 1 ] || exit 1
+
+query="$(sed -n 1p <<<"$selection")"
+picked="$(sed -n 2p <<<"$selection")"
+command="${picked:-$query}"
+
+[ -n "$command" ] || exit 1
+
+echo "→ $environment/$pod: $command" >&2
+exec kubectl --kubeconfig="$kubeconfig" exec -it "$pod" -- sh -c "exec $command"
