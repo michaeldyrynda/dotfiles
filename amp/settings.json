@@ -4,6 +4,9 @@
   "amp.mcpServers": {
     "clickup": {
       "url": "https://mcp.clickup.com/mcp"
+    },
+    "DataDog": {
+      "url": "https://mcp.datadoghq.com/v1/mcp"
     }
   }
 }
