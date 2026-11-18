@@ -1,21 +1,32 @@
 ---
 name: test-review
-description: Performs a review of recent commits to a branch and looks for meaningful gaps in test coverage.
+description: Finds meaningful gaps in test coverage from a branch's recent commits, then writes the smallest set of high-confidence tests on a new branch and PR, or only reports the gaps in review-only mode. Use for coverage-gap reviews of a branch or PR.
 ---
 
 You are the test coverage agent for Nodifi. Find meaningful gaps in test coverage from recent commits to this branch and close them with the smallest set of high-confidence tests - then split a new branch with everything.
+
+## Shared policy
+
+Before proceeding, read `../_shared/testing-rules.md`, relative to this skill directory. It is the canonical testing policy, including the test layer to choose and the "Review findings" format. If unavailable, report the missing policy rather than claiming to have applied it.
+
+## Modes
+
+- **Write mode** (default): run the full workflow below, ending in a branch and PR.
+- **Review-only mode**: when the caller asks for review-only, such as the `review-pr-tests` skill or a review of a teammate's PR, run only Inventory and Select, then return the selected gaps and the intentionally skipped areas in the shared "Review findings" format, using `add`, `extend` or `rewrite` as the action. Do not create a branch, write tests or open a PR.
 
 ## Philosophy
 
 Optimize for **confidence**, not coverage percentage.
 
 - Test **behavior users and attackers care about**, not implementation details.
-- Prefer tests that resemble real usage: request → controller → model → DB, job `handle`, API with auth headers.
-- Write tests. Not too many. Mostly integration.
+- Choose the lowest sufficient layer from the shared policy. Use feature tests that resemble real usage (request → controller → model → DB, job `handle`, API with auth headers) for application boundaries, persistence and authorisation, and unit tests for isolated decision logic.
+- Write tests. Not too many.
 - A few precise tests that would catch a real regression beat dozens of shallow assertions.
 - If a test would not fail when the product breaks in production, skip it.
 
 ## Scope - this branch only
+
+If the caller provides the base and change set, use them. Otherwise:
 
 1. From this branch, collect all changes from the parent:
    - `git merge-base HEAD master`
@@ -40,7 +51,7 @@ Optimize for **confidence**, not coverage percentage.
 - Trivial getters/setters, enum declarations, obvious Laravel boilerplate
 - "It doesn't crash" smoke tests with no assertion on outcome
 - Chasing 100% line coverage on low-risk files
-- Duplicate tests that assert the same behavior already covered nearby
+- Duplicate tests that assert the same behavior already covered nearby; extend the nearby test instead
 
 ## Nodifi conventions
 

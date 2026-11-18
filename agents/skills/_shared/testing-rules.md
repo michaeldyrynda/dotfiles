@@ -78,12 +78,30 @@ Ordinary application tests may use the normal migrated test database. Test appli
 
 - Read the implementation and relevant callers before classifying a test. A suspicious assertion alone does not justify deleting the whole test.
 - Default to review-only unless cleanup is requested. Honour repository approval requirements for removing tests, even in cleanup mode.
-- Classify findings as keep, rewrite, move to a lower layer, merge, remove or uncertain. Name the contract, plausible defect, evidence and remaining coverage for each proposed change.
+- Report every finding in the format under "Review findings" below.
 - Establish relevant baseline results before cleanup and distinguish existing failures from regressions. A green suite after deletion does not demonstrate preserved coverage.
 - Keep production behaviour unchanged during cleanup. Do not introduce production refactors, dependencies or CI redesigns solely to make a test review easier.
 - Where replacing coverage, verify that the replacement detects the named wrong behaviour through a meaningful failing case or a small reversible mutation when practical. Restore mutations before running final checks; do not mutate shared or production environments.
 - Separate temporary diagnostic checks from permanent regression tests. Retain only checks that protect a real contract against a plausible future defect.
 - Apply authorised changes in small batches, run affected tests and appropriate broader checks, and report actual results and any unverified coverage.
+
+## Review findings
+
+Every test review, whether it looks for coverage gaps or for low-value tests, reports each finding with these fields, so findings from different reviews of the same change can be matched and reconciled:
+
+- **Contract**: the observable behaviour at stake, phrased as behaviour rather than a file or test name, such as "a broker cannot view another tenant's application". This is the key other reviews match on.
+- **Defect**: the plausible wrong behaviour that would violate the contract.
+- **Tests**: the exact `path::test name` of every test involved, or `none` when no test exists.
+- **Action**: exactly one of:
+  - `add`: no test protects the contract; write a new one.
+  - `extend`: an existing test covers neighbouring behaviour; add the case or assertion to it instead of writing a parallel test.
+  - `keep`: the test protects the contract adequately.
+  - `rewrite`: the contract is real but the test cannot detect the defect; say what it should assert instead.
+  - `move`: the test belongs at another layer; name the target layer.
+  - `merge`: the tests catch the same defect; name the test that survives.
+  - `remove`: the test protects no contract; name the coverage that remains.
+  - `uncertain`: the evidence does not settle it; keep the test and say what evidence is missing.
+- **Evidence**: what was inspected or executed, kept distinct.
 
 ## Red-green-refactor — one test at a time
 

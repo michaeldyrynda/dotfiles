@@ -1,5 +1,5 @@
 ---
-name: reviewing-test-value
+name: review-test-value
 description: Reviews existing test suites for declaration-echo assertions, implementation coupling, redundant coverage and unnecessarily expensive test layers. Use for test-value audits, test cleanup, or reviewing suspected agent-written test slop.
 ---
 
@@ -24,7 +24,7 @@ When distributing this skill, include the sibling `_shared/testing-rules.md` fil
 1. Read repository instructions and the relevant test setup. Inspect implementation and callers as well as tests; do not judge test value by assertion syntax alone.
 2. Identify suspicious cases using the shared policy: literal/source/declaration echoes, CSS-class checks, generic framework mechanics, migration assertions, internal mock choreography, broad snapshots and overlapping coverage. These are candidates for investigation, not automatic deletion rules.
 3. For each candidate, identify the contract, plausible defect and evidence that the test can or cannot detect it. Check for a compatibility, architecture or integration contract before recommending removal. Mark unresolved cases uncertain and preserve them.
-4. Classify actionable findings as rewrite, move to a lower layer, merge or remove. Name the exact assertion/case involved, why it is low-value, and the specific coverage that will remain or replace it. Prioritise confidence risks and demonstrated maintenance/runtime costs; do not invent runtime savings.
+4. Record each actionable finding in the shared "Review findings" format, naming the exact assertion or case involved and why it is low-value. Prioritise confidence risks and demonstrated maintenance/runtime costs; do not invent runtime savings.
 5. In review-only mode, return the findings and stop. No baseline execution is required just to provide a read-only review; distinguish inspected evidence from executed checks.
 6. In authorised cleanup mode, establish relevant baseline results before edits. Rewrite or replace valuable coverage before removing weak coverage. Work in small batches without changing production behaviour. Verify replacement sensitivity to the named defect when practical, following the shared safeguards.
 7. Run affected tests and appropriate broader checks, restore any mutations, and inspect the final diff. Attribute existing failures separately. A green suite after deletion is not proof that useful coverage survived.
@@ -33,7 +33,7 @@ When distributing this skill, include the sibling `_shared/testing-rules.md` fil
 
 Keep the report in the response unless a file was requested. Include:
 
-- Scope actually reviewed and a concise findings table: location, classification, contract/defect, evidence, and remaining or replacement coverage.
+- Scope actually reviewed and a findings table with the shared "Review findings" fields as columns.
 - In cleanup mode, changes actually applied, commands and results, and any measured before/after runtime using comparable runs. Omit runtime claims if unmeasured.
 - Uncertain findings, uncovered risks and verification blockers. Explicitly state whether tests were only reviewed or changed.
 
