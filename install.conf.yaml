@@ -55,6 +55,10 @@
     ~/.zshrc:
       force: true
       path: zshrc
+    ~/Library/Application Support/Spaceman/config.toml:
+      create: true
+      force: true
+      path: spaceman/config.toml
     ~/bin/ghostty: /Applications/Ghostty.app/Contents/MacOS/ghostty
     ~/bin: bin
 

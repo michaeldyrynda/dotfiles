@@ -1,0 +1,158 @@
+# Spaceman configuration, ported from aerospace/aerospace.toml.
+# Needs a dev-channel build (0.0.0-dev-60 or later) for gaps, mouse_follows_focus and [shortcuts].
+# Docs: https://github.com/anomalyco/spaceman/blob/dev/docs/configuration.md
+version = 1
+
+[settings]
+update_channel = "dev"
+mouse_follows_focus = "window"
+
+[settings.gaps]
+inner = 20
+top = 20
+bottom = 60
+left = 20
+right = 20
+
+# Built-in shortcuts already match the AeroSpace bindings for:
+#   alt+h/j/k/l focus, alt+shift+h/j/k/l move, alt+/ layout, alt+shift+f fullscreen,
+#   alt+tab back-and-forth, alt+shift+tab move workspace to next display,
+#   alt+shift+1..9 and alt+shift+b/d/m/t move window to workspace.
+[shortcuts.bindings]
+"alt+shift+-" = "resize shrink"
+"alt+shift+=" = "resize grow"
+
+"ctrl+cmd+alt+shift+1" = "switch 1"
+"ctrl+cmd+alt+shift+2" = "switch 2"
+"ctrl+cmd+alt+shift+3" = "switch 3"
+"ctrl+cmd+alt+shift+4" = "switch 4"
+"ctrl+cmd+alt+shift+5" = "switch 5"
+"ctrl+cmd+alt+shift+6" = "switch 6"
+"ctrl+cmd+alt+shift+7" = "switch 7"
+"ctrl+cmd+alt+shift+8" = "switch 8"
+"ctrl+cmd+alt+shift+9" = "switch 9"
+"ctrl+cmd+alt+shift+b" = "switch B"
+"ctrl+cmd+alt+shift+d" = "switch D"
+"ctrl+cmd+alt+shift+m" = "switch M"
+"ctrl+cmd+alt+shift+t" = "switch T"
+
+# Named workspaces only get shortcuts when the config mentions them (D has no rule),
+# and new letters register on the next app start.
+[[workspaces]]
+workspace = "B"
+monitor = "main"
+
+[[workspaces]]
+workspace = "D"
+monitor = "main"
+
+[[workspaces]]
+workspace = "M"
+monitor = "main"
+
+[[workspaces]]
+workspace = "T"
+monitor = "main"
+
+# Floating apps
+[[rules]]
+bundle_id = "com.replay.sleeve"
+action = "float"
+
+[[rules]]
+bundle_id = "com.apple.finder"
+action = "float"
+
+[[rules]]
+bundle_id = "com.1password.1password"
+action = "float"
+
+[[rules]]
+bundle_id = "com.apple.QuickTimePlayerX"
+action = "float"
+
+[[rules]]
+bundle_id = "com.apple.Notes"
+action = "float"
+
+# Space M (Mail). AeroSpace also floated it; a rule can't both route and float.
+[[rules]]
+bundle_id = "com.apple.mail"
+action = "route"
+workspace = "M"
+
+# Space B (Browser)
+[[rules]]
+bundle_id = "company.thebrowser.Browser"
+action = "route"
+workspace = "B"
+
+[[rules]]
+bundle_id = "app.zen-browser.zen"
+action = "route"
+workspace = "B"
+
+# Space T (Terminal)
+[[rules]]
+bundle_id = "net.kovidgoyal.kitty"
+action = "route"
+workspace = "T"
+
+[[rules]]
+bundle_id = "com.mitchellh.ghostty"
+action = "route"
+workspace = "T"
+
+[[rules]]
+bundle_id = "com.superlogical.rex"
+action = "route"
+workspace = "T"
+
+[[rules]]
+bundle_id = "de.beyondco.herd"
+action = "route"
+workspace = "T"
+
+# Space 1
+[[rules]]
+bundle_id = "com.soloterm.solo"
+action = "route"
+workspace = 1
+
+# Space 2
+[[rules]]
+bundle_id = "app.yaak.desktop"
+action = "route"
+workspace = 2
+
+# Space 3. AeroSpace also floated it; a rule can't both route and float.
+[[rules]]
+bundle_id = "com.tinyapp.TablePlus-setapp"
+action = "route"
+workspace = 3
+
+# Space 4
+[[rules]]
+bundle_id = "dev.nkzw-tech.codiff"
+action = "route"
+workspace = 4
+
+[[rules]]
+bundle_id = "com.apple.MobileSMS"
+action = "route"
+workspace = 4
+
+[[rules]]
+bundle_id = "com.apple.Music"
+action = "route"
+workspace = 4
+
+[[rules]]
+bundle_id = "org.whispersystems.signal-desktop"
+action = "route"
+workspace = 4
+
+[[rules]]
+bundle_id = "ru.keepcoder.Telegram"
+action = "route"
+workspace = 4
